@@ -1,0 +1,2116 @@
+{
+  "schema_version": "1.1",
+  "run_id": "20261030T090046Z_0356ff",
+  "tool": {
+    "name": "interface-audit",
+    "version": "0.2.0",
+    "thresholds_version": "2026-10-29.absolute.2",
+    "calibration": "provisional"
+  },
+  "target": "/home/mkamel/Desktop/python scripts/modern_app_clean/index.html",
+  "started_at": "2026-10-30T09:00:46.296022+00:00",
+  "duration_s": 12.45,
+  "config": {
+    "views": [
+      "desktop",
+      "mobile"
+    ],
+    "max_pages": 5,
+    "device": "cuda",
+    "fast": false,
+    "thresholds_version": "2026-10-29.absolute.2"
+  },
+  "coverage": {
+    "pages_found": 1,
+    "pages_analyzed": 1,
+    "screens": 6,
+    "missing": [],
+    "pages_failed": [],
+    "measured": [
+      "layout_geometry",
+      "dom_structure",
+      "spacing",
+      "target_size",
+      "crowding",
+      "saliency_prominence",
+      "noise",
+      "focus_competition",
+      "distraction"
+    ],
+    "not_measured": [
+      "task_importance",
+      "safe_removal",
+      "dropdown_placement",
+      "naming_clarity",
+      "technical_dependencies",
+      "dynamic_ui_states"
+    ]
+  },
+  "limitations": [
+    "Saliency predicts free-viewing attention on a static screenshot, not task importance.",
+    "Spacing/alignment findings are heuristics unless severity is 'clear_problem'.",
+    "Semantic suggestions (removal, dropdown placement, label clarity) require human review.",
+    "Dynamic states (hover, focus, open menus, errors, empty/loading) are not captured.",
+    "Only the configured desktop (1920x1080) and mobile (390x844) viewports are analyzed."
+  ],
+  "summary": {
+    "clear_problem": 1,
+    "potential_improvement": 3,
+    "needs_investigation": 4,
+    "total": 8,
+    "requires_human": 7,
+    "top_issue_ids": [
+      "f_1fd2a462f6",
+      "f_87182304fe",
+      "f_c905cba864",
+      "f_9739a10f43",
+      "f_36cf828b1f"
+    ],
+    "score_modifiers_applied": true
+  },
+  "pages": [
+    {
+      "page_name": "index",
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app_clean/index.html",
+      "status": "ok",
+      "views": {
+        "desktop": {
+          "score": 22.7,
+          "overall": 22.7,
+          "noise": 13.8,
+          "focus_competition": 51.7,
+          "crowding": 0.0,
+          "distraction": 30.5,
+          "level": "LOW",
+          "valid": true,
+          "screens": 2,
+          "scroll_y": [
+            0,
+            918
+          ],
+          "saliency_mode": "enabled",
+          "layout": {
+            "scope": "document_union",
+            "first_view_screen_id": "desktop_index_s0",
+            "content_atoms": {
+              "text": 41,
+              "image": 0,
+              "icon": 0,
+              "button": 17,
+              "total": 58
+            },
+            "first_view_atoms": 25,
+            "row_bands": 26,
+            "columns": 1,
+            "column_widths_px": [
+              756.0
+            ],
+            "column_edges_px": [
+              [
+                582.0,
+                1338.0
+              ]
+            ],
+            "column_pitch_px": 0.0,
+            "gutter_px": 0.0,
+            "column_histogram": {
+              "1": 23,
+              "2": 1,
+              "3": 1,
+              "5": 1
+            },
+            "grid_confidence": 0.88,
+            "grid_regions": 6,
+            "symmetry_error_px": 0.0,
+            "symmetry_error_ratio": 0.0,
+            "spacing_axis": "vertical",
+            "dominant_spacing_px": 45.0,
+            "spacing_outliers": 0,
+            "atom_gap_histogram": {
+              "21": 1,
+              "22": 2,
+              "23": 1,
+              "25": 2,
+              "26": 9,
+              "27": 1,
+              "28": 3,
+              "44": 2
+            },
+            "off_grid_count": 0,
+            "whitespace_pct": 73.9,
+            "orphan_lines": 0,
+            "orphan_selectors": [],
+            "grid_holes": 0,
+            "underfilled_rows": 0,
+            "min_row_fill_ratio": 1.0,
+            "skewed_rows": 0,
+            "content_skew_pct": 15.1,
+            "layout_notes": [
+              "Grid: 1-column layout over 11 repeated rows; gutter 0px, pitch 0px, widest offset 0px from the viewport edge.",
+              "First view: 1 element(s) straddle the fold at 1080px and render as partial strips — shift them down or up.",
+              "Measured: every repeated row stays on its column line within 2px, rows fill at least 100% of their grid width, and no row leaves a centre column empty."
+            ],
+            "fold_clipped_count": 1,
+            "fold_clipped_atom_count": 5,
+            "fold_clipped_pct": 16.7,
+            "fold_clipped_selectors": [
+              "#card-agents"
+            ]
+          }
+        },
+        "mobile": {
+          "score": 29.3,
+          "overall": 29.3,
+          "noise": 33.2,
+          "focus_competition": 53.6,
+          "crowding": 0.7,
+          "distraction": 25.7,
+          "level": "LOW",
+          "valid": true,
+          "screens": 4,
+          "scroll_y": [
+            0,
+            717,
+            1434,
+            2151
+          ],
+          "saliency_mode": "enabled",
+          "score_modifiers": {
+            "structure_points": 0.0,
+            "grid_organization_points": 1.61,
+            "total_points": 1.61
+          },
+          "layout": {
+            "scope": "document_union",
+            "first_view_screen_id": "mobile_index_s0",
+            "content_atoms": {
+              "text": 41,
+              "image": 0,
+              "icon": 0,
+              "button": 17,
+              "total": 58
+            },
+            "first_view_atoms": 14,
+            "row_bands": 39,
+            "columns": 1,
+            "column_widths_px": [
+              346.0
+            ],
+            "column_edges_px": [
+              [
+                22.0,
+                368.0
+              ]
+            ],
+            "column_pitch_px": 0.0,
+            "gutter_px": 0.0,
+            "column_histogram": {
+              "1": 36,
+              "2": 2,
+              "4": 1
+            },
+            "grid_confidence": 0.92,
+            "grid_regions": 4,
+            "symmetry_error_px": 0.0,
+            "symmetry_error_ratio": 0.0,
+            "spacing_axis": "vertical",
+            "dominant_spacing_px": 21.5,
+            "spacing_outliers": 0,
+            "atom_gap_histogram": {
+              "14": 3,
+              "18": 2,
+              "19": 1,
+              "22": 1,
+              "23": 2,
+              "39": 2,
+              "40": 2,
+              "45": 2,
+              "54": 2
+            },
+            "off_grid_count": 0,
+            "whitespace_pct": 43.7,
+            "orphan_lines": 3,
+            "orphan_selectors": [
+              "#main-subheading",
+              "#notice-text",
+              "#foot-note"
+            ],
+            "grid_holes": 0,
+            "underfilled_rows": 0,
+            "min_row_fill_ratio": 1.0,
+            "skewed_rows": 1,
+            "content_skew_pct": 3.7,
+            "layout_notes": [
+              "Grid: 1-column layout over 32 repeated rows; gutter 0px, pitch 0px, widest offset 0px from the viewport edge.",
+              "Organization: 3 text block(s) end with a dangling word on its own line (#main-subheading, #notice-text, #foot-note) — tighten the copy or the block width.",
+              "Balance: 1 row(s) pile most of their width on one side while sibling rows spread evenly — rebalance the cell widths.",
+              "First view: 1 element(s) straddle the fold at 844px and render as partial strips — shift them down or up.",
+              "Measured: every repeated row stays on its column line within 2px, rows fill at least 100% of their grid width, and no row leaves a centre column empty."
+            ],
+            "fold_clipped_count": 1,
+            "fold_clipped_atom_count": 1,
+            "fold_clipped_pct": 6.7,
+            "fold_clipped_selectors": [
+              "#dash-title-text"
+            ]
+          }
+        }
+      },
+      "findings": [
+        {
+          "issue_id": "f_1fd2a462f6",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "clear_problem",
+          "impact": "high",
+          "confidence": 0.9,
+          "requires_human": false,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s3",
+          "scroll_y": 2151,
+          "selector": "#flink-terms",
+          "tag": "a",
+          "text": "4 controls, gap 14.0px",
+          "related_selectors": [
+            "#flink-terms",
+            "#flink-privacy",
+            "#flink-security",
+            "#flink-contact"
+          ],
+          "bbox": {
+            "x": 22,
+            "y": 797,
+            "width": 229,
+            "height": 21
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_1fd2a462f6.png",
+          "observed": {
+            "gap_px": 14.0,
+            "target_min_px": 21,
+            "group_size": 4
+          },
+          "expected": {
+            "gap_px": 16.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "deterministic_rule",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s3"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "4 adjacent controls are separated by 14.0px (threshold 16px); smallest target is 35x21px. Check touch spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 16.0px (current 14.0px), or raise the smallest target to at least 44x44px (current 21px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 14.0,
+            "severity": 0.125
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_87182304fe",
+          "rule_id": "FOLD_CLIPPED_CONTENT",
+          "issue": "FOLD_CLIPPED_CONTENT",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.8,
+          "requires_human": true,
+          "page": "index",
+          "view": "desktop",
+          "screen_id": "desktop_index_s0",
+          "scroll_y": 0,
+          "selector": "#card-agents",
+          "tag": "div",
+          "text": "Active agents twelve swarms at work · six odd visitors were quarantined 1,842 wo",
+          "related_selectors": [],
+          "bbox": {
+            "x": 582,
+            "y": 987,
+            "width": 756,
+            "height": 93
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_87182304fe.png",
+          "observed": {
+            "visible_pct": 84.5,
+            "clipped_edge": "bottom",
+            "clipped_px": 17,
+            "element_type": "box",
+            "covered_atoms": 5
+          },
+          "expected": {
+            "visible_pct": 100.0,
+            "note": "fully inside the first viewport, or fully below the fold"
+          },
+          "evidence": {
+            "class": "deterministic_geometry",
+            "slices_seen": 1,
+            "screen_ids": [
+              "desktop_index_s0"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "Only 85% of this box fits inside the first viewport; the remaining ~17px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+          "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+          "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+          "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+          "attention_stats": {},
+          "protected": false
+        },
+        {
+          "issue_id": "f_c905cba864",
+          "rule_id": "FOLD_CLIPPED_CONTENT",
+          "issue": "FOLD_CLIPPED_CONTENT",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.8,
+          "requires_human": true,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s0",
+          "scroll_y": 0,
+          "selector": "#dash-title-text",
+          "tag": "h2",
+          "text": "Today's entry — the fleet, in six lines",
+          "related_selectors": [],
+          "bbox": {
+            "x": 22,
+            "y": 741,
+            "width": 194,
+            "height": 103
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_c905cba864.png",
+          "observed": {
+            "visible_pct": 76.9,
+            "clipped_edge": "bottom",
+            "clipped_px": 31,
+            "element_type": "text",
+            "covered_atoms": 1
+          },
+          "expected": {
+            "visible_pct": 100.0,
+            "note": "fully inside the first viewport, or fully below the fold"
+          },
+          "evidence": {
+            "class": "deterministic_geometry",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s0"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "Only 77% of this text fits inside the first viewport; the remaining ~31px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+          "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+          "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {},
+          "protected": true
+        },
+        {
+          "issue_id": "f_9739a10f43",
+          "rule_id": "FOCUS_MULTIPLE_TARGETS",
+          "issue": "FOCUS_COMPETITION",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.55,
+          "requires_human": true,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s2",
+          "scroll_y": 1434,
+          "selector": "#btn-drain-node",
+          "tag": "a",
+          "text": "Drain the node",
+          "related_selectors": [
+            "#notice-text"
+          ],
+          "bbox": {
+            "x": 41,
+            "y": 603,
+            "width": 308,
+            "height": 49
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_9739a10f43.png",
+          "observed": {
+            "effective_targets": 10.34,
+            "runner_up_share_pct": 8.06
+          },
+          "expected": {
+            "effective_targets": 1.5
+          },
+          "evidence": {
+            "class": "statistical_heuristic",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s2"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "'#btn-drain-node' competes with '#notice-text' for visual prominence (0.081 vs 0.130 inclusive mass).",
+          "fix": "Strengthen one primary focus: increase the size/weight/contrast of the intended primary element, and demote the competing element (smaller, muted, or move it below the primary action). Do not remove required controls.",
+          "verify": "Re-run the audit; effective_targets and the runner-up share should decrease without losing primary content.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "effective_targets": 10.34,
+            "top1_share": 0.208
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_36cf828b1f",
+          "rule_id": "ORPHAN_LINE",
+          "issue": "ORPHAN_LINE",
+          "severity": "needs_investigation",
+          "impact": "low",
+          "confidence": 0.75,
+          "requires_human": true,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s0",
+          "scroll_y": 0,
+          "selector": "#main-subheading",
+          "tag": "p",
+          "text": "Latency, token burn and reasoning anomalies — watched around the clock, then exp",
+          "related_selectors": [],
+          "bbox": {
+            "x": 22,
+            "y": 393,
+            "width": 346,
+            "height": 80
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_36cf828b1f.png",
+          "observed": {
+            "line_count": 3,
+            "last_line_text": "morning note.",
+            "last_line_words": 2,
+            "last_line_width_px": 90.0,
+            "block_width_px": 344.0,
+            "last_line_share_pct": 26.2
+          },
+          "expected": {
+            "last_line_share_pct": ">= 30% of the block width, or no dangling line"
+          },
+          "evidence": {
+            "class": "deterministic_geometry",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s0"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "This text block wraps onto 3 lines and its last line holds only 'morning note.' (2 word(s), 26% of the block width), so one word dangles on its own line. Tighten the copy or the container width so the lines fill more evenly — do not remove the text.",
+          "fix": "Tighten the copy or widen/narrow the block so no line dangles: shorten the sentence, split it at a natural point, or use a balanced wrap (e.g. text-wrap: balance). Keep the full text.",
+          "verify": "Re-run the audit; the block's last line should no longer be a single dangling word (last_line_share_pct >= 30) and this issue_id should disappear.",
+          "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+          "attention_stats": {},
+          "protected": false,
+          "score_effect": {
+            "channel": "grid_organization",
+            "points_per_screen": 0.41,
+            "screens": 1
+          }
+        },
+        {
+          "issue_id": "f_78f21b215e",
+          "rule_id": "ORPHAN_LINE",
+          "issue": "ORPHAN_LINE",
+          "severity": "needs_investigation",
+          "impact": "low",
+          "confidence": 0.75,
+          "requires_human": true,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s0",
+          "scroll_y": 0,
+          "selector": "#notice-text",
+          "tag": "div",
+          "text": "worker-node-04 peaked at 94.8% CPU while the finance swarm grew.",
+          "related_selectors": [],
+          "bbox": {
+            "x": 41,
+            "y": 469,
+            "width": 308,
+            "height": 75
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_78f21b215e.png",
+          "observed": {
+            "line_count": 3,
+            "last_line_text": "grew.",
+            "last_line_words": 1,
+            "last_line_width_px": 33.0,
+            "block_width_px": 305.0,
+            "last_line_share_pct": 10.8
+          },
+          "expected": {
+            "last_line_share_pct": ">= 30% of the block width, or no dangling line"
+          },
+          "evidence": {
+            "class": "deterministic_geometry",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s0"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "This text block wraps onto 3 lines and its last line holds only 'grew.' (1 word(s), 11% of the block width), so one word dangles on its own line. Tighten the copy or the container width so the lines fill more evenly — do not remove the text.",
+          "fix": "Tighten the copy or widen/narrow the block so no line dangles: shorten the sentence, split it at a natural point, or use a balanced wrap (e.g. text-wrap: balance). Keep the full text.",
+          "verify": "Re-run the audit; the block's last line should no longer be a single dangling word (last_line_share_pct >= 30) and this issue_id should disappear.",
+          "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+          "attention_stats": {},
+          "protected": false,
+          "score_effect": {
+            "channel": "grid_organization",
+            "points_per_screen": 0.41,
+            "screens": 1
+          }
+        },
+        {
+          "issue_id": "f_c8d51a41ab",
+          "rule_id": "ORPHAN_LINE",
+          "issue": "ORPHAN_LINE",
+          "severity": "needs_investigation",
+          "impact": "low",
+          "confidence": 0.75,
+          "requires_human": true,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s0",
+          "scroll_y": 0,
+          "selector": "#foot-note",
+          "tag": "div",
+          "text": "© 2026 PulseAI Ledger — quiet observability for agent fleets.",
+          "related_selectors": [],
+          "bbox": {
+            "x": 22,
+            "y": 727,
+            "width": 346,
+            "height": 46
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_c8d51a41ab.png",
+          "observed": {
+            "line_count": 2,
+            "last_line_text": "fleets.",
+            "last_line_words": 1,
+            "last_line_width_px": 34.0,
+            "block_width_px": 313.0,
+            "last_line_share_pct": 10.9
+          },
+          "expected": {
+            "last_line_share_pct": ">= 30% of the block width, or no dangling line"
+          },
+          "evidence": {
+            "class": "deterministic_geometry",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s0"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "This text block wraps onto 2 lines and its last line holds only 'fleets.' (1 word(s), 11% of the block width), so one word dangles on its own line. Tighten the copy or the container width so the lines fill more evenly — do not remove the text.",
+          "fix": "Tighten the copy or widen/narrow the block so no line dangles: shorten the sentence, split it at a natural point, or use a balanced wrap (e.g. text-wrap: balance). Keep the full text.",
+          "verify": "Re-run the audit; the block's last line should no longer be a single dangling word (last_line_share_pct >= 30) and this issue_id should disappear.",
+          "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+          "attention_stats": {},
+          "protected": false,
+          "score_effect": {
+            "channel": "grid_organization",
+            "points_per_screen": 0.41,
+            "screens": 1
+          }
+        },
+        {
+          "issue_id": "f_36a7a78dd5",
+          "rule_id": "BLOCK_IMBALANCE",
+          "issue": "BLOCK_IMBALANCE",
+          "severity": "needs_investigation",
+          "impact": "low",
+          "confidence": 0.6,
+          "requires_human": true,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s0",
+          "scroll_y": 0,
+          "selector": "#flink-contact",
+          "tag": "a",
+          "text": "Write to us",
+          "related_selectors": [],
+          "bbox": {
+            "x": 189,
+            "y": 2605,
+            "width": 62,
+            "height": 21
+          },
+          "crop_path": null,
+          "observed": {
+            "left_third_pct": 46.7,
+            "center_third_pct": 53.3,
+            "right_third_pct": 0.0,
+            "skew_pct": 100.0,
+            "cluster_median_skew_pct": 55.3
+          },
+          "expected": {
+            "skew_pct": "<= 55%"
+          },
+          "evidence": {
+            "class": "deterministic_geometry",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s0"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "This row puts 47% of its width in the left slots while its sibling rows spread their content evenly (median skew 55%). The row reads off balance. Rebalance the cell widths or pair the small cell with a similar one — keep the content.",
+          "fix": "Rebalance this row: equalize the cell widths against the grid's column tracks, or pair the small cell with a similar one, so the visual mass is distributed like the sibling rows. Keep all content.",
+          "verify": "Re-run the audit; skew_pct should fall to the sibling-row level and this issue_id should disappear.",
+          "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+          "attention_stats": {},
+          "protected": false,
+          "score_effect": {
+            "channel": "grid_organization",
+            "points_per_screen": 0.38,
+            "screens": 1
+          }
+        }
+      ],
+      "comparison": {
+        "desktop_score": 22.7,
+        "mobile_score": 29.3,
+        "score_diff": 6.6,
+        "coverage": "complete",
+        "mobile_degradation_detected": false,
+        "reason": null
+      }
+    }
+  ],
+  "screens": [
+    {
+      "screen_id": "desktop_index_s0",
+      "page": "index",
+      "view": "desktop",
+      "scroll_y": 0,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app_clean/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/screenshots/desktop_index_s0.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 14.72,
+        "noise": 10.97,
+        "focus_competition": 31.53,
+        "crowding": 0.0,
+        "distraction": 19.69
+      },
+      "score_modifiers": null,
+      "level": "LOW",
+      "metrics": {
+        "entropy_bits": 19.14,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 0.0,
+        "container_saliency_pct": 43.58,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 9.23,
+        "textual_saliency_pct": 56.42,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 4,
+        "effective_peaks": 3.88,
+        "peak_top1_share": 0.289,
+        "content_coverage_pct": 13.28,
+        "density_outlier_pct": 10.39,
+        "visible_element_count": 46,
+        "content_element_count": 30,
+        "control_count": 9,
+        "element_density": 2.218,
+        "content_density": 1.447,
+        "control_density": 0.434,
+        "text_density": 1.447,
+        "tiny_text_pct": 0.0,
+        "font_size_variety": 10,
+        "small_control_pct": 22.22,
+        "effective_targets": 4.48,
+        "top1_share": 0.443,
+        "balance": 0.557,
+        "control_effective_targets": 3.12,
+        "secondary_content_share_pct": 22.19,
+        "primary_heading_share_pct": 25.0,
+        "crowding_groups_count": 0,
+        "crowding_conflicts_count": 0,
+        "complex_clusters_count": 0,
+        "features": {
+          "unexplained_pct": 0.0,
+          "container_pct": 43.5799,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 0.6517,
+          "density_outlier_pct": 10.3922,
+          "content_coverage_pct": 13.2752,
+          "element_density": 2.2184,
+          "content_density": 1.4468,
+          "control_density": 0.434,
+          "text_density": 1.4468,
+          "tiny_text_pct": 0.0,
+          "font_size_variety": 10.0,
+          "small_control_pct": 22.2222,
+          "secondary_content_share_pct": 22.1927,
+          "effective_targets": 4.4805,
+          "balance": 0.5569,
+          "control_effective_targets": 3.1189,
+          "top1_share": 0.4431,
+          "distraction_secondary_content_share_pct": 22.1927,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 0.0
+        },
+        "labels": {
+          "noise_score": 10.97,
+          "focus_competition_score": 31.53,
+          "distraction_score": 19.69,
+          "crowding_score": 0.0
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 27.8695,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "desktop_index_s0",
+          "content_atoms": {
+            "text": 41,
+            "image": 0,
+            "icon": 0,
+            "button": 17,
+            "total": 58
+          },
+          "first_view_atoms": 25,
+          "row_bands": 26,
+          "columns": 1,
+          "column_widths_px": [
+            756.0
+          ],
+          "column_edges_px": [
+            [
+              582.0,
+              1338.0
+            ]
+          ],
+          "column_pitch_px": 0.0,
+          "gutter_px": 0.0,
+          "column_histogram": {
+            "1": 23,
+            "2": 1,
+            "3": 1,
+            "5": 1
+          },
+          "grid_confidence": 0.88,
+          "grid_regions": 6,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "vertical",
+          "dominant_spacing_px": 45.0,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "21": 1,
+            "22": 2,
+            "23": 1,
+            "25": 2,
+            "26": 9,
+            "27": 1,
+            "28": 3,
+            "44": 2
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 73.9,
+          "orphan_lines": 0,
+          "orphan_selectors": [],
+          "grid_holes": 0,
+          "underfilled_rows": 0,
+          "min_row_fill_ratio": 1.0,
+          "skewed_rows": 0,
+          "content_skew_pct": 15.1,
+          "layout_notes": [
+            "Grid: 1-column layout over 11 repeated rows; gutter 0px, pitch 0px, widest offset 0px from the viewport edge.",
+            "First view: 1 element(s) straddle the fold at 1080px and render as partial strips — shift them down or up.",
+            "Measured: every repeated row stays on its column line within 2px, rows fill at least 100% of their grid width, and no row leaves a centre column empty."
+          ],
+          "fold_clipped_count": 1,
+          "fold_clipped_atom_count": 5,
+          "fold_clipped_pct": 16.7,
+          "fold_clipped_selectors": [
+            "#card-agents"
+          ]
+        }
+      },
+      "findings_count": 1
+    },
+    {
+      "screen_id": "desktop_index_s1",
+      "page": "index",
+      "view": "desktop",
+      "scroll_y": 918,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app_clean/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/screenshots/desktop_index_s1.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 32.13,
+        "noise": 17.19,
+        "focus_competition": 75.51,
+        "crowding": 0.0,
+        "distraction": 43.25
+      },
+      "score_modifiers": null,
+      "level": "LOW",
+      "metrics": {
+        "entropy_bits": 19.321,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 0.0,
+        "container_saliency_pct": 55.99,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 3.78,
+        "textual_saliency_pct": 44.01,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 10,
+        "effective_peaks": 9.87,
+        "peak_top1_share": 0.118,
+        "content_coverage_pct": 11.3,
+        "density_outlier_pct": 6.08,
+        "visible_element_count": 63,
+        "content_element_count": 38,
+        "control_count": 10,
+        "element_density": 3.038,
+        "content_density": 1.833,
+        "control_density": 0.482,
+        "text_density": 1.833,
+        "tiny_text_pct": 0.0,
+        "font_size_variety": 6,
+        "small_control_pct": 80.0,
+        "effective_targets": 16.36,
+        "top1_share": 0.133,
+        "balance": 0.867,
+        "control_effective_targets": 3.1,
+        "secondary_content_share_pct": 38.96,
+        "primary_heading_share_pct": 1.27,
+        "crowding_groups_count": 0,
+        "crowding_conflicts_count": 0,
+        "complex_clusters_count": 0,
+        "features": {
+          "unexplained_pct": 0.0,
+          "container_pct": 55.9851,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 1.101,
+          "density_outlier_pct": 6.0784,
+          "content_coverage_pct": 11.2972,
+          "element_density": 3.0382,
+          "content_density": 1.8326,
+          "control_density": 0.4823,
+          "text_density": 1.8326,
+          "tiny_text_pct": 0.0,
+          "font_size_variety": 6.0,
+          "small_control_pct": 80.0,
+          "secondary_content_share_pct": 38.9594,
+          "effective_targets": 16.3592,
+          "balance": 0.867,
+          "control_effective_targets": 3.0983,
+          "top1_share": 0.133,
+          "distraction_secondary_content_share_pct": 38.9594,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 0.0
+        },
+        "labels": {
+          "noise_score": 17.19,
+          "focus_competition_score": 75.51,
+          "distraction_score": 43.25,
+          "crowding_score": 0.0
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 31.5866,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "desktop_index_s0",
+          "content_atoms": {
+            "text": 41,
+            "image": 0,
+            "icon": 0,
+            "button": 17,
+            "total": 58
+          },
+          "first_view_atoms": 25,
+          "row_bands": 26,
+          "columns": 1,
+          "column_widths_px": [
+            756.0
+          ],
+          "column_edges_px": [
+            [
+              582.0,
+              1338.0
+            ]
+          ],
+          "column_pitch_px": 0.0,
+          "gutter_px": 0.0,
+          "column_histogram": {
+            "1": 23,
+            "2": 1,
+            "3": 1,
+            "5": 1
+          },
+          "grid_confidence": 0.88,
+          "grid_regions": 6,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "vertical",
+          "dominant_spacing_px": 45.0,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "21": 1,
+            "22": 2,
+            "23": 1,
+            "25": 2,
+            "26": 9,
+            "27": 1,
+            "28": 3,
+            "44": 2
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 73.9,
+          "orphan_lines": 0,
+          "orphan_selectors": [],
+          "grid_holes": 0,
+          "underfilled_rows": 0,
+          "min_row_fill_ratio": 1.0,
+          "skewed_rows": 0,
+          "content_skew_pct": 15.1,
+          "layout_notes": [
+            "Grid: 1-column layout over 11 repeated rows; gutter 0px, pitch 0px, widest offset 0px from the viewport edge.",
+            "First view: 1 element(s) straddle the fold at 1080px and render as partial strips — shift them down or up.",
+            "Measured: every repeated row stays on its column line within 2px, rows fill at least 100% of their grid width, and no row leaves a centre column empty."
+          ],
+          "fold_clipped_count": 1,
+          "fold_clipped_atom_count": 5,
+          "fold_clipped_pct": 16.7,
+          "fold_clipped_selectors": [
+            "#card-agents"
+          ]
+        }
+      },
+      "findings_count": 0
+    },
+    {
+      "screen_id": "mobile_index_s0",
+      "page": "index",
+      "view": "mobile",
+      "scroll_y": 0,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app_clean/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/screenshots/mobile_index_s0.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 27.78,
+        "noise": 36.96,
+        "focus_competition": 41.67,
+        "crowding": 0.0,
+        "distraction": 25.86
+      },
+      "score_modifiers": {
+        "base_overall": 26.17,
+        "structure_points": 0.0,
+        "grid_organization_points": 1.61,
+        "total_points": 1.61,
+        "final_overall": 27.78,
+        "level": "LOW",
+        "crossed_to_over_complex": false
+      },
+      "level": "LOW",
+      "metrics": {
+        "entropy_bits": 17.646,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 0.0,
+        "container_saliency_pct": 28.57,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 19.14,
+        "textual_saliency_pct": 71.43,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 4,
+        "effective_peaks": 3.94,
+        "peak_top1_share": 0.287,
+        "content_coverage_pct": 48.59,
+        "density_outlier_pct": 29.59,
+        "visible_element_count": 22,
+        "content_element_count": 15,
+        "control_count": 6,
+        "element_density": 6.684,
+        "content_density": 4.557,
+        "control_density": 1.823,
+        "text_density": 4.557,
+        "tiny_text_pct": 0.0,
+        "font_size_variety": 7,
+        "small_control_pct": 0.0,
+        "effective_targets": 5.53,
+        "top1_share": 0.325,
+        "balance": 0.675,
+        "control_effective_targets": 2.14,
+        "secondary_content_share_pct": 29.09,
+        "primary_heading_share_pct": 23.2,
+        "crowding_groups_count": 0,
+        "crowding_conflicts_count": 0,
+        "complex_clusters_count": 0,
+        "features": {
+          "unexplained_pct": 0.0,
+          "container_pct": 28.5732,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 0.6595,
+          "density_outlier_pct": 29.5918,
+          "content_coverage_pct": 48.5897,
+          "element_density": 6.6837,
+          "content_density": 4.5571,
+          "control_density": 1.8228,
+          "text_density": 4.5571,
+          "tiny_text_pct": 0.0,
+          "font_size_variety": 7.0,
+          "small_control_pct": 0.0,
+          "secondary_content_share_pct": 29.0882,
+          "effective_targets": 5.5253,
+          "balance": 0.6752,
+          "control_effective_targets": 2.1367,
+          "top1_share": 0.3248,
+          "distraction_secondary_content_share_pct": 29.0882,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 0.0
+        },
+        "labels": {
+          "noise_score": 36.96,
+          "focus_competition_score": 41.67,
+          "distraction_score": 25.86,
+          "crowding_score": 0.0
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 62.3003,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "mobile_index_s0",
+          "content_atoms": {
+            "text": 41,
+            "image": 0,
+            "icon": 0,
+            "button": 17,
+            "total": 58
+          },
+          "first_view_atoms": 14,
+          "row_bands": 39,
+          "columns": 1,
+          "column_widths_px": [
+            346.0
+          ],
+          "column_edges_px": [
+            [
+              22.0,
+              368.0
+            ]
+          ],
+          "column_pitch_px": 0.0,
+          "gutter_px": 0.0,
+          "column_histogram": {
+            "1": 36,
+            "2": 2,
+            "4": 1
+          },
+          "grid_confidence": 0.92,
+          "grid_regions": 4,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "vertical",
+          "dominant_spacing_px": 21.5,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "14": 3,
+            "18": 2,
+            "19": 1,
+            "22": 1,
+            "23": 2,
+            "39": 2,
+            "40": 2,
+            "45": 2,
+            "54": 2
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 43.7,
+          "orphan_lines": 3,
+          "orphan_selectors": [
+            "#main-subheading",
+            "#notice-text",
+            "#foot-note"
+          ],
+          "grid_holes": 0,
+          "underfilled_rows": 0,
+          "min_row_fill_ratio": 1.0,
+          "skewed_rows": 1,
+          "content_skew_pct": 3.7,
+          "layout_notes": [
+            "Grid: 1-column layout over 32 repeated rows; gutter 0px, pitch 0px, widest offset 0px from the viewport edge.",
+            "Organization: 3 text block(s) end with a dangling word on its own line (#main-subheading, #notice-text, #foot-note) — tighten the copy or the block width.",
+            "Balance: 1 row(s) pile most of their width on one side while sibling rows spread evenly — rebalance the cell widths.",
+            "First view: 1 element(s) straddle the fold at 844px and render as partial strips — shift them down or up.",
+            "Measured: every repeated row stays on its column line within 2px, rows fill at least 100% of their grid width, and no row leaves a centre column empty."
+          ],
+          "fold_clipped_count": 1,
+          "fold_clipped_atom_count": 1,
+          "fold_clipped_pct": 6.7,
+          "fold_clipped_selectors": [
+            "#dash-title-text"
+          ]
+        },
+        "score_modifiers": {
+          "base_overall": 26.17,
+          "structure_points": 0.0,
+          "grid_organization_points": 1.61,
+          "total_points": 1.61,
+          "final_overall": 27.78,
+          "level": "LOW",
+          "crossed_to_over_complex": false
+        }
+      },
+      "findings_count": 5
+    },
+    {
+      "screen_id": "mobile_index_s1",
+      "page": "index",
+      "view": "mobile",
+      "scroll_y": 717,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app_clean/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/screenshots/mobile_index_s1.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 24.59,
+        "noise": 31.58,
+        "focus_competition": 44.68,
+        "crowding": 0.0,
+        "distraction": 17.16
+      },
+      "score_modifiers": null,
+      "level": "LOW",
+      "metrics": {
+        "entropy_bits": 17.703,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 0.0,
+        "container_saliency_pct": 36.74,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 9.29,
+        "textual_saliency_pct": 63.26,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 2,
+        "effective_peaks": 1.96,
+        "peak_top1_share": 0.568,
+        "content_coverage_pct": 42.54,
+        "density_outlier_pct": 23.47,
+        "visible_element_count": 40,
+        "content_element_count": 23,
+        "control_count": 4,
+        "element_density": 12.152,
+        "content_density": 6.987,
+        "control_density": 1.215,
+        "text_density": 6.987,
+        "tiny_text_pct": 0.0,
+        "font_size_variety": 5,
+        "small_control_pct": 0.0,
+        "effective_targets": 5.66,
+        "top1_share": 0.393,
+        "balance": 0.607,
+        "control_effective_targets": 3.84,
+        "secondary_content_share_pct": 29.09,
+        "primary_heading_share_pct": 24.88,
+        "crowding_groups_count": 0,
+        "crowding_conflicts_count": 0,
+        "complex_clusters_count": 0,
+        "features": {
+          "unexplained_pct": 0.0,
+          "container_pct": 36.7395,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 0.3246,
+          "density_outlier_pct": 23.4694,
+          "content_coverage_pct": 42.5413,
+          "element_density": 12.1521,
+          "content_density": 6.9875,
+          "control_density": 1.2152,
+          "text_density": 6.9875,
+          "tiny_text_pct": 0.0,
+          "font_size_variety": 5.0,
+          "small_control_pct": 0.0,
+          "secondary_content_share_pct": 29.0851,
+          "effective_targets": 5.6608,
+          "balance": 0.6067,
+          "control_effective_targets": 3.8388,
+          "top1_share": 0.3933,
+          "distraction_secondary_content_share_pct": 29.0851,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 0.0
+        },
+        "labels": {
+          "noise_score": 31.58,
+          "focus_competition_score": 44.68,
+          "distraction_score": 17.16,
+          "crowding_score": 0.0
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 64.8339,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "mobile_index_s0",
+          "content_atoms": {
+            "text": 41,
+            "image": 0,
+            "icon": 0,
+            "button": 17,
+            "total": 58
+          },
+          "first_view_atoms": 14,
+          "row_bands": 39,
+          "columns": 1,
+          "column_widths_px": [
+            346.0
+          ],
+          "column_edges_px": [
+            [
+              22.0,
+              368.0
+            ]
+          ],
+          "column_pitch_px": 0.0,
+          "gutter_px": 0.0,
+          "column_histogram": {
+            "1": 36,
+            "2": 2,
+            "4": 1
+          },
+          "grid_confidence": 0.92,
+          "grid_regions": 4,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "vertical",
+          "dominant_spacing_px": 21.5,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "14": 3,
+            "18": 2,
+            "19": 1,
+            "22": 1,
+            "23": 2,
+            "39": 2,
+            "40": 2,
+            "45": 2,
+            "54": 2
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 43.7,
+          "orphan_lines": 3,
+          "orphan_selectors": [
+            "#main-subheading",
+            "#notice-text",
+            "#foot-note"
+          ],
+          "grid_holes": 0,
+          "underfilled_rows": 0,
+          "min_row_fill_ratio": 1.0,
+          "skewed_rows": 1,
+          "content_skew_pct": 3.7,
+          "layout_notes": [
+            "Grid: 1-column layout over 32 repeated rows; gutter 0px, pitch 0px, widest offset 0px from the viewport edge.",
+            "Organization: 3 text block(s) end with a dangling word on its own line (#main-subheading, #notice-text, #foot-note) — tighten the copy or the block width.",
+            "Balance: 1 row(s) pile most of their width on one side while sibling rows spread evenly — rebalance the cell widths.",
+            "First view: 1 element(s) straddle the fold at 844px and render as partial strips — shift them down or up.",
+            "Measured: every repeated row stays on its column line within 2px, rows fill at least 100% of their grid width, and no row leaves a centre column empty."
+          ],
+          "fold_clipped_count": 1,
+          "fold_clipped_atom_count": 1,
+          "fold_clipped_pct": 6.7,
+          "fold_clipped_selectors": [
+            "#dash-title-text"
+          ]
+        }
+      },
+      "findings_count": 0
+    },
+    {
+      "screen_id": "mobile_index_s2",
+      "page": "index",
+      "view": "mobile",
+      "scroll_y": 1434,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app_clean/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/screenshots/mobile_index_s2.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 35.37,
+        "noise": 34.33,
+        "focus_competition": 73.95,
+        "crowding": 0.0,
+        "distraction": 28.81
+      },
+      "score_modifiers": null,
+      "level": "LOW",
+      "metrics": {
+        "entropy_bits": 17.656,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 0.0,
+        "container_saliency_pct": 37.49,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 16.36,
+        "textual_saliency_pct": 62.51,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 2,
+        "effective_peaks": 1.99,
+        "peak_top1_share": 0.538,
+        "content_coverage_pct": 43.19,
+        "density_outlier_pct": 33.67,
+        "visible_element_count": 36,
+        "content_element_count": 20,
+        "control_count": 4,
+        "element_density": 10.937,
+        "content_density": 6.076,
+        "control_density": 1.215,
+        "text_density": 6.076,
+        "tiny_text_pct": 0.0,
+        "font_size_variety": 6,
+        "small_control_pct": 0.0,
+        "effective_targets": 10.34,
+        "top1_share": 0.208,
+        "balance": 0.792,
+        "control_effective_targets": 2.97,
+        "secondary_content_share_pct": 42.36,
+        "primary_heading_share_pct": 3.79,
+        "crowding_groups_count": 0,
+        "crowding_conflicts_count": 0,
+        "complex_clusters_count": 0,
+        "features": {
+          "unexplained_pct": 0.0,
+          "container_pct": 37.494,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 0.3305,
+          "density_outlier_pct": 33.6735,
+          "content_coverage_pct": 43.1942,
+          "element_density": 10.9369,
+          "content_density": 6.0761,
+          "control_density": 1.2152,
+          "text_density": 6.0761,
+          "tiny_text_pct": 0.0,
+          "font_size_variety": 6.0,
+          "small_control_pct": 0.0,
+          "secondary_content_share_pct": 42.3563,
+          "effective_targets": 10.3434,
+          "balance": 0.7917,
+          "control_effective_targets": 2.9738,
+          "top1_share": 0.2083,
+          "distraction_secondary_content_share_pct": 42.3563,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 0.0
+        },
+        "labels": {
+          "noise_score": 34.33,
+          "focus_competition_score": 73.95,
+          "distraction_score": 28.81,
+          "crowding_score": 0.0
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 62.7236,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "mobile_index_s0",
+          "content_atoms": {
+            "text": 41,
+            "image": 0,
+            "icon": 0,
+            "button": 17,
+            "total": 58
+          },
+          "first_view_atoms": 14,
+          "row_bands": 39,
+          "columns": 1,
+          "column_widths_px": [
+            346.0
+          ],
+          "column_edges_px": [
+            [
+              22.0,
+              368.0
+            ]
+          ],
+          "column_pitch_px": 0.0,
+          "gutter_px": 0.0,
+          "column_histogram": {
+            "1": 36,
+            "2": 2,
+            "4": 1
+          },
+          "grid_confidence": 0.92,
+          "grid_regions": 4,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "vertical",
+          "dominant_spacing_px": 21.5,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "14": 3,
+            "18": 2,
+            "19": 1,
+            "22": 1,
+            "23": 2,
+            "39": 2,
+            "40": 2,
+            "45": 2,
+            "54": 2
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 43.7,
+          "orphan_lines": 3,
+          "orphan_selectors": [
+            "#main-subheading",
+            "#notice-text",
+            "#foot-note"
+          ],
+          "grid_holes": 0,
+          "underfilled_rows": 0,
+          "min_row_fill_ratio": 1.0,
+          "skewed_rows": 1,
+          "content_skew_pct": 3.7,
+          "layout_notes": [
+            "Grid: 1-column layout over 32 repeated rows; gutter 0px, pitch 0px, widest offset 0px from the viewport edge.",
+            "Organization: 3 text block(s) end with a dangling word on its own line (#main-subheading, #notice-text, #foot-note) — tighten the copy or the block width.",
+            "Balance: 1 row(s) pile most of their width on one side while sibling rows spread evenly — rebalance the cell widths.",
+            "First view: 1 element(s) straddle the fold at 844px and render as partial strips — shift them down or up.",
+            "Measured: every repeated row stays on its column line within 2px, rows fill at least 100% of their grid width, and no row leaves a centre column empty."
+          ],
+          "fold_clipped_count": 1,
+          "fold_clipped_atom_count": 1,
+          "fold_clipped_pct": 6.7,
+          "fold_clipped_selectors": [
+            "#dash-title-text"
+          ]
+        }
+      },
+      "findings_count": 1
+    },
+    {
+      "screen_id": "mobile_index_s3",
+      "page": "index",
+      "view": "mobile",
+      "scroll_y": 2151,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app_clean/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/screenshots/mobile_index_s3.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 29.66,
+        "noise": 29.3,
+        "focus_competition": 56.1,
+        "crowding": 3.12,
+        "distraction": 31.01
+      },
+      "score_modifiers": null,
+      "level": "LOW",
+      "metrics": {
+        "entropy_bits": 17.386,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 0.0,
+        "container_saliency_pct": 28.67,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 13.56,
+        "textual_saliency_pct": 71.33,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 2,
+        "effective_peaks": 1.97,
+        "peak_top1_share": 0.557,
+        "content_coverage_pct": 44.27,
+        "density_outlier_pct": 27.55,
+        "visible_element_count": 27,
+        "content_element_count": 15,
+        "control_count": 6,
+        "element_density": 8.203,
+        "content_density": 4.557,
+        "control_density": 1.823,
+        "text_density": 4.557,
+        "tiny_text_pct": 0.0,
+        "font_size_variety": 5,
+        "small_control_pct": 83.33,
+        "effective_targets": 6.02,
+        "top1_share": 0.293,
+        "balance": 0.707,
+        "control_effective_targets": 1.46,
+        "secondary_content_share_pct": 54.47,
+        "primary_heading_share_pct": 3.31,
+        "crowding_groups_count": 1,
+        "crowding_conflicts_count": 3,
+        "complex_clusters_count": 0,
+        "features": {
+          "unexplained_pct": 0.0,
+          "container_pct": 28.6703,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 0.3271,
+          "density_outlier_pct": 27.551,
+          "content_coverage_pct": 44.2651,
+          "element_density": 8.2027,
+          "content_density": 4.5571,
+          "control_density": 1.8228,
+          "text_density": 4.5571,
+          "tiny_text_pct": 0.0,
+          "font_size_variety": 5.0,
+          "small_control_pct": 83.3333,
+          "secondary_content_share_pct": 54.4654,
+          "effective_targets": 6.0245,
+          "balance": 0.7067,
+          "control_effective_targets": 1.4565,
+          "top1_share": 0.2933,
+          "distraction_secondary_content_share_pct": 54.4654,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 0.0
+        },
+        "labels": {
+          "noise_score": 29.3,
+          "focus_competition_score": 56.1,
+          "distraction_score": 31.01,
+          "crowding_score": 3.12
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 52.0317,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "mobile_index_s0",
+          "content_atoms": {
+            "text": 41,
+            "image": 0,
+            "icon": 0,
+            "button": 17,
+            "total": 58
+          },
+          "first_view_atoms": 14,
+          "row_bands": 39,
+          "columns": 1,
+          "column_widths_px": [
+            346.0
+          ],
+          "column_edges_px": [
+            [
+              22.0,
+              368.0
+            ]
+          ],
+          "column_pitch_px": 0.0,
+          "gutter_px": 0.0,
+          "column_histogram": {
+            "1": 36,
+            "2": 2,
+            "4": 1
+          },
+          "grid_confidence": 0.92,
+          "grid_regions": 4,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "vertical",
+          "dominant_spacing_px": 21.5,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "14": 3,
+            "18": 2,
+            "19": 1,
+            "22": 1,
+            "23": 2,
+            "39": 2,
+            "40": 2,
+            "45": 2,
+            "54": 2
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 43.7,
+          "orphan_lines": 3,
+          "orphan_selectors": [
+            "#main-subheading",
+            "#notice-text",
+            "#foot-note"
+          ],
+          "grid_holes": 0,
+          "underfilled_rows": 0,
+          "min_row_fill_ratio": 1.0,
+          "skewed_rows": 1,
+          "content_skew_pct": 3.7,
+          "layout_notes": [
+            "Grid: 1-column layout over 32 repeated rows; gutter 0px, pitch 0px, widest offset 0px from the viewport edge.",
+            "Organization: 3 text block(s) end with a dangling word on its own line (#main-subheading, #notice-text, #foot-note) — tighten the copy or the block width.",
+            "Balance: 1 row(s) pile most of their width on one side while sibling rows spread evenly — rebalance the cell widths.",
+            "First view: 1 element(s) straddle the fold at 844px and render as partial strips — shift them down or up.",
+            "Measured: every repeated row stays on its column line within 2px, rows fill at least 100% of their grid width, and no row leaves a centre column empty."
+          ],
+          "fold_clipped_count": 1,
+          "fold_clipped_atom_count": 1,
+          "fold_clipped_pct": 6.7,
+          "fold_clipped_selectors": [
+            "#dash-title-text"
+          ]
+        }
+      },
+      "findings_count": 1
+    }
+  ],
+  "findings": [
+    {
+      "issue_id": "f_1fd2a462f6",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "clear_problem",
+      "impact": "high",
+      "confidence": 0.9,
+      "requires_human": false,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s3",
+      "scroll_y": 2151,
+      "selector": "#flink-terms",
+      "tag": "a",
+      "text": "4 controls, gap 14.0px",
+      "related_selectors": [
+        "#flink-terms",
+        "#flink-privacy",
+        "#flink-security",
+        "#flink-contact"
+      ],
+      "bbox": {
+        "x": 22,
+        "y": 797,
+        "width": 229,
+        "height": 21
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_1fd2a462f6.png",
+      "observed": {
+        "gap_px": 14.0,
+        "target_min_px": 21,
+        "group_size": 4
+      },
+      "expected": {
+        "gap_px": 16.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "deterministic_rule",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s3"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "4 adjacent controls are separated by 14.0px (threshold 16px); smallest target is 35x21px. Check touch spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 16.0px (current 14.0px), or raise the smallest target to at least 44x44px (current 21px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 14.0,
+        "severity": 0.125
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_87182304fe",
+      "rule_id": "FOLD_CLIPPED_CONTENT",
+      "issue": "FOLD_CLIPPED_CONTENT",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.8,
+      "requires_human": true,
+      "page": "index",
+      "view": "desktop",
+      "screen_id": "desktop_index_s0",
+      "scroll_y": 0,
+      "selector": "#card-agents",
+      "tag": "div",
+      "text": "Active agents twelve swarms at work · six odd visitors were quarantined 1,842 wo",
+      "related_selectors": [],
+      "bbox": {
+        "x": 582,
+        "y": 987,
+        "width": 756,
+        "height": 93
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_87182304fe.png",
+      "observed": {
+        "visible_pct": 84.5,
+        "clipped_edge": "bottom",
+        "clipped_px": 17,
+        "element_type": "box",
+        "covered_atoms": 5
+      },
+      "expected": {
+        "visible_pct": 100.0,
+        "note": "fully inside the first viewport, or fully below the fold"
+      },
+      "evidence": {
+        "class": "deterministic_geometry",
+        "slices_seen": 1,
+        "screen_ids": [
+          "desktop_index_s0"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "Only 85% of this box fits inside the first viewport; the remaining ~17px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+      "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+      "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+      "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+      "attention_stats": {},
+      "protected": false
+    },
+    {
+      "issue_id": "f_c905cba864",
+      "rule_id": "FOLD_CLIPPED_CONTENT",
+      "issue": "FOLD_CLIPPED_CONTENT",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.8,
+      "requires_human": true,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s0",
+      "scroll_y": 0,
+      "selector": "#dash-title-text",
+      "tag": "h2",
+      "text": "Today's entry — the fleet, in six lines",
+      "related_selectors": [],
+      "bbox": {
+        "x": 22,
+        "y": 741,
+        "width": 194,
+        "height": 103
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_c905cba864.png",
+      "observed": {
+        "visible_pct": 76.9,
+        "clipped_edge": "bottom",
+        "clipped_px": 31,
+        "element_type": "text",
+        "covered_atoms": 1
+      },
+      "expected": {
+        "visible_pct": 100.0,
+        "note": "fully inside the first viewport, or fully below the fold"
+      },
+      "evidence": {
+        "class": "deterministic_geometry",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s0"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "Only 77% of this text fits inside the first viewport; the remaining ~31px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+      "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+      "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {},
+      "protected": true
+    },
+    {
+      "issue_id": "f_9739a10f43",
+      "rule_id": "FOCUS_MULTIPLE_TARGETS",
+      "issue": "FOCUS_COMPETITION",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.55,
+      "requires_human": true,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s2",
+      "scroll_y": 1434,
+      "selector": "#btn-drain-node",
+      "tag": "a",
+      "text": "Drain the node",
+      "related_selectors": [
+        "#notice-text"
+      ],
+      "bbox": {
+        "x": 41,
+        "y": 603,
+        "width": 308,
+        "height": 49
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_9739a10f43.png",
+      "observed": {
+        "effective_targets": 10.34,
+        "runner_up_share_pct": 8.06
+      },
+      "expected": {
+        "effective_targets": 1.5
+      },
+      "evidence": {
+        "class": "statistical_heuristic",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s2"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "'#btn-drain-node' competes with '#notice-text' for visual prominence (0.081 vs 0.130 inclusive mass).",
+      "fix": "Strengthen one primary focus: increase the size/weight/contrast of the intended primary element, and demote the competing element (smaller, muted, or move it below the primary action). Do not remove required controls.",
+      "verify": "Re-run the audit; effective_targets and the runner-up share should decrease without losing primary content.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "effective_targets": 10.34,
+        "top1_share": 0.208
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_36cf828b1f",
+      "rule_id": "ORPHAN_LINE",
+      "issue": "ORPHAN_LINE",
+      "severity": "needs_investigation",
+      "impact": "low",
+      "confidence": 0.75,
+      "requires_human": true,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s0",
+      "scroll_y": 0,
+      "selector": "#main-subheading",
+      "tag": "p",
+      "text": "Latency, token burn and reasoning anomalies — watched around the clock, then exp",
+      "related_selectors": [],
+      "bbox": {
+        "x": 22,
+        "y": 393,
+        "width": 346,
+        "height": 80
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_36cf828b1f.png",
+      "observed": {
+        "line_count": 3,
+        "last_line_text": "morning note.",
+        "last_line_words": 2,
+        "last_line_width_px": 90.0,
+        "block_width_px": 344.0,
+        "last_line_share_pct": 26.2
+      },
+      "expected": {
+        "last_line_share_pct": ">= 30% of the block width, or no dangling line"
+      },
+      "evidence": {
+        "class": "deterministic_geometry",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s0"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "This text block wraps onto 3 lines and its last line holds only 'morning note.' (2 word(s), 26% of the block width), so one word dangles on its own line. Tighten the copy or the container width so the lines fill more evenly — do not remove the text.",
+      "fix": "Tighten the copy or widen/narrow the block so no line dangles: shorten the sentence, split it at a natural point, or use a balanced wrap (e.g. text-wrap: balance). Keep the full text.",
+      "verify": "Re-run the audit; the block's last line should no longer be a single dangling word (last_line_share_pct >= 30) and this issue_id should disappear.",
+      "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+      "attention_stats": {},
+      "protected": false,
+      "score_effect": {
+        "channel": "grid_organization",
+        "points_per_screen": 0.41,
+        "screens": 1
+      }
+    },
+    {
+      "issue_id": "f_78f21b215e",
+      "rule_id": "ORPHAN_LINE",
+      "issue": "ORPHAN_LINE",
+      "severity": "needs_investigation",
+      "impact": "low",
+      "confidence": 0.75,
+      "requires_human": true,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s0",
+      "scroll_y": 0,
+      "selector": "#notice-text",
+      "tag": "div",
+      "text": "worker-node-04 peaked at 94.8% CPU while the finance swarm grew.",
+      "related_selectors": [],
+      "bbox": {
+        "x": 41,
+        "y": 469,
+        "width": 308,
+        "height": 75
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_78f21b215e.png",
+      "observed": {
+        "line_count": 3,
+        "last_line_text": "grew.",
+        "last_line_words": 1,
+        "last_line_width_px": 33.0,
+        "block_width_px": 305.0,
+        "last_line_share_pct": 10.8
+      },
+      "expected": {
+        "last_line_share_pct": ">= 30% of the block width, or no dangling line"
+      },
+      "evidence": {
+        "class": "deterministic_geometry",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s0"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "This text block wraps onto 3 lines and its last line holds only 'grew.' (1 word(s), 11% of the block width), so one word dangles on its own line. Tighten the copy or the container width so the lines fill more evenly — do not remove the text.",
+      "fix": "Tighten the copy or widen/narrow the block so no line dangles: shorten the sentence, split it at a natural point, or use a balanced wrap (e.g. text-wrap: balance). Keep the full text.",
+      "verify": "Re-run the audit; the block's last line should no longer be a single dangling word (last_line_share_pct >= 30) and this issue_id should disappear.",
+      "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+      "attention_stats": {},
+      "protected": false,
+      "score_effect": {
+        "channel": "grid_organization",
+        "points_per_screen": 0.41,
+        "screens": 1
+      }
+    },
+    {
+      "issue_id": "f_c8d51a41ab",
+      "rule_id": "ORPHAN_LINE",
+      "issue": "ORPHAN_LINE",
+      "severity": "needs_investigation",
+      "impact": "low",
+      "confidence": 0.75,
+      "requires_human": true,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s0",
+      "scroll_y": 0,
+      "selector": "#foot-note",
+      "tag": "div",
+      "text": "© 2026 PulseAI Ledger — quiet observability for agent fleets.",
+      "related_selectors": [],
+      "bbox": {
+        "x": 22,
+        "y": 727,
+        "width": 346,
+        "height": 46
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_c8d51a41ab.png",
+      "observed": {
+        "line_count": 2,
+        "last_line_text": "fleets.",
+        "last_line_words": 1,
+        "last_line_width_px": 34.0,
+        "block_width_px": 313.0,
+        "last_line_share_pct": 10.9
+      },
+      "expected": {
+        "last_line_share_pct": ">= 30% of the block width, or no dangling line"
+      },
+      "evidence": {
+        "class": "deterministic_geometry",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s0"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "This text block wraps onto 2 lines and its last line holds only 'fleets.' (1 word(s), 11% of the block width), so one word dangles on its own line. Tighten the copy or the container width so the lines fill more evenly — do not remove the text.",
+      "fix": "Tighten the copy or widen/narrow the block so no line dangles: shorten the sentence, split it at a natural point, or use a balanced wrap (e.g. text-wrap: balance). Keep the full text.",
+      "verify": "Re-run the audit; the block's last line should no longer be a single dangling word (last_line_share_pct >= 30) and this issue_id should disappear.",
+      "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+      "attention_stats": {},
+      "protected": false,
+      "score_effect": {
+        "channel": "grid_organization",
+        "points_per_screen": 0.41,
+        "screens": 1
+      }
+    },
+    {
+      "issue_id": "f_36a7a78dd5",
+      "rule_id": "BLOCK_IMBALANCE",
+      "issue": "BLOCK_IMBALANCE",
+      "severity": "needs_investigation",
+      "impact": "low",
+      "confidence": 0.6,
+      "requires_human": true,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s0",
+      "scroll_y": 0,
+      "selector": "#flink-contact",
+      "tag": "a",
+      "text": "Write to us",
+      "related_selectors": [],
+      "bbox": {
+        "x": 189,
+        "y": 2605,
+        "width": 62,
+        "height": 21
+      },
+      "crop_path": null,
+      "observed": {
+        "left_third_pct": 46.7,
+        "center_third_pct": 53.3,
+        "right_third_pct": 0.0,
+        "skew_pct": 100.0,
+        "cluster_median_skew_pct": 55.3
+      },
+      "expected": {
+        "skew_pct": "<= 55%"
+      },
+      "evidence": {
+        "class": "deterministic_geometry",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s0"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "This row puts 47% of its width in the left slots while its sibling rows spread their content evenly (median skew 55%). The row reads off balance. Rebalance the cell widths or pair the small cell with a similar one — keep the content.",
+      "fix": "Rebalance this row: equalize the cell widths against the grid's column tracks, or pair the small cell with a similar one, so the visual mass is distributed like the sibling rows. Keep all content.",
+      "verify": "Re-run the audit; skew_pct should fall to the sibling-row level and this issue_id should disappear.",
+      "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+      "attention_stats": {},
+      "protected": false,
+      "score_effect": {
+        "channel": "grid_organization",
+        "points_per_screen": 0.38,
+        "screens": 1
+      }
+    }
+  ],
+  "diff": null,
+  "artifacts": {
+    "report_json": "/home/mkamel/Desktop/python scripts/modern_clean_results/report.json",
+    "dom_snapshot": "/home/mkamel/Desktop/python scripts/modern_clean_results/dom_snapshot.json",
+    "screenshots_dir": "/home/mkamel/Desktop/python scripts/modern_clean_results/screenshots",
+    "overlays_dir": "/home/mkamel/Desktop/python scripts/modern_clean_results/diagnostic_overlays",
+    "heatmaps": {
+      "desktop_index_s0": "/home/mkamel/Desktop/python scripts/modern_clean_results/heatmaps/desktop_index_s0_heatmap.jpg",
+      "desktop_index_s1": "/home/mkamel/Desktop/python scripts/modern_clean_results/heatmaps/desktop_index_s1_heatmap.jpg",
+      "mobile_index_s0": "/home/mkamel/Desktop/python scripts/modern_clean_results/heatmaps/mobile_index_s0_heatmap.jpg",
+      "mobile_index_s1": "/home/mkamel/Desktop/python scripts/modern_clean_results/heatmaps/mobile_index_s1_heatmap.jpg",
+      "mobile_index_s2": "/home/mkamel/Desktop/python scripts/modern_clean_results/heatmaps/mobile_index_s2_heatmap.jpg",
+      "mobile_index_s3": "/home/mkamel/Desktop/python scripts/modern_clean_results/heatmaps/mobile_index_s3_heatmap.jpg"
+    },
+    "crops_dir": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops"
+  }
+}

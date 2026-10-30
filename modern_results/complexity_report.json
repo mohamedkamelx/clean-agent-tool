@@ -1,0 +1,3431 @@
+{
+  "schema_version": "1.1",
+  "run_id": "20261029T175047Z_d978a9",
+  "tool": {
+    "name": "interface-audit",
+    "version": "0.2.0",
+    "thresholds_version": "2026-10-29.absolute.2",
+    "calibration": "provisional"
+  },
+  "target": "/home/mkamel/Desktop/python scripts/modern_app/index.html",
+  "started_at": "2026-10-29T17:50:47.153949+00:00",
+  "duration_s": 12.2,
+  "config": {
+    "views": [
+      "desktop",
+      "mobile"
+    ],
+    "max_pages": 5,
+    "device": "cuda",
+    "fast": false,
+    "thresholds_version": "2026-10-29.absolute.2"
+  },
+  "coverage": {
+    "pages_found": 1,
+    "pages_analyzed": 1,
+    "screens": 5,
+    "missing": [],
+    "pages_failed": [],
+    "measured": [
+      "layout_geometry",
+      "dom_structure",
+      "spacing",
+      "target_size",
+      "crowding",
+      "saliency_prominence",
+      "noise",
+      "focus_competition",
+      "distraction"
+    ],
+    "not_measured": [
+      "task_importance",
+      "safe_removal",
+      "dropdown_placement",
+      "naming_clarity",
+      "technical_dependencies",
+      "dynamic_ui_states"
+    ]
+  },
+  "limitations": [
+    "Saliency predicts free-viewing attention on a static screenshot, not task importance.",
+    "Spacing/alignment findings are heuristics unless severity is 'clear_problem'.",
+    "Semantic suggestions (removal, dropdown placement, label clarity) require human review.",
+    "Dynamic states (hover, focus, open menus, errors, empty/loading) are not captured.",
+    "Only the configured desktop (1920x1080) and mobile (390x844) viewports are analyzed."
+  ],
+  "summary": {
+    "clear_problem": 9,
+    "potential_improvement": 14,
+    "needs_investigation": 0,
+    "total": 23,
+    "requires_human": 4,
+    "top_issue_ids": [
+      "f_1b13f1d212",
+      "f_31750a2271",
+      "f_6057a248b7",
+      "f_9f2c449751",
+      "f_b9c5a6f86a"
+    ]
+  },
+  "pages": [
+    {
+      "page_name": "index",
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app/index.html",
+      "status": "ok",
+      "views": {
+        "desktop": {
+          "score": 40.1,
+          "overall": 40.1,
+          "noise": 22.9,
+          "focus_competition": 61.6,
+          "crowding": 37.3,
+          "distraction": 35.3,
+          "level": "MODERATE",
+          "valid": true,
+          "screens": 2,
+          "scroll_y": [
+            0,
+            918
+          ],
+          "saliency_mode": "enabled",
+          "layout": {
+            "scope": "document_union",
+            "first_view_screen_id": "desktop_index_s0",
+            "content_atoms": {
+              "text": 33,
+              "image": 0,
+              "icon": 0,
+              "button": 23,
+              "total": 56
+            },
+            "first_view_atoms": 37,
+            "row_bands": 17,
+            "columns": 3,
+            "column_widths_px": [
+              367.0,
+              367.0,
+              367.0
+            ],
+            "column_edges_px": [
+              [
+                393.0,
+                760.0
+              ],
+              [
+                776.0,
+                1143.0
+              ],
+              [
+                1160.0,
+                1527.0
+              ]
+            ],
+            "column_pitch_px": 383.5,
+            "gutter_px": 16.5,
+            "column_histogram": {
+              "1": 7,
+              "2": 1,
+              "3": 9
+            },
+            "grid_confidence": 0.53,
+            "grid_regions": 2,
+            "symmetry_error_px": 0.0,
+            "symmetry_error_ratio": 0.0,
+            "spacing_axis": "horizontal",
+            "dominant_spacing_px": 16.5,
+            "spacing_outliers": 0,
+            "atom_gap_histogram": {
+              "5": 2,
+              "6": 5,
+              "7": 1,
+              "8": 2,
+              "20": 1,
+              "31": 1,
+              "32": 2,
+              "53": 2,
+              "54": 5,
+              "55": 5
+            },
+            "off_grid_count": 0,
+            "whitespace_pct": 70.9,
+            "fold_clipped_count": 3,
+            "fold_clipped_atom_count": 9,
+            "fold_clipped_pct": 19.6,
+            "fold_clipped_selectors": [
+              "#card-latency",
+              "#card-tokens",
+              "#card-error"
+            ]
+          }
+        },
+        "mobile": {
+          "score": 59.0,
+          "overall": 59.0,
+          "noise": 46.5,
+          "focus_competition": 75.6,
+          "crowding": 66.1,
+          "distraction": 25.7,
+          "level": "MODERATE",
+          "valid": true,
+          "screens": 3,
+          "scroll_y": [
+            0,
+            717,
+            1434
+          ],
+          "saliency_mode": "enabled",
+          "layout": {
+            "scope": "document_union",
+            "first_view_screen_id": "mobile_index_s0",
+            "content_atoms": {
+              "text": 33,
+              "image": 0,
+              "icon": 0,
+              "button": 23,
+              "total": 56
+            },
+            "first_view_atoms": 17,
+            "row_bands": 35,
+            "columns": 1,
+            "column_widths_px": [
+              332.0
+            ],
+            "column_edges_px": [
+              [
+                29.0,
+                361.0
+              ]
+            ],
+            "column_pitch_px": 0.0,
+            "gutter_px": 0.0,
+            "column_histogram": {
+              "1": 34,
+              "3": 1
+            },
+            "grid_confidence": 0.97,
+            "grid_regions": 5,
+            "symmetry_error_px": 0.0,
+            "symmetry_error_ratio": 0.0,
+            "spacing_axis": "vertical",
+            "dominant_spacing_px": 23.0,
+            "spacing_outliers": 0,
+            "atom_gap_histogram": {
+              "2": 2,
+              "3": 6,
+              "8": 2,
+              "15": 1,
+              "16": 2,
+              "47": 1,
+              "57": 1
+            },
+            "off_grid_count": 0,
+            "whitespace_pct": 37.1,
+            "fold_clipped_count": 1,
+            "fold_clipped_atom_count": 2,
+            "fold_clipped_pct": 10.5,
+            "fold_clipped_selectors": [
+              "#card-cpu"
+            ]
+          }
+        }
+      },
+      "findings": [
+        {
+          "issue_id": "f_1b13f1d212",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "clear_problem",
+          "impact": "high",
+          "confidence": 0.9,
+          "requires_human": false,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s2",
+          "scroll_y": 1434,
+          "selector": "#btn-quota",
+          "tag": "button",
+          "text": "2 controls, gap 3.0px",
+          "related_selectors": [
+            "#btn-quota",
+            "#btn-cost"
+          ],
+          "bbox": {
+            "x": 44,
+            "y": 439,
+            "width": 302,
+            "height": 30
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_1b13f1d212.png",
+          "observed": {
+            "gap_px": 3.0,
+            "target_min_px": 30,
+            "group_size": 2
+          },
+          "expected": {
+            "gap_px": 16.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "deterministic_rule",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s2"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "2 adjacent controls are separated by 3.0px (threshold 16px); smallest target is 150x30px. Check touch spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 16.0px (current 3.0px), or raise the smallest target to at least 44x44px (current 30px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 3.0,
+            "severity": 0.812
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_31750a2271",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "clear_problem",
+          "impact": "high",
+          "confidence": 0.9,
+          "requires_human": false,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s2",
+          "scroll_y": 1434,
+          "selector": "#btn-evals",
+          "tag": "button",
+          "text": "2 controls, gap 3.0px",
+          "related_selectors": [
+            "#btn-evals",
+            "#btn-alert-rule"
+          ],
+          "bbox": {
+            "x": 44,
+            "y": 640,
+            "width": 302,
+            "height": 30
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_31750a2271.png",
+          "observed": {
+            "gap_px": 3.0,
+            "target_min_px": 30,
+            "group_size": 2
+          },
+          "expected": {
+            "gap_px": 16.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "deterministic_rule",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s2"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "2 adjacent controls are separated by 3.0px (threshold 16px); smallest target is 150x30px. Check touch spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 16.0px (current 3.0px), or raise the smallest target to at least 44x44px (current 30px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 3.0,
+            "severity": 0.812
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_6057a248b7",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "clear_problem",
+          "impact": "high",
+          "confidence": 0.9,
+          "requires_human": false,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s1",
+          "scroll_y": 717,
+          "selector": "#btn-throttle",
+          "tag": "button",
+          "text": "3 controls, gap 3.0px",
+          "related_selectors": [
+            "#btn-throttle",
+            "#btn-rebalance",
+            "#btn-drain"
+          ],
+          "bbox": {
+            "x": 44,
+            "y": 231,
+            "width": 302,
+            "height": 30
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_6057a248b7.png",
+          "observed": {
+            "gap_px": 3.0,
+            "target_min_px": 30,
+            "group_size": 3
+          },
+          "expected": {
+            "gap_px": 16.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "deterministic_rule",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s1"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "3 adjacent controls are separated by 3.0px (threshold 16px); smallest target is 99x30px. Check touch spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 16.0px (current 3.0px), or raise the smallest target to at least 44x44px (current 30px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 3.0,
+            "severity": 0.812
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_9f2c449751",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "clear_problem",
+          "impact": "high",
+          "confidence": 0.9,
+          "requires_human": false,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s1",
+          "scroll_y": 717,
+          "selector": "#btn-gc",
+          "tag": "button",
+          "text": "2 controls, gap 3.0px",
+          "related_selectors": [
+            "#btn-gc",
+            "#btn-dump"
+          ],
+          "bbox": {
+            "x": 44,
+            "y": 432,
+            "width": 302,
+            "height": 30
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_9f2c449751.png",
+          "observed": {
+            "gap_px": 3.0,
+            "target_min_px": 30,
+            "group_size": 2
+          },
+          "expected": {
+            "gap_px": 16.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "deterministic_rule",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s1"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "2 adjacent controls are separated by 3.0px (threshold 16px); smallest target is 150x30px. Check touch spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 16.0px (current 3.0px), or raise the smallest target to at least 44x44px (current 30px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 3.0,
+            "severity": 0.812
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_b9c5a6f86a",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "clear_problem",
+          "impact": "high",
+          "confidence": 0.9,
+          "requires_human": false,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s1",
+          "scroll_y": 717,
+          "selector": "#btn-pause",
+          "tag": "button",
+          "text": "3 controls, gap 3.0px",
+          "related_selectors": [
+            "#btn-pause",
+            "#btn-scale",
+            "#btn-inspect"
+          ],
+          "bbox": {
+            "x": 44,
+            "y": 632,
+            "width": 302,
+            "height": 30
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_b9c5a6f86a.png",
+          "observed": {
+            "gap_px": 3.0,
+            "target_min_px": 30,
+            "group_size": 3
+          },
+          "expected": {
+            "gap_px": 16.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "deterministic_rule",
+            "slices_seen": 2,
+            "screen_ids": [
+              "mobile_index_s1",
+              "mobile_index_s2"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "3 adjacent controls are separated by 3.0px (threshold 16px); smallest target is 99x30px. Check touch spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 16.0px (current 3.0px), or raise the smallest target to at least 44x44px (current 30px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 3.0,
+            "severity": 0.812
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_cc7ca12a32",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "clear_problem",
+          "impact": "high",
+          "confidence": 0.9,
+          "requires_human": false,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s1",
+          "scroll_y": 717,
+          "selector": "#btn-trace",
+          "tag": "button",
+          "text": "2 controls, gap 3.0px",
+          "related_selectors": [
+            "#btn-trace",
+            "#btn-logs"
+          ],
+          "bbox": {
+            "x": 44,
+            "y": 833,
+            "width": 302,
+            "height": 11
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_cc7ca12a32.png",
+          "observed": {
+            "gap_px": 3.0,
+            "target_min_px": 11,
+            "group_size": 2
+          },
+          "expected": {
+            "gap_px": 16.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "deterministic_rule",
+            "slices_seen": 2,
+            "screen_ids": [
+              "mobile_index_s1",
+              "mobile_index_s2"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "2 adjacent controls are separated by 3.0px (threshold 16px); smallest target is 150x11px. Check touch spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 16.0px (current 3.0px), or raise the smallest target to at least 44x44px (current 11px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 3.0,
+            "severity": 0.812
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_d03e2f7652",
+          "rule_id": "MIN_FONT_SIZE",
+          "issue": "TEXT_TOO_SMALL",
+          "severity": "clear_problem",
+          "impact": "high",
+          "confidence": 0.85,
+          "requires_human": false,
+          "page": "index",
+          "view": "desktop",
+          "screen_id": "desktop_index_s0",
+          "scroll_y": 0,
+          "selector": "div#card-cpu > div > span:nth-of-type(2)",
+          "tag": "span",
+          "text": "94.8% CRITICAL",
+          "related_selectors": [],
+          "bbox": {
+            "x": 640,
+            "y": 830,
+            "width": 101,
+            "height": 24
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_d03e2f7652.png",
+          "observed": {
+            "tiny_text_pct": 30.43,
+            "smallest_px": 11.0,
+            "text_elements": 46
+          },
+          "expected": {
+            "threshold_px": 12.0
+          },
+          "evidence": {
+            "class": "deterministic_rule",
+            "slices_seen": 2,
+            "screen_ids": [
+              "desktop_index_s0",
+              "desktop_index_s1"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "14 of 46 text elements are under 12px (smallest 11.0px; 30% below threshold). Small text is a legibility issue, not clutter — keep the content, raise the size.",
+          "fix": "Investigate this element in context before changing it.",
+          "verify": "Re-run the audit and compare the finding by issue_id.",
+          "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+          "attention_stats": {
+            "tiny_text_pct": 30.43
+          },
+          "protected": false
+        },
+        {
+          "issue_id": "f_1f4478ffe2",
+          "rule_id": "MIN_FONT_SIZE",
+          "issue": "TEXT_TOO_SMALL",
+          "severity": "clear_problem",
+          "impact": "high",
+          "confidence": 0.85,
+          "requires_human": false,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s2",
+          "scroll_y": 1434,
+          "selector": "#btn-pause",
+          "tag": "button",
+          "text": "Pause Swarm",
+          "related_selectors": [],
+          "bbox": {
+            "x": 44,
+            "y": 38,
+            "width": 99,
+            "height": 30
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_1f4478ffe2.png",
+          "observed": {
+            "tiny_text_pct": 52.17,
+            "smallest_px": 11.0,
+            "text_elements": 23
+          },
+          "expected": {
+            "threshold_px": 12.0
+          },
+          "evidence": {
+            "class": "deterministic_rule",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s2"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "12 of 23 text elements are under 12px (smallest 11.0px; 52% below threshold). Small text is a legibility issue, not clutter — keep the content, raise the size.",
+          "fix": "Investigate this element in context before changing it.",
+          "verify": "Re-run the audit and compare the finding by issue_id.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "tiny_text_pct": 52.17
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_2633d12c47",
+          "rule_id": "MIN_FONT_SIZE",
+          "issue": "TEXT_TOO_SMALL",
+          "severity": "clear_problem",
+          "impact": "high",
+          "confidence": 0.85,
+          "requires_human": false,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s0",
+          "scroll_y": 0,
+          "selector": "div#card-cpu > div > span:nth-of-type(2)",
+          "tag": "span",
+          "text": "94.8% CRITICAL",
+          "related_selectors": [],
+          "bbox": {
+            "x": 244,
+            "y": 817,
+            "width": 102,
+            "height": 24
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_2633d12c47.png",
+          "observed": {
+            "tiny_text_pct": 5.26,
+            "smallest_px": 11.0,
+            "text_elements": 19
+          },
+          "expected": {
+            "threshold_px": 12.0
+          },
+          "evidence": {
+            "class": "deterministic_rule",
+            "slices_seen": 2,
+            "screen_ids": [
+              "mobile_index_s0",
+              "mobile_index_s1"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "1 of 19 text elements are under 12px (smallest 11.0px; 5% below threshold). Small text is a legibility issue, not clutter — keep the content, raise the size.",
+          "fix": "Investigate this element in context before changing it.",
+          "verify": "Re-run the audit and compare the finding by issue_id.",
+          "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+          "attention_stats": {
+            "tiny_text_pct": 5.26
+          },
+          "protected": false
+        },
+        {
+          "issue_id": "f_2592fc4445",
+          "rule_id": "FOLD_CLIPPED_CONTENT",
+          "issue": "FOLD_CLIPPED_CONTENT",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.8,
+          "requires_human": true,
+          "page": "index",
+          "view": "desktop",
+          "screen_id": "desktop_index_s0",
+          "scroll_y": 0,
+          "selector": "#card-tokens",
+          "tag": "div",
+          "text": "TOKEN BURN RATE 42.1k / min 42,190 Prompt tokens: 82% | Gen: 18% Quotas Cost Ana",
+          "related_selectors": [],
+          "bbox": {
+            "x": 776,
+            "y": 1020,
+            "width": 368,
+            "height": 60
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_2592fc4445.png",
+          "observed": {
+            "visible_pct": 31.2,
+            "clipped_edge": "bottom",
+            "clipped_px": 133,
+            "element_type": "box",
+            "covered_atoms": 3
+          },
+          "expected": {
+            "visible_pct": 100.0,
+            "note": "fully inside the first viewport, or fully below the fold"
+          },
+          "evidence": {
+            "class": "deterministic_geometry",
+            "slices_seen": 1,
+            "screen_ids": [
+              "desktop_index_s0"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "Only 31% of this box fits inside the first viewport; the remaining ~133px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+          "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+          "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+          "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+          "attention_stats": {},
+          "protected": false
+        },
+        {
+          "issue_id": "f_5cb347664c",
+          "rule_id": "FOLD_CLIPPED_CONTENT",
+          "issue": "FOLD_CLIPPED_CONTENT",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.8,
+          "requires_human": true,
+          "page": "index",
+          "view": "desktop",
+          "screen_id": "desktop_index_s0",
+          "scroll_y": 0,
+          "selector": "#card-latency",
+          "tag": "div",
+          "text": "P99 INFERENCE LATENCY OPTIMAL 48 ms -12ms improvement over baseline Trace Spans ",
+          "related_selectors": [],
+          "bbox": {
+            "x": 393,
+            "y": 1020,
+            "width": 367,
+            "height": 60
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_5cb347664c.png",
+          "observed": {
+            "visible_pct": 31.1,
+            "clipped_edge": "bottom",
+            "clipped_px": 133,
+            "element_type": "box",
+            "covered_atoms": 3
+          },
+          "expected": {
+            "visible_pct": 100.0,
+            "note": "fully inside the first viewport, or fully below the fold"
+          },
+          "evidence": {
+            "class": "deterministic_geometry",
+            "slices_seen": 1,
+            "screen_ids": [
+              "desktop_index_s0"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "Only 31% of this box fits inside the first viewport; the remaining ~133px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+          "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+          "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+          "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+          "attention_stats": {},
+          "protected": false
+        },
+        {
+          "issue_id": "f_b37acc8aac",
+          "rule_id": "FOLD_CLIPPED_CONTENT",
+          "issue": "FOLD_CLIPPED_CONTENT",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.8,
+          "requires_human": true,
+          "page": "index",
+          "view": "desktop",
+          "screen_id": "desktop_index_s0",
+          "scroll_y": 0,
+          "selector": "#card-error",
+          "tag": "div",
+          "text": "REASONING ERROR BUDGET 99.94% 0.06% 0 hallucinations in last 1hr Evals Alert Rul",
+          "related_selectors": [],
+          "bbox": {
+            "x": 1160,
+            "y": 1020,
+            "width": 367,
+            "height": 60
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_b37acc8aac.png",
+          "observed": {
+            "visible_pct": 31.1,
+            "clipped_edge": "bottom",
+            "clipped_px": 133,
+            "element_type": "box",
+            "covered_atoms": 3
+          },
+          "expected": {
+            "visible_pct": 100.0,
+            "note": "fully inside the first viewport, or fully below the fold"
+          },
+          "evidence": {
+            "class": "deterministic_geometry",
+            "slices_seen": 1,
+            "screen_ids": [
+              "desktop_index_s0"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "Only 31% of this box fits inside the first viewport; the remaining ~133px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+          "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+          "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+          "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+          "attention_stats": {},
+          "protected": false
+        },
+        {
+          "issue_id": "f_e050329df7",
+          "rule_id": "FOLD_CLIPPED_CONTENT",
+          "issue": "FOLD_CLIPPED_CONTENT",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.8,
+          "requires_human": true,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s0",
+          "scroll_y": 0,
+          "selector": "#card-cpu",
+          "tag": "div",
+          "text": "CPU SATURATION 94.8% CRITICAL 94.8% Peak spike on worker-node-04 Throttle Rebala",
+          "related_selectors": [],
+          "bbox": {
+            "x": 29,
+            "y": 802,
+            "width": 332,
+            "height": 42
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_e050329df7.png",
+          "observed": {
+            "visible_pct": 22.0,
+            "clipped_edge": "bottom",
+            "clipped_px": 149,
+            "element_type": "box",
+            "covered_atoms": 2
+          },
+          "expected": {
+            "visible_pct": 100.0,
+            "note": "fully inside the first viewport, or fully below the fold"
+          },
+          "evidence": {
+            "class": "deterministic_geometry",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s0"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "Only 22% of this box fits inside the first viewport; the remaining ~149px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+          "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+          "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+          "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+          "attention_stats": {},
+          "protected": false
+        },
+        {
+          "issue_id": "f_4e28f826c6",
+          "rule_id": "CLUSTER_REPEATED_BOXES",
+          "issue": "COMPLEX_STRUCTURE",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.7,
+          "requires_human": false,
+          "page": "index",
+          "view": "desktop",
+          "screen_id": "desktop_index_s0",
+          "scroll_y": 0,
+          "selector": "#metrics-card-grid",
+          "tag": "cluster",
+          "text": "6 boxes / 29 elements",
+          "related_selectors": [
+            "#card-cpu",
+            "#card-memory",
+            "#card-latency",
+            "#card-tokens",
+            "#card-agents",
+            "#card-error"
+          ],
+          "bbox": {
+            "x": 393,
+            "y": 811,
+            "width": 1134,
+            "height": 269
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_4e28f826c6.png",
+          "observed": {
+            "box_count": 6,
+            "total_elements": 29,
+            "density": 0.95,
+            "columns": 3,
+            "control_count": 8,
+            "controls_per_box": 1.33,
+            "layout": "grid"
+          },
+          "expected": {
+            "box_count": 4
+          },
+          "evidence": {
+            "class": "statistical_heuristic",
+            "slices_seen": 2,
+            "screen_ids": [
+              "desktop_index_s0",
+              "desktop_index_s1"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "Repeated 3-column grid under '#metrics-card-grid': 6 boxes (8 controls, 1.3/box) and 29 content elements in a 1134x269px area (density 1.0/10k px2) on desktop. DeepGaze predicts 32.7% of attention lands here.",
+          "fix": "Reduce the number of visible boxes in this region (for mobile, keep one column and collapse secondary cards into an accordion or 'Show more' section). Preserve the primary metric and its main action above the fold.",
+          "verify": "Re-run the audit; box_count in this cluster should fall and the mobile density should decrease.",
+          "preserve": "Preserve primary content, metrics, and actions. Collapse or regroup secondary cards only after confirming which content is task-critical.",
+          "attention_stats": {
+            "attention_share_pct": 32.66
+          },
+          "protected": false
+        },
+        {
+          "issue_id": "f_aabd5fab2a",
+          "rule_id": "CLUSTER_REPEATED_BOXES",
+          "issue": "COMPLEX_STRUCTURE",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.7,
+          "requires_human": false,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s1",
+          "scroll_y": 717,
+          "selector": "#metrics-card-grid",
+          "tag": "cluster",
+          "text": "4 boxes / 26 elements",
+          "related_selectors": [
+            "#card-cpu",
+            "#card-memory",
+            "#card-agents",
+            "#card-latency"
+          ],
+          "bbox": {
+            "x": 29,
+            "y": 85,
+            "width": 332,
+            "height": 759
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_aabd5fab2a.png",
+          "observed": {
+            "box_count": 4,
+            "total_elements": 26,
+            "density": 1.03,
+            "columns": 1,
+            "control_count": 10,
+            "controls_per_box": 2.5,
+            "layout": "dense_list"
+          },
+          "expected": {
+            "box_count": 2
+          },
+          "evidence": {
+            "class": "statistical_heuristic",
+            "slices_seen": 2,
+            "screen_ids": [
+              "mobile_index_s1",
+              "mobile_index_s2"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "Repeated single-column list under '#metrics-card-grid': 4 boxes (10 controls, 2.5/box) and 26 content elements in a 332x759px area (density 1.0/10k px2) on mobile. DeepGaze predicts 86.9% of attention lands here.",
+          "fix": "Reduce the number of visible boxes in this region (for mobile, keep one column and collapse secondary cards into an accordion or 'Show more' section). Preserve the primary metric and its main action above the fold.",
+          "verify": "Re-run the audit; box_count in this cluster should fall and the mobile density should decrease.",
+          "preserve": "Preserve primary content, metrics, and actions. Collapse or regroup secondary cards only after confirming which content is task-critical.",
+          "attention_stats": {
+            "attention_share_pct": 86.86
+          },
+          "protected": false
+        },
+        {
+          "issue_id": "f_58acb7b6ad",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.6,
+          "requires_human": false,
+          "page": "index",
+          "view": "desktop",
+          "screen_id": "desktop_index_s1",
+          "scroll_y": 918,
+          "selector": "#btn-trace",
+          "tag": "button",
+          "text": "2 controls, gap 6.0px",
+          "related_selectors": [
+            "#btn-trace",
+            "#btn-logs"
+          ],
+          "bbox": {
+            "x": 412,
+            "y": 802,
+            "width": 169,
+            "height": 24
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_58acb7b6ad.png",
+          "observed": {
+            "gap_px": 6.0,
+            "target_min_px": 24,
+            "group_size": 2
+          },
+          "expected": {
+            "gap_px": 8.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "statistical_heuristic",
+            "slices_seen": 1,
+            "screen_ids": [
+              "desktop_index_s1"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "2 adjacent controls are separated by 6.0px (threshold 8px); smallest target is 87x24px. Check pointer spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 8.0px (current 6.0px), or raise the smallest target to at least 44x44px (current 24px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 6.0,
+            "severity": 0.113
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_58cda89e80",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.6,
+          "requires_human": false,
+          "page": "index",
+          "view": "desktop",
+          "screen_id": "desktop_index_s0",
+          "scroll_y": 0,
+          "selector": "#btn-pause",
+          "tag": "button",
+          "text": "3 controls, gap 6.0px",
+          "related_selectors": [
+            "#btn-pause",
+            "#btn-scale",
+            "#btn-inspect"
+          ],
+          "bbox": {
+            "x": 1179,
+            "y": 961,
+            "width": 245,
+            "height": 24
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_58cda89e80.png",
+          "observed": {
+            "gap_px": 6.0,
+            "target_min_px": 24,
+            "group_size": 3
+          },
+          "expected": {
+            "gap_px": 8.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "statistical_heuristic",
+            "slices_seen": 2,
+            "screen_ids": [
+              "desktop_index_s0",
+              "desktop_index_s1"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "3 adjacent controls are separated by 6.0px (threshold 8px); smallest target is 93x24px. Check pointer spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 8.0px (current 6.0px), or raise the smallest target to at least 44x44px (current 24px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 6.0,
+            "severity": 0.113
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_76e4b999da",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.6,
+          "requires_human": false,
+          "page": "index",
+          "view": "desktop",
+          "screen_id": "desktop_index_s1",
+          "scroll_y": 918,
+          "selector": "#btn-quota",
+          "tag": "button",
+          "text": "2 controls, gap 6.0px",
+          "related_selectors": [
+            "#btn-quota",
+            "#btn-cost"
+          ],
+          "bbox": {
+            "x": 795,
+            "y": 802,
+            "width": 164,
+            "height": 24
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_76e4b999da.png",
+          "observed": {
+            "gap_px": 6.0,
+            "target_min_px": 24,
+            "group_size": 2
+          },
+          "expected": {
+            "gap_px": 8.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "statistical_heuristic",
+            "slices_seen": 1,
+            "screen_ids": [
+              "desktop_index_s1"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "2 adjacent controls are separated by 6.0px (threshold 8px); smallest target is 60x24px. Check pointer spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 8.0px (current 6.0px), or raise the smallest target to at least 44x44px (current 24px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 6.0,
+            "severity": 0.113
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_c0ce6d7caa",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.6,
+          "requires_human": false,
+          "page": "index",
+          "view": "desktop",
+          "screen_id": "desktop_index_s1",
+          "scroll_y": 918,
+          "selector": "#btn-evals",
+          "tag": "button",
+          "text": "2 controls, gap 6.0px",
+          "related_selectors": [
+            "#btn-evals",
+            "#btn-alert-rule"
+          ],
+          "bbox": {
+            "x": 1179,
+            "y": 802,
+            "width": 136,
+            "height": 24
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_c0ce6d7caa.png",
+          "observed": {
+            "gap_px": 6.0,
+            "target_min_px": 24,
+            "group_size": 2
+          },
+          "expected": {
+            "gap_px": 8.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "statistical_heuristic",
+            "slices_seen": 1,
+            "screen_ids": [
+              "desktop_index_s1"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "2 adjacent controls are separated by 6.0px (threshold 8px); smallest target is 50x24px. Check pointer spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 8.0px (current 6.0px), or raise the smallest target to at least 44x44px (current 24px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 6.0,
+            "severity": 0.113
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_fd6c997188",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.6,
+          "requires_human": false,
+          "page": "index",
+          "view": "desktop",
+          "screen_id": "desktop_index_s0",
+          "scroll_y": 0,
+          "selector": "#btn-throttle",
+          "tag": "button",
+          "text": "3 controls, gap 6.0px",
+          "related_selectors": [
+            "#btn-throttle",
+            "#btn-rebalance",
+            "#btn-drain"
+          ],
+          "bbox": {
+            "x": 412,
+            "y": 961,
+            "width": 233,
+            "height": 24
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_fd6c997188.png",
+          "observed": {
+            "gap_px": 6.0,
+            "target_min_px": 24,
+            "group_size": 3
+          },
+          "expected": {
+            "gap_px": 8.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "statistical_heuristic",
+            "slices_seen": 2,
+            "screen_ids": [
+              "desktop_index_s0",
+              "desktop_index_s1"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "3 adjacent controls are separated by 6.0px (threshold 8px); smallest target is 63x24px. Check pointer spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 8.0px (current 6.0px), or raise the smallest target to at least 44x44px (current 24px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 6.0,
+            "severity": 0.113
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_ff883665ce",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.6,
+          "requires_human": false,
+          "page": "index",
+          "view": "desktop",
+          "screen_id": "desktop_index_s0",
+          "scroll_y": 0,
+          "selector": "#btn-gc",
+          "tag": "button",
+          "text": "2 controls, gap 6.0px",
+          "related_selectors": [
+            "#btn-gc",
+            "#btn-dump"
+          ],
+          "bbox": {
+            "x": 795,
+            "y": 961,
+            "width": 168,
+            "height": 24
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_ff883665ce.png",
+          "observed": {
+            "gap_px": 6.0,
+            "target_min_px": 24,
+            "group_size": 2
+          },
+          "expected": {
+            "gap_px": 8.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "statistical_heuristic",
+            "slices_seen": 2,
+            "screen_ids": [
+              "desktop_index_s0",
+              "desktop_index_s1"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "2 adjacent controls are separated by 6.0px (threshold 8px); smallest target is 79x24px. Check pointer spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 8.0px (current 6.0px), or raise the smallest target to at least 44x44px (current 24px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 6.0,
+            "severity": 0.113
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_2136df2300",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.6,
+          "requires_human": false,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s0",
+          "scroll_y": 0,
+          "selector": "#btn-start-trial",
+          "tag": "a",
+          "text": "2 controls, gap 12.0px",
+          "related_selectors": [
+            "#btn-start-trial",
+            "#btn-book-demo"
+          ],
+          "bbox": {
+            "x": 16,
+            "y": 433,
+            "width": 358,
+            "height": 129
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_2136df2300.png",
+          "observed": {
+            "gap_px": 12.0,
+            "target_min_px": 57,
+            "group_size": 2
+          },
+          "expected": {
+            "gap_px": 16.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "statistical_heuristic",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s0"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "2 adjacent controls are separated by 12.0px (threshold 16px); smallest target is 358x57px. Check touch spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 16.0px (current 12.0px), or raise the smallest target to at least 44x44px (current 57px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 12.0,
+            "severity": 0.113
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_d7626991ad",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.6,
+          "requires_human": false,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s0",
+          "scroll_y": 0,
+          "selector": "#chip-all",
+          "tag": "button",
+          "text": "3 controls, gap 8.0px",
+          "related_selectors": [
+            "#chip-all",
+            "#chip-prod",
+            "#chip-staging"
+          ],
+          "bbox": {
+            "x": 29,
+            "y": 728,
+            "width": 268,
+            "height": 29
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_d7626991ad.png",
+          "observed": {
+            "gap_px": 8.0,
+            "target_min_px": 29,
+            "group_size": 3
+          },
+          "expected": {
+            "gap_px": 16.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "statistical_heuristic",
+            "slices_seen": 2,
+            "screen_ids": [
+              "mobile_index_s0",
+              "mobile_index_s1"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "3 adjacent controls are separated by 8.0px (threshold 16px); smallest target is 86x29px. Check touch spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 16.0px (current 8.0px), or raise the smallest target to at least 44x44px (current 29px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 8.0,
+            "severity": 0.225
+          },
+          "protected": true
+        }
+      ],
+      "comparison": {
+        "desktop_score": 40.1,
+        "mobile_score": 59.0,
+        "score_diff": 18.9,
+        "coverage": "complete",
+        "mobile_degradation_detected": false,
+        "reason": null
+      }
+    }
+  ],
+  "screens": [
+    {
+      "screen_id": "desktop_index_s0",
+      "page": "index",
+      "view": "desktop",
+      "scroll_y": 0,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_results/screenshots/desktop_index_s0.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 33.7,
+        "noise": 20.65,
+        "focus_competition": 47.61,
+        "crowding": 33.44,
+        "distraction": 31.92
+      },
+      "level": "LOW",
+      "metrics": {
+        "entropy_bits": 19.245,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 0.0,
+        "container_saliency_pct": 42.49,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 8.59,
+        "textual_saliency_pct": 57.51,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 8,
+        "effective_peaks": 7.75,
+        "peak_top1_share": 0.172,
+        "content_coverage_pct": 15.9,
+        "density_outlier_pct": 11.76,
+        "visible_element_count": 71,
+        "content_element_count": 46,
+        "control_count": 17,
+        "element_density": 3.424,
+        "content_density": 2.218,
+        "control_density": 0.82,
+        "text_density": 2.218,
+        "tiny_text_pct": 30.43,
+        "font_size_variety": 9,
+        "small_control_pct": 17.65,
+        "effective_targets": 5.58,
+        "top1_share": 0.393,
+        "balance": 0.607,
+        "control_effective_targets": 5.36,
+        "secondary_content_share_pct": 26.33,
+        "primary_heading_share_pct": 22.59,
+        "crowding_groups_count": 3,
+        "crowding_conflicts_count": 5,
+        "complex_clusters_count": 1,
+        "features": {
+          "unexplained_pct": 0.0,
+          "container_pct": 42.4884,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 0.9846,
+          "density_outlier_pct": 11.7647,
+          "content_coverage_pct": 15.8986,
+          "element_density": 3.424,
+          "content_density": 2.2184,
+          "control_density": 0.8198,
+          "text_density": 2.2184,
+          "tiny_text_pct": 30.4348,
+          "font_size_variety": 9.0,
+          "small_control_pct": 17.6471,
+          "secondary_content_share_pct": 26.3291,
+          "effective_targets": 5.5823,
+          "balance": 0.6072,
+          "control_effective_targets": 5.3556,
+          "top1_share": 0.3928,
+          "distraction_secondary_content_share_pct": 26.3291,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 0.0
+        },
+        "labels": {
+          "noise_score": 20.65,
+          "focus_competition_score": 47.61,
+          "distraction_score": 31.92,
+          "crowding_score": 33.44
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 29.9547,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "desktop_index_s0",
+          "content_atoms": {
+            "text": 33,
+            "image": 0,
+            "icon": 0,
+            "button": 23,
+            "total": 56
+          },
+          "first_view_atoms": 37,
+          "row_bands": 17,
+          "columns": 3,
+          "column_widths_px": [
+            367.0,
+            367.0,
+            367.0
+          ],
+          "column_edges_px": [
+            [
+              393.0,
+              760.0
+            ],
+            [
+              776.0,
+              1143.0
+            ],
+            [
+              1160.0,
+              1527.0
+            ]
+          ],
+          "column_pitch_px": 383.5,
+          "gutter_px": 16.5,
+          "column_histogram": {
+            "1": 7,
+            "2": 1,
+            "3": 9
+          },
+          "grid_confidence": 0.53,
+          "grid_regions": 2,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "horizontal",
+          "dominant_spacing_px": 16.5,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "5": 2,
+            "6": 5,
+            "7": 1,
+            "8": 2,
+            "20": 1,
+            "31": 1,
+            "32": 2,
+            "53": 2,
+            "54": 5,
+            "55": 5
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 70.9,
+          "fold_clipped_count": 3,
+          "fold_clipped_atom_count": 9,
+          "fold_clipped_pct": 19.6,
+          "fold_clipped_selectors": [
+            "#card-latency",
+            "#card-tokens",
+            "#card-error"
+          ]
+        }
+      },
+      "findings_count": 8
+    },
+    {
+      "screen_id": "desktop_index_s1",
+      "page": "index",
+      "view": "desktop",
+      "scroll_y": 918,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_results/screenshots/desktop_index_s1.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 47.62,
+        "noise": 25.62,
+        "focus_competition": 78.12,
+        "crowding": 41.88,
+        "distraction": 39.32
+      },
+      "level": "MODERATE",
+      "metrics": {
+        "entropy_bits": 19.275,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 1.46,
+        "container_saliency_pct": 43.02,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 14.12,
+        "textual_saliency_pct": 55.52,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 10,
+        "effective_peaks": 9.55,
+        "peak_top1_share": 0.136,
+        "content_coverage_pct": 22.92,
+        "density_outlier_pct": 20.0,
+        "visible_element_count": 74,
+        "content_element_count": 48,
+        "control_count": 19,
+        "element_density": 3.569,
+        "content_density": 2.315,
+        "control_density": 0.916,
+        "text_density": 2.315,
+        "tiny_text_pct": 41.67,
+        "font_size_variety": 8,
+        "small_control_pct": 0.0,
+        "effective_targets": 16.3,
+        "top1_share": 0.158,
+        "balance": 0.842,
+        "control_effective_targets": 5.12,
+        "secondary_content_share_pct": 34.42,
+        "primary_heading_share_pct": 3.01,
+        "crowding_groups_count": 6,
+        "crowding_conflicts_count": 8,
+        "complex_clusters_count": 1,
+        "features": {
+          "unexplained_pct": 1.4603,
+          "container_pct": 43.0167,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 1.0852,
+          "density_outlier_pct": 20.0,
+          "content_coverage_pct": 22.9173,
+          "element_density": 3.5687,
+          "content_density": 2.3148,
+          "control_density": 0.9163,
+          "text_density": 2.3148,
+          "tiny_text_pct": 41.6667,
+          "font_size_variety": 8.0,
+          "small_control_pct": 0.0,
+          "secondary_content_share_pct": 34.4188,
+          "effective_targets": 16.2957,
+          "balance": 0.8424,
+          "control_effective_targets": 5.1181,
+          "top1_share": 0.1576,
+          "distraction_secondary_content_share_pct": 34.4188,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 1.4603
+        },
+        "labels": {
+          "noise_score": 25.62,
+          "focus_competition_score": 78.12,
+          "distraction_score": 39.32,
+          "crowding_score": 41.88
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 30.5915,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "desktop_index_s0",
+          "content_atoms": {
+            "text": 33,
+            "image": 0,
+            "icon": 0,
+            "button": 23,
+            "total": 56
+          },
+          "first_view_atoms": 37,
+          "row_bands": 17,
+          "columns": 3,
+          "column_widths_px": [
+            367.0,
+            367.0,
+            367.0
+          ],
+          "column_edges_px": [
+            [
+              393.0,
+              760.0
+            ],
+            [
+              776.0,
+              1143.0
+            ],
+            [
+              1160.0,
+              1527.0
+            ]
+          ],
+          "column_pitch_px": 383.5,
+          "gutter_px": 16.5,
+          "column_histogram": {
+            "1": 7,
+            "2": 1,
+            "3": 9
+          },
+          "grid_confidence": 0.53,
+          "grid_regions": 2,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "horizontal",
+          "dominant_spacing_px": 16.5,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "5": 2,
+            "6": 5,
+            "7": 1,
+            "8": 2,
+            "20": 1,
+            "31": 1,
+            "32": 2,
+            "53": 2,
+            "54": 5,
+            "55": 5
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 70.9,
+          "fold_clipped_count": 3,
+          "fold_clipped_atom_count": 9,
+          "fold_clipped_pct": 19.6,
+          "fold_clipped_selectors": [
+            "#card-latency",
+            "#card-tokens",
+            "#card-error"
+          ]
+        }
+      },
+      "findings_count": 8
+    },
+    {
+      "screen_id": "mobile_index_s0",
+      "page": "index",
+      "view": "mobile",
+      "scroll_y": 0,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_results/screenshots/mobile_index_s0.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 33.87,
+        "noise": 46.69,
+        "focus_competition": 50.16,
+        "crowding": 8.44,
+        "distraction": 22.8
+      },
+      "level": "LOW",
+      "metrics": {
+        "entropy_bits": 17.638,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 0.0,
+        "container_saliency_pct": 35.93,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 17.44,
+        "textual_saliency_pct": 64.07,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 4,
+        "effective_peaks": 3.71,
+        "peak_top1_share": 0.321,
+        "content_coverage_pct": 46.47,
+        "density_outlier_pct": 35.71,
+        "visible_element_count": 31,
+        "content_element_count": 19,
+        "control_count": 9,
+        "element_density": 9.418,
+        "content_density": 5.772,
+        "control_density": 2.734,
+        "text_density": 5.772,
+        "tiny_text_pct": 5.26,
+        "font_size_variety": 6,
+        "small_control_pct": 33.33,
+        "effective_targets": 6.71,
+        "top1_share": 0.316,
+        "balance": 0.684,
+        "control_effective_targets": 3.85,
+        "secondary_content_share_pct": 26.41,
+        "primary_heading_share_pct": 20.21,
+        "crowding_groups_count": 2,
+        "crowding_conflicts_count": 3,
+        "complex_clusters_count": 0,
+        "features": {
+          "unexplained_pct": 0.0,
+          "container_pct": 35.9346,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 0.6308,
+          "density_outlier_pct": 35.7143,
+          "content_coverage_pct": 46.4719,
+          "element_density": 9.4179,
+          "content_density": 5.7723,
+          "control_density": 2.7342,
+          "text_density": 5.7723,
+          "tiny_text_pct": 5.2632,
+          "font_size_variety": 6.0,
+          "small_control_pct": 33.3333,
+          "secondary_content_share_pct": 26.4114,
+          "effective_targets": 6.7055,
+          "balance": 0.6845,
+          "control_effective_targets": 3.8484,
+          "top1_share": 0.3155,
+          "distraction_secondary_content_share_pct": 26.4114,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 0.0
+        },
+        "labels": {
+          "noise_score": 46.69,
+          "focus_competition_score": 50.16,
+          "distraction_score": 22.8,
+          "crowding_score": 8.44
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 61.9641,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "mobile_index_s0",
+          "content_atoms": {
+            "text": 33,
+            "image": 0,
+            "icon": 0,
+            "button": 23,
+            "total": 56
+          },
+          "first_view_atoms": 17,
+          "row_bands": 35,
+          "columns": 1,
+          "column_widths_px": [
+            332.0
+          ],
+          "column_edges_px": [
+            [
+              29.0,
+              361.0
+            ]
+          ],
+          "column_pitch_px": 0.0,
+          "gutter_px": 0.0,
+          "column_histogram": {
+            "1": 34,
+            "3": 1
+          },
+          "grid_confidence": 0.97,
+          "grid_regions": 5,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "vertical",
+          "dominant_spacing_px": 23.0,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "2": 2,
+            "3": 6,
+            "8": 2,
+            "15": 1,
+            "16": 2,
+            "47": 1,
+            "57": 1
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 37.1,
+          "fold_clipped_count": 1,
+          "fold_clipped_atom_count": 2,
+          "fold_clipped_pct": 10.5,
+          "fold_clipped_selectors": [
+            "#card-cpu"
+          ]
+        }
+      },
+      "findings_count": 4
+    },
+    {
+      "screen_id": "mobile_index_s1",
+      "page": "index",
+      "view": "mobile",
+      "scroll_y": 717,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_results/screenshots/mobile_index_s1.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 74.99,
+        "noise": 47.15,
+        "focus_competition": 93.21,
+        "crowding": 100.0,
+        "distraction": 28.78
+      },
+      "level": "OVER_COMPLEX",
+      "metrics": {
+        "entropy_bits": 17.527,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 0.0,
+        "container_saliency_pct": 43.92,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 13.71,
+        "textual_saliency_pct": 56.08,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 2,
+        "effective_peaks": 1.98,
+        "peak_top1_share": 0.549,
+        "content_coverage_pct": 40.77,
+        "density_outlier_pct": 24.49,
+        "visible_element_count": 46,
+        "content_element_count": 29,
+        "control_count": 13,
+        "element_density": 13.975,
+        "content_density": 8.81,
+        "control_density": 3.949,
+        "text_density": 8.81,
+        "tiny_text_pct": 48.28,
+        "font_size_variety": 4,
+        "small_control_pct": 15.38,
+        "effective_targets": 13.82,
+        "top1_share": 0.144,
+        "balance": 0.856,
+        "control_effective_targets": 8.65,
+        "secondary_content_share_pct": 42.37,
+        "primary_heading_share_pct": 0.0,
+        "crowding_groups_count": 5,
+        "crowding_conflicts_count": 8,
+        "complex_clusters_count": 1,
+        "features": {
+          "unexplained_pct": 0.0,
+          "container_pct": 43.9207,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 0.3288,
+          "density_outlier_pct": 24.4898,
+          "content_coverage_pct": 40.7726,
+          "element_density": 13.975,
+          "content_density": 8.8103,
+          "control_density": 3.9494,
+          "text_density": 8.8103,
+          "tiny_text_pct": 48.2759,
+          "font_size_variety": 4.0,
+          "small_control_pct": 15.3846,
+          "secondary_content_share_pct": 42.3719,
+          "effective_targets": 13.8183,
+          "balance": 0.8564,
+          "control_effective_targets": 8.6483,
+          "top1_share": 0.1436,
+          "distraction_secondary_content_share_pct": 42.3719,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 0.0
+        },
+        "labels": {
+          "noise_score": 47.15,
+          "focus_competition_score": 93.21,
+          "distraction_score": 28.78,
+          "crowding_score": 100.0
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 57.3957,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "mobile_index_s0",
+          "content_atoms": {
+            "text": 33,
+            "image": 0,
+            "icon": 0,
+            "button": 23,
+            "total": 56
+          },
+          "first_view_atoms": 17,
+          "row_bands": 35,
+          "columns": 1,
+          "column_widths_px": [
+            332.0
+          ],
+          "column_edges_px": [
+            [
+              29.0,
+              361.0
+            ]
+          ],
+          "column_pitch_px": 0.0,
+          "gutter_px": 0.0,
+          "column_histogram": {
+            "1": 34,
+            "3": 1
+          },
+          "grid_confidence": 0.97,
+          "grid_regions": 5,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "vertical",
+          "dominant_spacing_px": 23.0,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "2": 2,
+            "3": 6,
+            "8": 2,
+            "15": 1,
+            "16": 2,
+            "47": 1,
+            "57": 1
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 37.1,
+          "fold_clipped_count": 1,
+          "fold_clipped_atom_count": 2,
+          "fold_clipped_pct": 10.5,
+          "fold_clipped_selectors": [
+            "#card-cpu"
+          ]
+        }
+      },
+      "findings_count": 7
+    },
+    {
+      "screen_id": "mobile_index_s2",
+      "page": "index",
+      "view": "mobile",
+      "scroll_y": 1434,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_results/screenshots/mobile_index_s2.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 72.72,
+        "noise": 45.78,
+        "focus_competition": 87.9,
+        "crowding": 100.0,
+        "distraction": 26.13
+      },
+      "level": "OVER_COMPLEX",
+      "metrics": {
+        "entropy_bits": 17.556,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 0.75,
+        "container_saliency_pct": 36.97,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 11.07,
+        "textual_saliency_pct": 62.29,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 2,
+        "effective_peaks": 2.0,
+        "peak_top1_share": 0.516,
+        "content_coverage_pct": 48.91,
+        "density_outlier_pct": 37.76,
+        "visible_element_count": 37,
+        "content_element_count": 23,
+        "control_count": 9,
+        "element_density": 11.241,
+        "content_density": 6.987,
+        "control_density": 2.734,
+        "text_density": 6.987,
+        "tiny_text_pct": 52.17,
+        "font_size_variety": 4,
+        "small_control_pct": 0.0,
+        "effective_targets": 11.08,
+        "top1_share": 0.174,
+        "balance": 0.826,
+        "control_effective_targets": 7.41,
+        "secondary_content_share_pct": 39.2,
+        "primary_heading_share_pct": 0.0,
+        "crowding_groups_count": 4,
+        "crowding_conflicts_count": 5,
+        "complex_clusters_count": 1,
+        "features": {
+          "unexplained_pct": 0.7468,
+          "container_pct": 36.9656,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 0.3328,
+          "density_outlier_pct": 37.7551,
+          "content_coverage_pct": 48.9142,
+          "element_density": 11.2407,
+          "content_density": 6.9875,
+          "control_density": 2.7342,
+          "text_density": 6.9875,
+          "tiny_text_pct": 52.1739,
+          "font_size_variety": 4.0,
+          "small_control_pct": 0.0,
+          "secondary_content_share_pct": 39.1967,
+          "effective_targets": 11.0794,
+          "balance": 0.8256,
+          "control_effective_targets": 7.4102,
+          "top1_share": 0.1744,
+          "distraction_secondary_content_share_pct": 39.1967,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 0.7468
+        },
+        "labels": {
+          "noise_score": 45.78,
+          "focus_competition_score": 87.9,
+          "distraction_score": 26.13,
+          "crowding_score": 100.0
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 58.5439,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "mobile_index_s0",
+          "content_atoms": {
+            "text": 33,
+            "image": 0,
+            "icon": 0,
+            "button": 23,
+            "total": 56
+          },
+          "first_view_atoms": 17,
+          "row_bands": 35,
+          "columns": 1,
+          "column_widths_px": [
+            332.0
+          ],
+          "column_edges_px": [
+            [
+              29.0,
+              361.0
+            ]
+          ],
+          "column_pitch_px": 0.0,
+          "gutter_px": 0.0,
+          "column_histogram": {
+            "1": 34,
+            "3": 1
+          },
+          "grid_confidence": 0.97,
+          "grid_regions": 5,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "vertical",
+          "dominant_spacing_px": 23.0,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "2": 2,
+            "3": 6,
+            "8": 2,
+            "15": 1,
+            "16": 2,
+            "47": 1,
+            "57": 1
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 37.1,
+          "fold_clipped_count": 1,
+          "fold_clipped_atom_count": 2,
+          "fold_clipped_pct": 10.5,
+          "fold_clipped_selectors": [
+            "#card-cpu"
+          ]
+        }
+      },
+      "findings_count": 6
+    }
+  ],
+  "findings": [
+    {
+      "issue_id": "f_1b13f1d212",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "clear_problem",
+      "impact": "high",
+      "confidence": 0.9,
+      "requires_human": false,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s2",
+      "scroll_y": 1434,
+      "selector": "#btn-quota",
+      "tag": "button",
+      "text": "2 controls, gap 3.0px",
+      "related_selectors": [
+        "#btn-quota",
+        "#btn-cost"
+      ],
+      "bbox": {
+        "x": 44,
+        "y": 439,
+        "width": 302,
+        "height": 30
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_1b13f1d212.png",
+      "observed": {
+        "gap_px": 3.0,
+        "target_min_px": 30,
+        "group_size": 2
+      },
+      "expected": {
+        "gap_px": 16.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "deterministic_rule",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s2"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "2 adjacent controls are separated by 3.0px (threshold 16px); smallest target is 150x30px. Check touch spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 16.0px (current 3.0px), or raise the smallest target to at least 44x44px (current 30px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 3.0,
+        "severity": 0.812
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_31750a2271",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "clear_problem",
+      "impact": "high",
+      "confidence": 0.9,
+      "requires_human": false,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s2",
+      "scroll_y": 1434,
+      "selector": "#btn-evals",
+      "tag": "button",
+      "text": "2 controls, gap 3.0px",
+      "related_selectors": [
+        "#btn-evals",
+        "#btn-alert-rule"
+      ],
+      "bbox": {
+        "x": 44,
+        "y": 640,
+        "width": 302,
+        "height": 30
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_31750a2271.png",
+      "observed": {
+        "gap_px": 3.0,
+        "target_min_px": 30,
+        "group_size": 2
+      },
+      "expected": {
+        "gap_px": 16.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "deterministic_rule",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s2"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "2 adjacent controls are separated by 3.0px (threshold 16px); smallest target is 150x30px. Check touch spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 16.0px (current 3.0px), or raise the smallest target to at least 44x44px (current 30px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 3.0,
+        "severity": 0.812
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_6057a248b7",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "clear_problem",
+      "impact": "high",
+      "confidence": 0.9,
+      "requires_human": false,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s1",
+      "scroll_y": 717,
+      "selector": "#btn-throttle",
+      "tag": "button",
+      "text": "3 controls, gap 3.0px",
+      "related_selectors": [
+        "#btn-throttle",
+        "#btn-rebalance",
+        "#btn-drain"
+      ],
+      "bbox": {
+        "x": 44,
+        "y": 231,
+        "width": 302,
+        "height": 30
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_6057a248b7.png",
+      "observed": {
+        "gap_px": 3.0,
+        "target_min_px": 30,
+        "group_size": 3
+      },
+      "expected": {
+        "gap_px": 16.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "deterministic_rule",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s1"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "3 adjacent controls are separated by 3.0px (threshold 16px); smallest target is 99x30px. Check touch spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 16.0px (current 3.0px), or raise the smallest target to at least 44x44px (current 30px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 3.0,
+        "severity": 0.812
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_9f2c449751",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "clear_problem",
+      "impact": "high",
+      "confidence": 0.9,
+      "requires_human": false,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s1",
+      "scroll_y": 717,
+      "selector": "#btn-gc",
+      "tag": "button",
+      "text": "2 controls, gap 3.0px",
+      "related_selectors": [
+        "#btn-gc",
+        "#btn-dump"
+      ],
+      "bbox": {
+        "x": 44,
+        "y": 432,
+        "width": 302,
+        "height": 30
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_9f2c449751.png",
+      "observed": {
+        "gap_px": 3.0,
+        "target_min_px": 30,
+        "group_size": 2
+      },
+      "expected": {
+        "gap_px": 16.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "deterministic_rule",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s1"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "2 adjacent controls are separated by 3.0px (threshold 16px); smallest target is 150x30px. Check touch spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 16.0px (current 3.0px), or raise the smallest target to at least 44x44px (current 30px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 3.0,
+        "severity": 0.812
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_b9c5a6f86a",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "clear_problem",
+      "impact": "high",
+      "confidence": 0.9,
+      "requires_human": false,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s1",
+      "scroll_y": 717,
+      "selector": "#btn-pause",
+      "tag": "button",
+      "text": "3 controls, gap 3.0px",
+      "related_selectors": [
+        "#btn-pause",
+        "#btn-scale",
+        "#btn-inspect"
+      ],
+      "bbox": {
+        "x": 44,
+        "y": 632,
+        "width": 302,
+        "height": 30
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_b9c5a6f86a.png",
+      "observed": {
+        "gap_px": 3.0,
+        "target_min_px": 30,
+        "group_size": 3
+      },
+      "expected": {
+        "gap_px": 16.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "deterministic_rule",
+        "slices_seen": 2,
+        "screen_ids": [
+          "mobile_index_s1",
+          "mobile_index_s2"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "3 adjacent controls are separated by 3.0px (threshold 16px); smallest target is 99x30px. Check touch spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 16.0px (current 3.0px), or raise the smallest target to at least 44x44px (current 30px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 3.0,
+        "severity": 0.812
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_cc7ca12a32",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "clear_problem",
+      "impact": "high",
+      "confidence": 0.9,
+      "requires_human": false,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s1",
+      "scroll_y": 717,
+      "selector": "#btn-trace",
+      "tag": "button",
+      "text": "2 controls, gap 3.0px",
+      "related_selectors": [
+        "#btn-trace",
+        "#btn-logs"
+      ],
+      "bbox": {
+        "x": 44,
+        "y": 833,
+        "width": 302,
+        "height": 11
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_cc7ca12a32.png",
+      "observed": {
+        "gap_px": 3.0,
+        "target_min_px": 11,
+        "group_size": 2
+      },
+      "expected": {
+        "gap_px": 16.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "deterministic_rule",
+        "slices_seen": 2,
+        "screen_ids": [
+          "mobile_index_s1",
+          "mobile_index_s2"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "2 adjacent controls are separated by 3.0px (threshold 16px); smallest target is 150x11px. Check touch spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 16.0px (current 3.0px), or raise the smallest target to at least 44x44px (current 11px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 3.0,
+        "severity": 0.812
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_d03e2f7652",
+      "rule_id": "MIN_FONT_SIZE",
+      "issue": "TEXT_TOO_SMALL",
+      "severity": "clear_problem",
+      "impact": "high",
+      "confidence": 0.85,
+      "requires_human": false,
+      "page": "index",
+      "view": "desktop",
+      "screen_id": "desktop_index_s0",
+      "scroll_y": 0,
+      "selector": "div#card-cpu > div > span:nth-of-type(2)",
+      "tag": "span",
+      "text": "94.8% CRITICAL",
+      "related_selectors": [],
+      "bbox": {
+        "x": 640,
+        "y": 830,
+        "width": 101,
+        "height": 24
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_d03e2f7652.png",
+      "observed": {
+        "tiny_text_pct": 30.43,
+        "smallest_px": 11.0,
+        "text_elements": 46
+      },
+      "expected": {
+        "threshold_px": 12.0
+      },
+      "evidence": {
+        "class": "deterministic_rule",
+        "slices_seen": 2,
+        "screen_ids": [
+          "desktop_index_s0",
+          "desktop_index_s1"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "14 of 46 text elements are under 12px (smallest 11.0px; 30% below threshold). Small text is a legibility issue, not clutter — keep the content, raise the size.",
+      "fix": "Investigate this element in context before changing it.",
+      "verify": "Re-run the audit and compare the finding by issue_id.",
+      "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+      "attention_stats": {
+        "tiny_text_pct": 30.43
+      },
+      "protected": false
+    },
+    {
+      "issue_id": "f_1f4478ffe2",
+      "rule_id": "MIN_FONT_SIZE",
+      "issue": "TEXT_TOO_SMALL",
+      "severity": "clear_problem",
+      "impact": "high",
+      "confidence": 0.85,
+      "requires_human": false,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s2",
+      "scroll_y": 1434,
+      "selector": "#btn-pause",
+      "tag": "button",
+      "text": "Pause Swarm",
+      "related_selectors": [],
+      "bbox": {
+        "x": 44,
+        "y": 38,
+        "width": 99,
+        "height": 30
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_1f4478ffe2.png",
+      "observed": {
+        "tiny_text_pct": 52.17,
+        "smallest_px": 11.0,
+        "text_elements": 23
+      },
+      "expected": {
+        "threshold_px": 12.0
+      },
+      "evidence": {
+        "class": "deterministic_rule",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s2"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "12 of 23 text elements are under 12px (smallest 11.0px; 52% below threshold). Small text is a legibility issue, not clutter — keep the content, raise the size.",
+      "fix": "Investigate this element in context before changing it.",
+      "verify": "Re-run the audit and compare the finding by issue_id.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "tiny_text_pct": 52.17
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_2633d12c47",
+      "rule_id": "MIN_FONT_SIZE",
+      "issue": "TEXT_TOO_SMALL",
+      "severity": "clear_problem",
+      "impact": "high",
+      "confidence": 0.85,
+      "requires_human": false,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s0",
+      "scroll_y": 0,
+      "selector": "div#card-cpu > div > span:nth-of-type(2)",
+      "tag": "span",
+      "text": "94.8% CRITICAL",
+      "related_selectors": [],
+      "bbox": {
+        "x": 244,
+        "y": 817,
+        "width": 102,
+        "height": 24
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_2633d12c47.png",
+      "observed": {
+        "tiny_text_pct": 5.26,
+        "smallest_px": 11.0,
+        "text_elements": 19
+      },
+      "expected": {
+        "threshold_px": 12.0
+      },
+      "evidence": {
+        "class": "deterministic_rule",
+        "slices_seen": 2,
+        "screen_ids": [
+          "mobile_index_s0",
+          "mobile_index_s1"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "1 of 19 text elements are under 12px (smallest 11.0px; 5% below threshold). Small text is a legibility issue, not clutter — keep the content, raise the size.",
+      "fix": "Investigate this element in context before changing it.",
+      "verify": "Re-run the audit and compare the finding by issue_id.",
+      "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+      "attention_stats": {
+        "tiny_text_pct": 5.26
+      },
+      "protected": false
+    },
+    {
+      "issue_id": "f_2592fc4445",
+      "rule_id": "FOLD_CLIPPED_CONTENT",
+      "issue": "FOLD_CLIPPED_CONTENT",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.8,
+      "requires_human": true,
+      "page": "index",
+      "view": "desktop",
+      "screen_id": "desktop_index_s0",
+      "scroll_y": 0,
+      "selector": "#card-tokens",
+      "tag": "div",
+      "text": "TOKEN BURN RATE 42.1k / min 42,190 Prompt tokens: 82% | Gen: 18% Quotas Cost Ana",
+      "related_selectors": [],
+      "bbox": {
+        "x": 776,
+        "y": 1020,
+        "width": 368,
+        "height": 60
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_2592fc4445.png",
+      "observed": {
+        "visible_pct": 31.2,
+        "clipped_edge": "bottom",
+        "clipped_px": 133,
+        "element_type": "box",
+        "covered_atoms": 3
+      },
+      "expected": {
+        "visible_pct": 100.0,
+        "note": "fully inside the first viewport, or fully below the fold"
+      },
+      "evidence": {
+        "class": "deterministic_geometry",
+        "slices_seen": 1,
+        "screen_ids": [
+          "desktop_index_s0"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "Only 31% of this box fits inside the first viewport; the remaining ~133px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+      "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+      "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+      "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+      "attention_stats": {},
+      "protected": false
+    },
+    {
+      "issue_id": "f_5cb347664c",
+      "rule_id": "FOLD_CLIPPED_CONTENT",
+      "issue": "FOLD_CLIPPED_CONTENT",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.8,
+      "requires_human": true,
+      "page": "index",
+      "view": "desktop",
+      "screen_id": "desktop_index_s0",
+      "scroll_y": 0,
+      "selector": "#card-latency",
+      "tag": "div",
+      "text": "P99 INFERENCE LATENCY OPTIMAL 48 ms -12ms improvement over baseline Trace Spans ",
+      "related_selectors": [],
+      "bbox": {
+        "x": 393,
+        "y": 1020,
+        "width": 367,
+        "height": 60
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_5cb347664c.png",
+      "observed": {
+        "visible_pct": 31.1,
+        "clipped_edge": "bottom",
+        "clipped_px": 133,
+        "element_type": "box",
+        "covered_atoms": 3
+      },
+      "expected": {
+        "visible_pct": 100.0,
+        "note": "fully inside the first viewport, or fully below the fold"
+      },
+      "evidence": {
+        "class": "deterministic_geometry",
+        "slices_seen": 1,
+        "screen_ids": [
+          "desktop_index_s0"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "Only 31% of this box fits inside the first viewport; the remaining ~133px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+      "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+      "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+      "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+      "attention_stats": {},
+      "protected": false
+    },
+    {
+      "issue_id": "f_b37acc8aac",
+      "rule_id": "FOLD_CLIPPED_CONTENT",
+      "issue": "FOLD_CLIPPED_CONTENT",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.8,
+      "requires_human": true,
+      "page": "index",
+      "view": "desktop",
+      "screen_id": "desktop_index_s0",
+      "scroll_y": 0,
+      "selector": "#card-error",
+      "tag": "div",
+      "text": "REASONING ERROR BUDGET 99.94% 0.06% 0 hallucinations in last 1hr Evals Alert Rul",
+      "related_selectors": [],
+      "bbox": {
+        "x": 1160,
+        "y": 1020,
+        "width": 367,
+        "height": 60
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_b37acc8aac.png",
+      "observed": {
+        "visible_pct": 31.1,
+        "clipped_edge": "bottom",
+        "clipped_px": 133,
+        "element_type": "box",
+        "covered_atoms": 3
+      },
+      "expected": {
+        "visible_pct": 100.0,
+        "note": "fully inside the first viewport, or fully below the fold"
+      },
+      "evidence": {
+        "class": "deterministic_geometry",
+        "slices_seen": 1,
+        "screen_ids": [
+          "desktop_index_s0"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "Only 31% of this box fits inside the first viewport; the remaining ~133px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+      "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+      "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+      "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+      "attention_stats": {},
+      "protected": false
+    },
+    {
+      "issue_id": "f_e050329df7",
+      "rule_id": "FOLD_CLIPPED_CONTENT",
+      "issue": "FOLD_CLIPPED_CONTENT",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.8,
+      "requires_human": true,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s0",
+      "scroll_y": 0,
+      "selector": "#card-cpu",
+      "tag": "div",
+      "text": "CPU SATURATION 94.8% CRITICAL 94.8% Peak spike on worker-node-04 Throttle Rebala",
+      "related_selectors": [],
+      "bbox": {
+        "x": 29,
+        "y": 802,
+        "width": 332,
+        "height": 42
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_e050329df7.png",
+      "observed": {
+        "visible_pct": 22.0,
+        "clipped_edge": "bottom",
+        "clipped_px": 149,
+        "element_type": "box",
+        "covered_atoms": 2
+      },
+      "expected": {
+        "visible_pct": 100.0,
+        "note": "fully inside the first viewport, or fully below the fold"
+      },
+      "evidence": {
+        "class": "deterministic_geometry",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s0"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "Only 22% of this box fits inside the first viewport; the remaining ~149px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+      "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+      "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+      "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+      "attention_stats": {},
+      "protected": false
+    },
+    {
+      "issue_id": "f_4e28f826c6",
+      "rule_id": "CLUSTER_REPEATED_BOXES",
+      "issue": "COMPLEX_STRUCTURE",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.7,
+      "requires_human": false,
+      "page": "index",
+      "view": "desktop",
+      "screen_id": "desktop_index_s0",
+      "scroll_y": 0,
+      "selector": "#metrics-card-grid",
+      "tag": "cluster",
+      "text": "6 boxes / 29 elements",
+      "related_selectors": [
+        "#card-cpu",
+        "#card-memory",
+        "#card-latency",
+        "#card-tokens",
+        "#card-agents",
+        "#card-error"
+      ],
+      "bbox": {
+        "x": 393,
+        "y": 811,
+        "width": 1134,
+        "height": 269
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_4e28f826c6.png",
+      "observed": {
+        "box_count": 6,
+        "total_elements": 29,
+        "density": 0.95,
+        "columns": 3,
+        "control_count": 8,
+        "controls_per_box": 1.33,
+        "layout": "grid"
+      },
+      "expected": {
+        "box_count": 4
+      },
+      "evidence": {
+        "class": "statistical_heuristic",
+        "slices_seen": 2,
+        "screen_ids": [
+          "desktop_index_s0",
+          "desktop_index_s1"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "Repeated 3-column grid under '#metrics-card-grid': 6 boxes (8 controls, 1.3/box) and 29 content elements in a 1134x269px area (density 1.0/10k px2) on desktop. DeepGaze predicts 32.7% of attention lands here.",
+      "fix": "Reduce the number of visible boxes in this region (for mobile, keep one column and collapse secondary cards into an accordion or 'Show more' section). Preserve the primary metric and its main action above the fold.",
+      "verify": "Re-run the audit; box_count in this cluster should fall and the mobile density should decrease.",
+      "preserve": "Preserve primary content, metrics, and actions. Collapse or regroup secondary cards only after confirming which content is task-critical.",
+      "attention_stats": {
+        "attention_share_pct": 32.66
+      },
+      "protected": false
+    },
+    {
+      "issue_id": "f_aabd5fab2a",
+      "rule_id": "CLUSTER_REPEATED_BOXES",
+      "issue": "COMPLEX_STRUCTURE",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.7,
+      "requires_human": false,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s1",
+      "scroll_y": 717,
+      "selector": "#metrics-card-grid",
+      "tag": "cluster",
+      "text": "4 boxes / 26 elements",
+      "related_selectors": [
+        "#card-cpu",
+        "#card-memory",
+        "#card-agents",
+        "#card-latency"
+      ],
+      "bbox": {
+        "x": 29,
+        "y": 85,
+        "width": 332,
+        "height": 759
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_aabd5fab2a.png",
+      "observed": {
+        "box_count": 4,
+        "total_elements": 26,
+        "density": 1.03,
+        "columns": 1,
+        "control_count": 10,
+        "controls_per_box": 2.5,
+        "layout": "dense_list"
+      },
+      "expected": {
+        "box_count": 2
+      },
+      "evidence": {
+        "class": "statistical_heuristic",
+        "slices_seen": 2,
+        "screen_ids": [
+          "mobile_index_s1",
+          "mobile_index_s2"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "Repeated single-column list under '#metrics-card-grid': 4 boxes (10 controls, 2.5/box) and 26 content elements in a 332x759px area (density 1.0/10k px2) on mobile. DeepGaze predicts 86.9% of attention lands here.",
+      "fix": "Reduce the number of visible boxes in this region (for mobile, keep one column and collapse secondary cards into an accordion or 'Show more' section). Preserve the primary metric and its main action above the fold.",
+      "verify": "Re-run the audit; box_count in this cluster should fall and the mobile density should decrease.",
+      "preserve": "Preserve primary content, metrics, and actions. Collapse or regroup secondary cards only after confirming which content is task-critical.",
+      "attention_stats": {
+        "attention_share_pct": 86.86
+      },
+      "protected": false
+    },
+    {
+      "issue_id": "f_58acb7b6ad",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.6,
+      "requires_human": false,
+      "page": "index",
+      "view": "desktop",
+      "screen_id": "desktop_index_s1",
+      "scroll_y": 918,
+      "selector": "#btn-trace",
+      "tag": "button",
+      "text": "2 controls, gap 6.0px",
+      "related_selectors": [
+        "#btn-trace",
+        "#btn-logs"
+      ],
+      "bbox": {
+        "x": 412,
+        "y": 802,
+        "width": 169,
+        "height": 24
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_58acb7b6ad.png",
+      "observed": {
+        "gap_px": 6.0,
+        "target_min_px": 24,
+        "group_size": 2
+      },
+      "expected": {
+        "gap_px": 8.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "statistical_heuristic",
+        "slices_seen": 1,
+        "screen_ids": [
+          "desktop_index_s1"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "2 adjacent controls are separated by 6.0px (threshold 8px); smallest target is 87x24px. Check pointer spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 8.0px (current 6.0px), or raise the smallest target to at least 44x44px (current 24px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 6.0,
+        "severity": 0.113
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_58cda89e80",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.6,
+      "requires_human": false,
+      "page": "index",
+      "view": "desktop",
+      "screen_id": "desktop_index_s0",
+      "scroll_y": 0,
+      "selector": "#btn-pause",
+      "tag": "button",
+      "text": "3 controls, gap 6.0px",
+      "related_selectors": [
+        "#btn-pause",
+        "#btn-scale",
+        "#btn-inspect"
+      ],
+      "bbox": {
+        "x": 1179,
+        "y": 961,
+        "width": 245,
+        "height": 24
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_58cda89e80.png",
+      "observed": {
+        "gap_px": 6.0,
+        "target_min_px": 24,
+        "group_size": 3
+      },
+      "expected": {
+        "gap_px": 8.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "statistical_heuristic",
+        "slices_seen": 2,
+        "screen_ids": [
+          "desktop_index_s0",
+          "desktop_index_s1"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "3 adjacent controls are separated by 6.0px (threshold 8px); smallest target is 93x24px. Check pointer spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 8.0px (current 6.0px), or raise the smallest target to at least 44x44px (current 24px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 6.0,
+        "severity": 0.113
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_76e4b999da",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.6,
+      "requires_human": false,
+      "page": "index",
+      "view": "desktop",
+      "screen_id": "desktop_index_s1",
+      "scroll_y": 918,
+      "selector": "#btn-quota",
+      "tag": "button",
+      "text": "2 controls, gap 6.0px",
+      "related_selectors": [
+        "#btn-quota",
+        "#btn-cost"
+      ],
+      "bbox": {
+        "x": 795,
+        "y": 802,
+        "width": 164,
+        "height": 24
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_76e4b999da.png",
+      "observed": {
+        "gap_px": 6.0,
+        "target_min_px": 24,
+        "group_size": 2
+      },
+      "expected": {
+        "gap_px": 8.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "statistical_heuristic",
+        "slices_seen": 1,
+        "screen_ids": [
+          "desktop_index_s1"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "2 adjacent controls are separated by 6.0px (threshold 8px); smallest target is 60x24px. Check pointer spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 8.0px (current 6.0px), or raise the smallest target to at least 44x44px (current 24px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 6.0,
+        "severity": 0.113
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_c0ce6d7caa",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.6,
+      "requires_human": false,
+      "page": "index",
+      "view": "desktop",
+      "screen_id": "desktop_index_s1",
+      "scroll_y": 918,
+      "selector": "#btn-evals",
+      "tag": "button",
+      "text": "2 controls, gap 6.0px",
+      "related_selectors": [
+        "#btn-evals",
+        "#btn-alert-rule"
+      ],
+      "bbox": {
+        "x": 1179,
+        "y": 802,
+        "width": 136,
+        "height": 24
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_c0ce6d7caa.png",
+      "observed": {
+        "gap_px": 6.0,
+        "target_min_px": 24,
+        "group_size": 2
+      },
+      "expected": {
+        "gap_px": 8.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "statistical_heuristic",
+        "slices_seen": 1,
+        "screen_ids": [
+          "desktop_index_s1"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "2 adjacent controls are separated by 6.0px (threshold 8px); smallest target is 50x24px. Check pointer spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 8.0px (current 6.0px), or raise the smallest target to at least 44x44px (current 24px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 6.0,
+        "severity": 0.113
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_fd6c997188",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.6,
+      "requires_human": false,
+      "page": "index",
+      "view": "desktop",
+      "screen_id": "desktop_index_s0",
+      "scroll_y": 0,
+      "selector": "#btn-throttle",
+      "tag": "button",
+      "text": "3 controls, gap 6.0px",
+      "related_selectors": [
+        "#btn-throttle",
+        "#btn-rebalance",
+        "#btn-drain"
+      ],
+      "bbox": {
+        "x": 412,
+        "y": 961,
+        "width": 233,
+        "height": 24
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_fd6c997188.png",
+      "observed": {
+        "gap_px": 6.0,
+        "target_min_px": 24,
+        "group_size": 3
+      },
+      "expected": {
+        "gap_px": 8.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "statistical_heuristic",
+        "slices_seen": 2,
+        "screen_ids": [
+          "desktop_index_s0",
+          "desktop_index_s1"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "3 adjacent controls are separated by 6.0px (threshold 8px); smallest target is 63x24px. Check pointer spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 8.0px (current 6.0px), or raise the smallest target to at least 44x44px (current 24px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 6.0,
+        "severity": 0.113
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_ff883665ce",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.6,
+      "requires_human": false,
+      "page": "index",
+      "view": "desktop",
+      "screen_id": "desktop_index_s0",
+      "scroll_y": 0,
+      "selector": "#btn-gc",
+      "tag": "button",
+      "text": "2 controls, gap 6.0px",
+      "related_selectors": [
+        "#btn-gc",
+        "#btn-dump"
+      ],
+      "bbox": {
+        "x": 795,
+        "y": 961,
+        "width": 168,
+        "height": 24
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_ff883665ce.png",
+      "observed": {
+        "gap_px": 6.0,
+        "target_min_px": 24,
+        "group_size": 2
+      },
+      "expected": {
+        "gap_px": 8.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "statistical_heuristic",
+        "slices_seen": 2,
+        "screen_ids": [
+          "desktop_index_s0",
+          "desktop_index_s1"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "2 adjacent controls are separated by 6.0px (threshold 8px); smallest target is 79x24px. Check pointer spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 8.0px (current 6.0px), or raise the smallest target to at least 44x44px (current 24px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 6.0,
+        "severity": 0.113
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_2136df2300",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.6,
+      "requires_human": false,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s0",
+      "scroll_y": 0,
+      "selector": "#btn-start-trial",
+      "tag": "a",
+      "text": "2 controls, gap 12.0px",
+      "related_selectors": [
+        "#btn-start-trial",
+        "#btn-book-demo"
+      ],
+      "bbox": {
+        "x": 16,
+        "y": 433,
+        "width": 358,
+        "height": 129
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_2136df2300.png",
+      "observed": {
+        "gap_px": 12.0,
+        "target_min_px": 57,
+        "group_size": 2
+      },
+      "expected": {
+        "gap_px": 16.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "statistical_heuristic",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s0"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "2 adjacent controls are separated by 12.0px (threshold 16px); smallest target is 358x57px. Check touch spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 16.0px (current 12.0px), or raise the smallest target to at least 44x44px (current 57px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 12.0,
+        "severity": 0.113
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_d7626991ad",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.6,
+      "requires_human": false,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s0",
+      "scroll_y": 0,
+      "selector": "#chip-all",
+      "tag": "button",
+      "text": "3 controls, gap 8.0px",
+      "related_selectors": [
+        "#chip-all",
+        "#chip-prod",
+        "#chip-staging"
+      ],
+      "bbox": {
+        "x": 29,
+        "y": 728,
+        "width": 268,
+        "height": 29
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_results/crops/f_d7626991ad.png",
+      "observed": {
+        "gap_px": 8.0,
+        "target_min_px": 29,
+        "group_size": 3
+      },
+      "expected": {
+        "gap_px": 16.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "statistical_heuristic",
+        "slices_seen": 2,
+        "screen_ids": [
+          "mobile_index_s0",
+          "mobile_index_s1"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "3 adjacent controls are separated by 8.0px (threshold 16px); smallest target is 86x29px. Check touch spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 16.0px (current 8.0px), or raise the smallest target to at least 44x44px (current 29px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 8.0,
+        "severity": 0.225
+      },
+      "protected": true
+    }
+  ],
+  "diff": null,
+  "artifacts": {
+    "report_json": "/home/mkamel/Desktop/python scripts/modern_results/complexity_report.json",
+    "dom_snapshot": "/home/mkamel/Desktop/python scripts/modern_results/dom_snapshot.json",
+    "screenshots_dir": "/home/mkamel/Desktop/python scripts/modern_results/screenshots",
+    "overlays_dir": "/home/mkamel/Desktop/python scripts/modern_results/diagnostic_overlays",
+    "heatmaps": {
+      "desktop_index_s0": "/home/mkamel/Desktop/python scripts/modern_results/heatmaps/desktop_index_s0_heatmap.jpg",
+      "desktop_index_s1": "/home/mkamel/Desktop/python scripts/modern_results/heatmaps/desktop_index_s1_heatmap.jpg",
+      "mobile_index_s0": "/home/mkamel/Desktop/python scripts/modern_results/heatmaps/mobile_index_s0_heatmap.jpg",
+      "mobile_index_s1": "/home/mkamel/Desktop/python scripts/modern_results/heatmaps/mobile_index_s1_heatmap.jpg",
+      "mobile_index_s2": "/home/mkamel/Desktop/python scripts/modern_results/heatmaps/mobile_index_s2_heatmap.jpg"
+    },
+    "crops_dir": "/home/mkamel/Desktop/python scripts/modern_results/crops"
+  }
+}

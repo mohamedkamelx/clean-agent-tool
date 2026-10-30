@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PulseAI Enterprise Console — Fleet Command Center</title>
+  <style>
+    :root {
+      --bg-page: #f4f6fa;
+      --bg-panel: #ffffff;
+      --bg-sunken: #eef1f7;
+      --border: #dfe4ee;
+      --border-strong: #c9d2e3;
+      --ink: #1e293b;
+      --ink-muted: #64748b;
+      --ink-faint: #94a3b8;
+      --blue: #2563eb;
+      --indigo: #4f46e5;
+      --cyan: #0891b2;
+      --red: #dc2626;
+      --orange: #ea580c;
+      --green: #16a34a;
+      --violet: #7c3aed;
+      --amber: #d97706;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif; }
+    body { background: var(--bg-page); color: var(--ink); line-height: 1.45; overflow-x: hidden; }
+
+    /* ============ UTILITY TOPBAR: tiny links, tiny text ============ */
+    .utility-bar {
+      background: #0f172a;
+      color: #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 20px;
+      font-size: 11px;
+    }
+    .utility-links { display: flex; gap: 14px; }
+    .utility-links a { color: #94a3b8; text-decoration: none; font-size: 11px; }
+    .utility-status { display: flex; gap: 10px; align-items: center; font-size: 10px; }
+    .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+    .dot-green { background: #22c55e; }
+    .dot-amber { background: #f59e0b; }
+    .dot-red { background: #ef4444; }
+
+    /* ============ MEGA HEADER + TICKER ============ */
+    header {
+      background: var(--bg-panel);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-block { display: flex; align-items: center; gap: 10px; }
+    .logo-mark {
+      width: 34px; height: 34px; border-radius: 8px;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: #fff; font-weight: 800; font-size: 16px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-name { font-size: 17px; font-weight: 800; letter-spacing: -0.01em; }
+    .logo-env { font-size: 9px; font-weight: 700; color: var(--ink-faint); letter-spacing: 0.14em; text-transform: uppercase; display: block; }
+    nav { display: flex; gap: 4px; align-items: center; }
+    nav a {
+      color: var(--ink-muted); text-decoration: none; font-size: 12px; font-weight: 600;
+      padding: 7px 9px; border-radius: 6px;
+    }
+    nav a.active { background: var(--bg-sunken); color: var(--blue); }
+    .header-actions { display: flex; gap: 6px; align-items: center; }
+    .btn-icon {
+      background: var(--bg-panel); border: 1px solid var(--border-strong); border-radius: 6px;
+      padding: 6px 11px; font-size: 12px; color: var(--ink-muted); cursor: pointer;
+    }
+    .btn-topbar-primary {
+      background: var(--blue); color: #fff; border: none; border-radius: 6px;
+      padding: 7px 14px; font-size: 12px; font-weight: 700; cursor: pointer;
+    }
+
+    /* Ticker: many tight badges = strong focus competition */
+    .ticker {
+      background: #111c33;
+      color: #e2e8f0;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      padding: 5px 20px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-label { font-size: 9px; font-weight: 800; letter-spacing: 0.12em; color: #64748b; margin-right: 8px; }
+    .tick {
+      font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.14); color: #cbd5e1;
+      display: inline-flex; gap: 5px; align-items: center;
+    }
+    .tick b { font-weight: 800; }
+    .t-ok b { color: #4ade80; } .t-warn b { color: #fbbf24; } .t-crit b { color: #f87171; } .t-info b { color: #7dd3fc; }
+
+    /* ============ HERO: left-aligned, dense proof stats ============ */
+    .hero {
+      background:
+        radial-gradient(900px 300px at 12% -60%, rgba(37, 99, 235, 0.14), transparent),
+        radial-gradient(700px 260px at 85% -50%, rgba(124, 58, 237, 0.12), transparent),
+        var(--bg-panel);
+      border-bottom: 1px solid var(--border);
+      padding: 40px 32px 30px 32px;
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 28px;
+      align-items: start;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex; gap: 6px; align-items: center;
+      font-size: 11px; font-weight: 700; color: var(--indigo);
+      background: rgba(79, 70, 229, 0.09); border: 1px solid rgba(79, 70, 229, 0.25);
+      padding: 3px 10px; border-radius: 12px; margin-bottom: 12px;
+    }
+    .hero-title {
+      font-size: 36px; font-weight: 800; line-height: 1.12; letter-spacing: -0.02em;
+      color: #0f172a; margin-bottom: 10px;
+    }
+    .hero-title em { font-style: normal; background: linear-gradient(120deg, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-copy { font-size: 14px; color: var(--ink-muted); max-width: 560px; margin-bottom: 16px; }
+    .hero-ctas { display: flex; gap: 8px; margin-bottom: 16px; }
+    .btn-cta {
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: #fff; border: none; border-radius: 8px;
+      padding: 11px 20px; font-size: 13px; font-weight: 700; cursor: pointer; text-decoration: none;
+      box-shadow: 0 2px 10px rgba(37, 99, 235, 0.3);
+    }
+    .btn-cta-ghost {
+      background: var(--bg-panel); color: var(--ink); border: 1px solid var(--border-strong);
+      border-radius: 8px; padding: 11px 16px; font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none;
+    }
+    .btn-cta-link { color: var(--blue); font-size: 13px; font-weight: 600; text-decoration: none; padding: 11px 4px; }
+    .hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; align-content: start; }
+    .stat-tile {
+      background: var(--bg-panel); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px;
+    }
+    .stat-k { font-size: 9px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+    .stat-v { font-size: 20px; font-weight: 800; color: #0f172a; line-height: 1.15; }
+    .stat-d { font-size: 10px; font-weight: 700; }
+    .up { color: var(--green); } .down { color: var(--red); }
+
+    /* ============ SEVERITY BANNER STRIP ============ */
+    .alert-strip {
+      max-width: 1400px; margin: 14px auto 0 auto; padding: 0 32px;
+      display: flex; gap: 10px;
+    }
+    .alert {
+      flex: 1; display: flex; align-items: center; gap: 10px;
+      border-radius: 8px; padding: 9px 12px; font-size: 12px;
+      border: 1px solid;
+    }
+    .alert b { font-size: 12px; }
+    .alert-crit { background: #fef2f2; border-color: #fecaca; color: #991b1b; }
+    .alert-warn { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+    .alert-info { background: #eff6ff; border-color: #bfdbfe; color: #1e40af; }
+    .alert-act { margin-left: auto; font-size: 11px; font-weight: 700; text-decoration: none; color: inherit; border-bottom: 1px solid currentColor; }
+
+    /* ============ CONSOLE BODY ============ */
+    .console {
+      max-width: 1400px; margin: 14px auto 30px auto; padding: 0 32px;
+      display: grid; grid-template-columns: 1fr 320px; gap: 14px; align-items: start;
+    }
+    .panel {
+      background: var(--bg-panel); border: 1px solid var(--border); border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; gap: 8px; }
+    .panel-title { font-size: 13px; font-weight: 800; letter-spacing: 0.02em; }
+    .panel-tools { display: flex; gap: 4px; }
+    .tool-chip {
+      font-size: 10px; font-weight: 700; color: var(--ink-muted);
+      background: var(--bg-sunken); border: 1px solid var(--border); border-radius: 5px; padding: 3px 8px; cursor: pointer;
+    }
+    .tool-chip.on { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+    /* KPI strip: 4 mini cards, tight */
+    .kpi-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px; padding: 0 32px; max-width: 1400px; margin-inline: auto; }
+    .kpi {
+      background: var(--bg-panel); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px;
+    }
+    .kpi-k { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); display: flex; justify-content: space-between; align-items: center; }
+    .kpi-v { font-size: 22px; font-weight: 800; color: #0f172a; margin: 2px 0; }
+    .kpi-s { font-size: 10px; color: var(--ink-muted); display: flex; justify-content: space-between; }
+    .delta-chip { font-size: 9px; font-weight: 800; padding: 1px 6px; border-radius: 8px; }
+    .dc-up { background: rgba(22,163,74,0.12); color: var(--green); }
+    .dc-down { background: rgba(220,38,38,0.12); color: var(--red); }
+
+    /* Metric cards: 3-col, micro buttons */
+    .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .metric-card {
+      background: var(--bg-panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+    .card-top { display: flex; justify-content: space-between; align-items: center; gap: 6px; margin-bottom: 6px; }
+    .card-title { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+    .status-pill { font-size: 9px; font-weight: 800; padding: 2px 7px; border-radius: 9px; white-space: nowrap; }
+    .p-red { background: #fee2e2; color: #b91c1c; }
+    .p-green { background: #dcfce7; color: #15803d; }
+    .p-blue { background: #dbeafe; color: #1d4ed8; }
+    .p-amber { background: #fef3c7; color: #b45309; }
+    .card-val { font-size: 24px; font-weight: 800; color: #0f172a; line-height: 1.1; }
+    .card-val small { font-size: 12px; font-weight: 700; color: var(--ink-faint); }
+    .spark { display: flex; gap: 2px; align-items: flex-end; height: 22px; margin: 6px 0; }
+    .spark i { flex: 1; background: var(--bg-sunken); border-radius: 1px; min-height: 3px; }
+    .spark i.hot { background: rgba(220, 38, 38, 0.35); }
+    .spark i.cold { background: rgba(37, 99, 235, 0.28); }
+    .card-sub { font-size: 10px; color: var(--ink-muted); margin-bottom: 8px; }
+    .card-actions { display: flex; gap: 4px; padding-top: 7px; border-top: 1px dashed var(--border); }
+    .btn-micro {
+      background: var(--bg-sunken); border: 1px solid var(--border-strong); border-radius: 4px;
+      padding: 4px 8px; font-size: 10px; font-weight: 700; color: var(--ink); cursor: pointer;
+    }
+    .btn-micro.danger { color: #b91c1c; border-color: #fecaca; background: #fef2f2; }
+    .btn-micro.blue { color: #1d4ed8; border-color: #bfdbfe; background: #eff6ff; }
+
+    /* Feed + side rail */
+    .console-lower { display: grid; grid-template-columns: 1fr 320px; gap: 14px; max-width: 1400px; margin: 0 auto; padding: 0 32px 8px 32px; }
+    .feed { display: flex; flex-direction: column; }
+    .feed-row {
+      display: flex; align-items: center; gap: 8px;
+      padding: 6px 4px; border-bottom: 1px solid var(--bg-sunken); font-size: 11px;
+    }
+    .feed-row:last-child { border-bottom: none; }
+    .feed-who { font-weight: 700; min-width: 92px; }
+    .feed-what { color: var(--ink-muted); flex: 1; }
+    .feed-when { color: var(--ink-faint); font-size: 10px; }
+    .sev-tag { font-size: 9px; font-weight: 800; padding: 1px 6px; border-radius: 4px; }
+    .s-crit { background: #fee2e2; color: #b91c1c; }
+    .s-warn { background: #fef3c7; color: #b45309; }
+    .s-ok { background: #dcfce7; color: #15803d; }
+
+    .side-rail { display: flex; flex-direction: column; gap: 14px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .tag {
+      font-size: 10px; font-weight: 700; color: var(--ink-muted);
+      background: var(--bg-sunken); border: 1px solid var(--border);
+      padding: 2px 8px; border-radius: 10px; cursor: pointer;
+    }
+    .tag.hot { color: var(--red); border-color: #fecaca; background: #fef2f2; }
+    .bar-row { margin-bottom: 8px; }
+    .bar-head { display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; color: var(--ink-muted); margin-bottom: 3px; }
+    .bar { height: 6px; border-radius: 3px; background: var(--bg-sunken); overflow: hidden; }
+    .bar i { display: block; height: 100%; border-radius: 3px; }
+    .mini-table { width: 100%; border-collapse: collapse; font-size: 10px; }
+    .mini-table th { text-align: left; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); padding: 3px 4px; border-bottom: 1px solid var(--border); }
+    .mini-table td { padding: 4px; border-bottom: 1px solid var(--bg-sunken); color: var(--ink); white-space: nowrap; }
+    .mini-table td.mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 10px; }
+
+    /* Upgrade banner */
+    .upgrade {
+      max-width: 1400px; margin: 10px auto 26px auto; padding: 0 32px;
+    }
+    .upgrade-inner {
+      background: linear-gradient(120deg, #1d4ed8, #7c3aed);
+      color: #fff; border-radius: 12px; padding: 18px 22px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .upgrade-title { font-size: 17px; font-weight: 800; }
+    .upgrade-copy { font-size: 12px; color: rgba(255,255,255,0.82); }
+    .upgrade-actions { margin-left: auto; display: flex; gap: 8px; }
+    .btn-up {
+      background: #fff; color: #1e40af; border: none; border-radius: 7px;
+      padding: 9px 16px; font-size: 12px; font-weight: 800; cursor: pointer;
+    }
+    .btn-up-ghost {
+      background: rgba(255,255,255,0.14); color: #fff; border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 7px; padding: 9px 14px; font-size: 12px; font-weight: 700; cursor: pointer;
+    }
+
+    /* Dense footer */
+    footer { background: #0f172a; color: #94a3b8; padding: 26px 32px 18px 32px; }
+    .foot-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; max-width: 1400px; margin: 0 auto 16px auto; }
+    .foot-col h4 { color: #e2e8f0; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+    .foot-col a { display: block; color: #94a3b8; text-decoration: none; font-size: 11px; padding: 2px 0; }
+    .foot-legal {
+      border-top: 1px solid #1e293b; padding-top: 12px; max-width: 1400px; margin: 0 auto;
+      display: flex; justify-content: space-between; font-size: 10px; color: #64748b;
+    }
+    .foot-legal-links { display: flex; gap: 12px; }
+    .foot-legal-links a { color: #64748b; text-decoration: none; font-size: 10px; }
+
+    /* ============ MOBILE: dense column, tighter hazards ============ */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 28px 18px 22px 18px; }
+      .console { grid-template-columns: 1fr; padding: 0 14px; }
+      .console-lower { grid-template-columns: 1fr; padding: 0 14px 8px 14px; }
+      .kpi-strip { grid-template-columns: repeat(2, 1fr); padding: 0 14px; }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .alert-strip { flex-wrap: wrap; padding: 0 14px; }
+      .upgrade { padding: 0 14px; }
+      .foot-grid { grid-template-columns: repeat(2, 1fr); padding: 0 14px; }
+    }
+    @media (max-width: 600px) {
+      header { flex-wrap: wrap; padding: 8px 12px; gap: 8px; }
+      nav { flex-wrap: wrap; }
+      .utility-bar { font-size: 10px; padding: 3px 10px; }
+      .utility-links { gap: 8px; }
+      .ticker { flex-wrap: wrap; white-space: normal; }
+      .hero-title { font-size: 25px; }
+      .hero-copy { font-size: 12px; }
+      .hero-ctas { flex-wrap: wrap; }
+      .kpi-strip { gap: 6px; }
+      .metrics-grid { grid-template-columns: 1fr; gap: 6px; }
+      .alert-strip { flex-direction: column; }
+      .card-actions { gap: 2px !important; }
+      .btn-micro { flex: 1; padding: 7px 3px; font-size: 9px; }
+      .upgrade-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .upgrade-actions { margin-left: 0; width: 100%; }
+      .btn-up, .btn-up-ghost { flex: 1; padding: 11px 8px; }
+      .foot-grid { grid-template-columns: 1fr; gap: 10px; }
+      .foot-legal { flex-direction: column; gap: 8px; }
+      .hero-stats { gap: 6px; }
+      .metric-card { padding: 10px; }
+      .panel { padding: 11px 12px; }
+      .feed-row { padding: 5px 2px; gap: 5px; }
+      .mini-table { font-size: 9px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UTILITY TOPBAR -->
+  <div class="utility-bar" id="utility-bar">
+    <div class="utility-links" id="utility-links">
+      <a href="#status" id="ulink-status">system status</a>
+      <a href="#changelog" id="ulink-changelog">changelog v3.8.2</a>
+      <a href="#docs" id="ulink-docs">api docs</a>
+      <a href="#composer" id="ulink-composer">compose</a>
+      <a href="#admin" id="ulink-admin">admin</a>
+      <a href="#prefs" id="ulink-prefs">preferences</a>
+    </div>
+    <div class="utility-status" id="utility-status">
+      <span><span class="dot dot-green"></span> api 62ms</span>
+      <span><span class="dot dot-amber"></span> ingest 1.2k/s</span>
+      <span><span class="dot dot-red"></span> 2 incidents</span>
+      <span>us-east-1 · eu-central-1</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <div class="brand-block" id="brand-block">
+      <div class="logo-mark" id="brand-logo">P</div>
+      <div>
+        <span class="logo-name" id="brand-name">PulseAI <span style="color:var(--ink-faint)">Console</span></span>
+        <span class="logo-env" id="brand-env">production workspace</span>
+      </div>
+    </div>
+    <nav id="top-nav">
+      <a href="#fleet" class="active" id="link-fleet">Fleet</a>
+      <a href="#agents" id="link-agents">Agents</a>
+      <a href="#traces" id="link-traces">Traces</a>
+      <a href="#evals" id="link-evals">Evals</a>
+      <a href="#costs" id="link-costs">Costs</a>
+      <a href="#alerts" id="link-alerts">Alerts</a>
+      <a href="#settings" id="link-settings">Settings</a>
+    </nav>
+    <div class="header-actions" id="header-actions">
+      <button class="btn-icon" id="btn-search">⌘K</button>
+      <button class="btn-icon" id="btn-notifs">🔔 12</button>
+      <button class="btn-topbar-primary" id="btn-login">Sign In</button>
+    </div>
+  </header>
+
+  <!-- TICKER -->
+  <div class="ticker" id="health-strip">
+    <span class="ticker-label" id="ticker-label">LIVE STATUS</span>
+    <span class="tick t-ok" id="tick-agents"><span class="dot dot-green"></span> AGENTS <b>1,842</b></span>
+    <span class="tick t-ok" id="tick-latency"><span class="dot dot-green"></span> P99 <b>48ms</b></span>
+    <span class="tick t-warn" id="tick-tokens"><span class="dot dot-amber"></span> TOKENS <b>42.1k/m</b></span>
+    <span class="tick t-crit" id="tick-cpu"><span class="dot dot-red"></span> CPU <b>94.8%</b></span>
+    <span class="tick t-ok" id="tick-errors"><span class="dot dot-green"></span> ERR <b>0.06%</b></span>
+    <span class="tick t-info" id="tick-swarms"><span class="dot dot-green"></span> SWARMS <b>12</b></span>
+    <span class="tick t-warn" id="tick-queue"><span class="dot dot-amber"></span> QUEUE <b>312</b></span>
+    <span class="tick t-ok" id="tick-region"><span class="dot dot-green"></span> ALL REGIONS <b>OK</b></span>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero-area">
+      <div>
+        <div class="hero-badge" id="badge-announcement"><span>⚡</span> ENTERPRISE OBSERVABILITY ENGINE v3.8.2 — NOW WITH AGENT SWARM DEFENSE</div>
+        <h1 class="hero-title" id="main-heading">Command your entire <em>autonomous agent fleet</em> from one screen</h1>
+        <p class="hero-copy" id="main-subheading">
+          PulseAI instruments every reasoning hop, token batch and tool call across your fleet —
+          with zero-instrumentation eBPF telemetry, live swarm defense, deterministic evals and
+          real-time cost guardrails that stop runway burn before finance notices.
+        </p>
+        <div class="hero-ctas" id="hero-actions">
+          <a href="#console" class="btn-cta" id="btn-start-trial">Start Free 14-Day Trial</a>
+          <a href="#demo" class="btn-cta-ghost" id="btn-book-demo">Schedule Live Demo</a>
+          <a href="#pricing" class="btn-cta-link" id="link-pricing">or compare plans →</a>
+        </div>
+        <div class="hero-stats" id="hero-stats">
+          <div class="stat-tile" id="stat-fleet"><div class="stat-k">Fleet Trace Coverage</div><div class="stat-v">99.98%</div><div class="stat-d up">▲ 0.03 wk/wk</div></div>
+          <div class="stat-tile" id="stat-mttr"><div class="stat-k">Mean Time to Remediate</div><div class="stat-v">4.2<small style="font-size:12px;color:var(--ink-faint)">min</small></div><div class="stat-d up">▲ 31% faster</div></div>
+          <div class="stat-tile" id="stat-savings"><div class="stat-k">Token Spend Saved</div><div class="stat-v">$418k</div><div class="stat-d up">▲ this quarter</div></div>
+          <div class="stat-tile" id="stat-swarmraid"><div class="stat-k">Swarm Raids Blocked</div><div class="stat-v">1,204</div><div class="stat-d down">▲ 21 attempted</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALERT STRIP -->
+    <div class="alert-strip" id="alert-strip">
+      <div class="alert alert-crit" id="alert-1"><span class="dot dot-red"></span> <b>CRITICAL</b> worker-node-04 CPU 94.8% — swarm raft rebalancing
+        <a class="alert-act" href="#remediate" id="alert-act-1">Remediate</a></div>
+      <div class="alert alert-warn" id="alert-2"><span class="dot dot-amber"></span> <b>WARN</b> token burn 18% over 7-day baseline
+        <a class="alert-act" href="#costs" id="alert-act-2">Review</a></div>
+      <div class="alert alert-info" id="alert-3"><span class="dot dot-green"></span> <b>INFO</b> eval suite v12 green on 812 cases
+        <a class="alert-act" href="#evals" id="alert-act-3">Details</a></div>
+    </div>
+
+    <!-- KPI STRIP -->
+    <div class="kpi-strip" id="kpi-strip">
+      <div class="kpi" id="kpi-tokens"><div class="kpi-k">Token Burn <span class="delta-chip dc-down">-4%</span></div><div class="kpi-v">42.1k<small>/m</small></div><div class="kpi-s"><span>prompt 82%</span><span>gen 18%</span></div></div>
+      <div class="kpi" id="kpi-agents"><div class="kpi-k">Active Agents <span class="delta-chip dc-up">+128</span></div><div class="kpi-v">1,842</div><div class="kpi-s"><span>idle 214</span><span>quarantined 6</span></div></div>
+      <div class="kpi" id="kpi-latency"><div class="kpi-k">P99 Latency <span class="delta-chip dc-up">-12ms</span></div><div class="kpi-v">48<small>ms</small></div><div class="kpi-s"><span>target 60ms</span><span>SLO 99.9%</span></div></div>
+      <div class="kpi" id="kpi-errors"><div class="kpi-k">Error Budget <span class="delta-chip dc-up">+99.9%</span></div><div class="kpi-v">0.06<small>%</small></div><div class="kpi-s"><span>halluc 0</span><span>tool 14</span></div></div>
+    </div>
+
+    <!-- CONSOLE MAIN + RAIL -->
+    <div class="console" id="console">
+      <div class="panel" id="cluster-panel">
+        <div class="panel-head" id="dash-header">
+          <div>
+            <span class="panel-title" id="dash-title-text">LIVE AUTONOMOUS CLUSTER HEALTH — US-EAST / EU-CENTRAL</span>
+          </div>
+          <div class="panel-tools" id="dash-filters-group">
+            <button class="tool-chip on" id="chip-all">All Nodes</button>
+            <button class="tool-chip" id="chip-prod">Production</button>
+            <button class="tool-chip" id="chip-staging">Staging</button>
+            <button class="tool-chip" id="chip-canary">Canary</button>
+          </div>
+        </div>
+
+        <div class="metrics-grid" id="metrics-card-grid">
+          <div class="metric-card" id="card-cpu">
+            <div class="card-top"><span class="card-title">CPU Saturation</span><span class="status-pill p-red">94.8% CRITICAL</span></div>
+            <div class="card-val" style="color:#b91c1c">94.8<small>%</small></div>
+            <div class="spark" id="spark-cpu"><i style="height:40%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:70%"></i><i style="height:85%"></i><i class="hot" style="height:96%"></i><i class="hot" style="height:92%"></i><i class="hot" style="height:98%"></i></div>
+            <div class="card-sub">Peak spike on worker-node-04 · throttling attempted 14:02Z</div>
+            <div class="card-actions" id="actions-cpu">
+              <button class="btn-micro" id="btn-throttle">Throttle</button>
+              <button class="btn-micro" id="btn-rebalance">Rebalance</button>
+              <button class="btn-micro danger" id="btn-drain">Drain Node</button>
+              <button class="btn-micro" id="btn-histogram">Histogram</button>
+            </div>
+          </div>
+
+          <div class="metric-card" id="card-memory">
+            <div class="card-top"><span class="card-title">Memory Allocation</span><span class="status-pill p-green">HEALTHY</span></div>
+            <div class="card-val">34.2<small>GB</small></div>
+            <div class="spark" id="spark-mem"><i style="height:60%"></i><i style="height:62%"></i><i style="height:58%"></i><i style="height:61%"></i><i style="height:64%"></i><i style="height:63%"></i><i style="height:60%"></i><i style="height:59%"></i></div>
+            <div class="card-sub">68% of 48 GB pool · page-faults nominal</div>
+            <div class="card-actions" id="actions-mem">
+              <button class="btn-micro" id="btn-gc">Trigger GC</button>
+              <button class="btn-micro" id="btn-dump">Heap Dump</button>
+              <button class="btn-micro" id="btn-profiler">Profiler</button>
+            </div>
+          </div>
+
+          <div class="metric-card" id="card-agents">
+            <div class="card-top"><span class="card-title">Active AI Agents</span><span class="status-pill p-blue">RUNNING</span></div>
+            <div class="card-val">1,842</div>
+            <div class="spark" id="spark-agents"><i style="height:30%"></i><i style="height:45%"></i><i style="height:52%"></i><i style="height:60%"></i><i style="height:58%"></i><i style="height:72%"></i><i style="height:80%"></i><i style="height:88%"></i></div>
+            <div class="card-sub">12 subagent swarms · 6 quarantined by defense</div>
+            <div class="card-actions" id="actions-agents">
+              <button class="btn-micro" id="btn-pause">Pause Swarm</button>
+              <button class="btn-micro blue" id="btn-scale">Auto-Scale</button>
+              <button class="btn-micro" id="btn-inspect">Inspect</button>
+            </div>
+          </div>
+
+          <div class="metric-card" id="card-latency">
+            <div class="card-top"><span class="card-title">P99 Inference Latency</span><span class="status-pill p-green">OPTIMAL</span></div>
+            <div class="card-val">48<small>ms</small></div>
+            <div class="spark" id="spark-lat"><i style="height:70%"></i><i style="height:68%"></i><i style="height:64%"></i><i style="height:60%"></i><i style="height:56%"></i><i style="height:52%"></i><i style="height:48%"></i><i style="height:44%"></i></div>
+            <div class="card-sub">-12ms vs baseline · router cache hit 91%</div>
+            <div class="card-actions" id="actions-latency">
+              <button class="btn-micro" id="btn-trace">Trace Spans</button>
+              <button class="btn-micro" id="btn-logs">View Logs</button>
+              <button class="btn-micro" id="btn-trace-flame">Flame Graph</button>
+            </div>
+          </div>
+
+          <div class="metric-card" id="card-tokens">
+            <div class="card-top"><span class="card-title">Token Burn Rate</span><span class="status-pill p-amber">42.1k/min</span></div>
+            <div class="card-val">42,190<small>/m</small></div>
+            <div class="spark" id="spark-tok"><i style="height:50%"></i><i style="height:55%"></i><i style="height:60%"></i><i style="height:66%"></i><i style="height:72%"></i><i style="height:78%"></i><i style="height:84%"></i><i style="height:90%"></i></div>
+            <div class="card-sub">Prompt 82% · gen 18% · quota 61% consumed</div>
+            <div class="card-actions" id="actions-tokens">
+              <button class="btn-micro" id="btn-quota">Quotas</button>
+              <button class="btn-micro blue" id="btn-cost">Cost Analytics</button>
+              <button class="btn-micro" id="btn-budget">Budget Limit</button>
+            </div>
+          </div>
+
+          <div class="metric-card" id="card-error">
+            <div class="card-top"><span class="card-title">Reasoning Error Budget</span><span class="status-pill p-green">99.94%</span></div>
+            <div class="card-val">0.06<small>%</small></div>
+            <div class="spark" id="spark-err"><i style="height:20%"></i><i style="height:12%"></i><i style="height:25%"></i><i style="height:10%"></i><i style="height:8%"></i><i style="height:15%"></i><i style="height:8%"></i><i style="height:6%"></i></div>
+            <div class="card-sub">0 hallucinations · 14 tool failures auto-retried</div>
+            <div class="card-actions" id="actions-error">
+              <button class="btn-micro" id="btn-evals">Evals</button>
+              <button class="btn-micro" id="btn-alert-rule">Alert Rules</button>
+              <button class="btn-micro" id="btn-replay">Replay Trace</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDE RAIL -->
+      <aside class="side-rail" id="side-rail">
+        <div class="panel" id="panel-envs">
+          <div class="panel-head"><span class="panel-title" id="panel-envs-title">Environments &amp; Tags</span><button class="tool-chip" id="btn-edit-tags">edit</button></div>
+          <div class="tags" id="tag-cloud">
+            <span class="tag hot" id="tag-prod">production</span>
+            <span class="tag" id="tag-staging">staging</span>
+            <span class="tag" id="tag-canary">canary</span>
+            <span class="tag" id="tag-emea">emea</span>
+            <span class="tag" id="tag-amer">amers</span>
+            <span class="tag" id="tag-apac">apac</span>
+            <span class="tag" id="tag-finance">finance-swarms</span>
+            <span class="tag" id="tag-support">support-triage</span>
+            <span class="tag hot" id="tag-research">research-beta</span>
+            <span class="tag" id="tag-soc2">soc2</span>
+            <span class="tag" id="tag-hipaa">hipaa-pilot</span>
+            <span class="tag" id="tag-shadow">shadow-mode</span>
+          </div>
+        </div>
+
+        <div class="panel" id="panel-quota">
+          <div class="panel-head"><span class="panel-title" id="panel-quota-title">Quota Pressure</span><span class="status-pill p-amber">2 near</span></div>
+          <div class="bar-row" id="bar-tokens"><div class="bar-head"><span>Tokens / day</span><span>61%</span></div><div class="bar"><i style="width:61%;background:#d97706"></i></div></div>
+          <div class="bar-row" id="bar-cpu"><div class="bar-head"><span>CPU fleet</span><span>95%</span></div><div class="bar"><i style="width:95%;background:#dc2626"></i></div></div>
+          <div class="bar-row" id="bar-context"><div class="bar-head"><span>Context window</span><span>44%</span></div><div class="bar"><i style="width:44%;background:#2563eb"></i></div></div>
+          <div class="bar-row" id="bar-evals"><div class="bar-head"><span>Eval seats</span><span>28%</span></div><div class="bar"><i style="width:28%;background:#16a34a"></i></div></div>
+        </div>
+
+        <div class="panel" id="panel-nodes">
+          <div class="panel-head"><span class="panel-title" id="panel-nodes-title">Hot Nodes</span><button class="tool-chip" id="btn-view-all">view all</button></div>
+          <table class="mini-table" id="nodes-table">
+            <thead><tr><th>Node</th><th>CPU</th><th>Agents</th></tr></thead>
+            <tbody>
+              <tr><td class="mono" id="node-04">wn-04</td><td style="color:#b91c1c;font-weight:800">94.8%</td><td>312</td></tr>
+              <tr><td class="mono" id="node-02">wn-02</td><td style="color:#b45309;font-weight:700">71.2%</td><td>298</td></tr>
+              <tr><td class="mono" id="node-07">wn-07</td><td style="color:#b45309;font-weight:700">64.9%</td><td>274</td></tr>
+              <tr><td class="mono" id="node-09">wn-09</td><td>44.1%</td><td>251</td></tr>
+              <tr><td class="mono" id="node-11">wn-11</td><td>38.6%</td><td>246</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </aside>
+    </div>
+
+    <!-- CONSOLE LOWER: FEED -->
+    <div class="console-lower" id="console-lower">
+      <div class="panel" id="panel-feed">
+        <div class="panel-head">
+          <span class="panel-title" id="panel-feed-title">Event Stream — reasoning hops, tools, defenses</span>
+          <div class="panel-tools" id="feed-filters">
+            <button class="tool-chip on" id="chip-live">Live</button>
+            <button class="tool-chip" id="chip-crit">Crit only</button>
+          </div>
+        </div>
+        <div class="feed" id="feed-list">
+          <div class="feed-row" id="feed-1"><span class="feed-who">swarm-finance</span><span class="sev-tag s-crit">CRIT</span><span class="feed-what">raft re-election on wn-04 · 312 agents rescheduled</span><span class="feed-when">14:03:22Z</span></div>
+          <div class="feed-row" id="feed-2"><span class="feed-who">defense-daemon</span><span class="sev-tag s-warn">WARN</span><span class="feed-what">quarantined 2 agents (prompt-injection signature 7a)</span><span class="feed-when">14:02:58Z</span></div>
+          <div class="feed-row" id="feed-3"><span class="feed-who">swarm-support</span><span class="sev-tag s-ok">OK</span><span class="feed-what">completed 1,204 triage hops · p95 210ms</span><span class="feed-when">14:02:41Z</span></div>
+          <div class="feed-row" id="feed-4"><span class="feed-who">cost-guard</span><span class="sev-tag s-warn">WARN</span><span class="feed-what">finance-swarms at 82% of daily token ceiling</span><span class="feed-when">14:02:12Z</span></div>
+          <div class="feed-row" id="feed-5"><span class="feed-who">eval-runner</span><span class="sev-tag s-ok">OK</span><span class="feed-what">regression suite v12 green · 812/812 cases</span><span class="feed-when">14:01:55Z</span></div>
+          <div class="feed-row" id="feed-6"><span class="feed-who">router-core</span><span class="sev-tag s-ok">OK</span><span class="feed-what">cache hit 91% · 3.1M requests served</span><span class="feed-when">14:01:30Z</span></div>
+          <div class="feed-row" id="feed-7"><span class="feed-who">swarm-research</span><span class="sev-tag s-warn">WARN</span><span class="feed-what">context window 88% on 42 agents · compacted</span><span class="feed-when">14:01:02Z</span></div>
+          <div class="feed-row" id="feed-8"><span class="feed-who">gorm-watcher</span><span class="sev-tag s-ok">OK</span><span class="feed-what">gc pause 12ms · heap steady at 34.2GB</span><span class="feed-when">14:00:47Z</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UPGRADE BANNER -->
+    <div class="upgrade" id="upgrade">
+      <div class="upgrade-inner" id="upgrade-banner">
+        <div>
+          <div class="upgrade-title" id="upgrade-title">Swarm Defense Pro stops runway burn automatically</div>
+          <div class="upgrade-copy" id="upgrade-copy">Deterministic prompt-injection quarantine, enforced token ceilings per swarm, and nightly compile of fleet evals. SOC2 report available today.</div>
+        </div>
+        <div class="upgrade-actions" id="upgrade-actions">
+          <button class="btn-up" id="btn-upgrade">Upgrade Workspace</button>
+          <button class="btn-up-ghost" id="btn-talk-sales">Talk to Sales</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- DENSE FOOTER -->
+  <footer id="site-footer">
+    <div class="foot-grid" id="foot-grid">
+      <div class="foot-col" id="foot-product">
+        <h4>Product</h4>
+        <a href="#f1" id="fp-1">Fleet dashboard</a>
+        <a href="#f2" id="fp-2">Swarm defense</a>
+        <a href="#f3" id="fp-3">Eval suite</a>
+        <a href="#f4" id="fp-4">Cost guardrails</a>
+        <a href="#f5" id="fp-5">Trace flame graphs</a>
+        <a href="#f6" id="fp-6">Changelog</a>
+      </div>
+      <div class="foot-col" id="foot-company">
+        <h4>Company</h4>
+        <a href="#c1" id="fc-1">About</a>
+        <a href="#c2" id="fc-2">Customers</a>
+        <a href="#c3" id="fc-3">Security</a>
+        <a href="#c4" id="fc-4">Careers</a>
+        <a href="#c5" id="fc-5">Press kit</a>
+        <a href="#c6" id="fc-6">Contact</a>
+      </div>
+      <div class="foot-col" id="foot-resources">
+        <h4>Resources</h4>
+        <a href="#r1" id="fr-1">API docs</a>
+        <a href="#r2" id="fr-2">Status page</a>
+        <a href="#r3" id="fr-3">Runbooks</a>
+        <a href="#r4" id="fr-4">Benchmarks</a>
+        <a href="#r5" id="fr-5">Community</a>
+        <a href="#r6" id="fr-6">Support SLA</a>
+      </div>
+      <div class="foot-col" id="foot-legal">
+        <h4>Compliance</h4>
+        <a href="#l1" id="fl-1">SOC2 Type II</a>
+        <a href="#l2" id="fl-2">GDPR</a>
+        <a href="#l3" id="fl-3">HIPAA pilot</a>
+        <a href="#l4" id="fl-4">DPA</a>
+        <a href="#l5" id="fl-5">Sub-processors</a>
+        <a href="#l6" id="fl-6">Trust center</a>
+      </div>
+    </div>
+    <div class="foot-legal" id="foot-legal-row">
+      <span>© 2026 PulseAI Systems Inc. — observability redefined. EU: PulseAI B.V. Amsterdam.</span>
+      <span class="foot-legal-links" id="foot-legal-links">
+        <a href="#t1" id="flink-terms">Terms</a>
+        <a href="#t2" id="flink-privacy">Privacy</a>
+        <a href="#t3" id="flink-cookies">Cookies</a>
+        <a href="#t4" id="flink-dpa">DPA</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

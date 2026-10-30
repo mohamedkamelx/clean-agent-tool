@@ -1,0 +1,247 @@
+version: 2026-10-29.absolute.2
+provisional: true
+calibration:
+  base_scoring: absolute
+  method: absolute-threshold scoring; corpus used only as a sanity check
+  n_screens: 10
+  labeled_positive: 5
+  labeled_negative: 5
+  measured_at: '2026-10-29T16:15:54.731495+00:00'
+  sections:
+    noise:
+      available: true
+      absolute_score_auc: 0.8
+      meets_min_auc: true
+      feature_diagnostics:
+      - feature: density_outlier_pct
+        auc: 0.72
+        positive_mean: 25.9448
+        negative_mean: 19.6039
+        oriented_correctly: true
+      - feature: control_density
+        auc: 0.72
+        positive_mean: 2.2308
+        negative_mean: 1.4978
+        oriented_correctly: true
+      - feature: element_density
+        auc: 0.6
+        positive_mean: 8.3253
+        negative_mean: 8.087
+        oriented_correctly: true
+      - feature: effective_peaks_norm
+        auc: 0.64
+        positive_mean: 0.6724
+        negative_mean: 0.4798
+        oriented_correctly: true
+      - feature: content_coverage_pct
+        auc: 0.64
+        positive_mean: 34.9949
+        negative_mean: 28.6765
+        oriented_correctly: true
+      - feature: unexplained_pct
+        auc: 0.5
+        positive_mean: 0.4414
+        negative_mean: 0.4205
+        oriented_correctly: true
+    focus:
+      available: true
+      absolute_score_auc: 0.5
+      meets_min_auc: false
+      feature_diagnostics:
+      - feature: effective_targets
+        auc: 0.56
+        positive_mean: 5.4544
+        negative_mean: 5.2601
+        oriented_correctly: true
+      - feature: balance
+        auc: 0.48
+        positive_mean: 0.6736
+        negative_mean: 0.6614
+        oriented_correctly: true
+      - feature: control_effective_targets
+        auc: 0.4
+        positive_mean: 1.5587
+        negative_mean: 1.6344
+        oriented_correctly: false
+      - feature: secondary_content_share_pct
+        auc: 0.76
+        positive_mean: 24.671
+        negative_mean: 17.6936
+        oriented_correctly: true
+    distraction:
+      available: true
+      absolute_score_auc: 0.88
+      meets_min_auc: true
+      feature_diagnostics:
+      - feature: secondary_content_share_pct
+        auc: 0.76
+        positive_mean: 24.671
+        negative_mean: 17.6936
+        oriented_correctly: true
+      - feature: decorative_pct
+        auc: 0.5
+        positive_mean: 0.0
+        negative_mean: 0.0
+        oriented_correctly: true
+      - feature: unexplained_pct
+        auc: 0.5
+        positive_mean: 0.4414
+        negative_mean: 0.4205
+        oriented_correctly: true
+      - feature: effective_peaks_norm
+        auc: 0.64
+        positive_mean: 0.6724
+        negative_mean: 0.4798
+        oriented_correctly: true
+    crowding:
+      available: true
+      absolute_score_auc: 0.92
+      meets_min_auc: true
+      note: deterministic/composite score; reported only
+    overall:
+      available: true
+      absolute_score_auc: 0.8
+      meets_min_auc: true
+      note: deterministic/composite score; reported only
+  warnings:
+  - Corpus is small (5 positive / 5 negative screens). Base scoring is absolute and
+    does not depend on it; do not treat these AUCs as generalization estimates.
+  note: Weights/anchors are fixed UX thresholds, NOT fitted to this corpus.
+noise:
+  features:
+    density_outlier_pct:
+      zero: 5.0
+      sat: 40.0
+      weight: 1.0
+    control_density:
+      zero: 0.8
+      sat: 5.0
+      weight: 1.0
+    element_density:
+      zero: 2.0
+      sat: 14.0
+      weight: 0.6
+    content_density:
+      zero: 1.5
+      sat: 10.0
+      weight: 0.8
+    effective_peaks_norm:
+      zero: 0.25
+      sat: 1.0
+      weight: 0.9
+    content_coverage_pct:
+      zero: 35.0
+      sat: 78.0
+      weight: 0.7
+    unexplained_pct:
+      zero: 3.0
+      sat: 25.0
+      weight: 0.9
+  level_low: 40.0
+  level_high: 65.0
+focus:
+  features:
+    effective_targets:
+      zero: 1.5
+      sat: 10.0
+      weight: 1.0
+    balance:
+      zero: 0.35
+      sat: 0.9
+      weight: 0.8
+    control_effective_targets:
+      zero: 1.5
+      sat: 8.0
+      weight: 0.7
+    secondary_content_share_pct:
+      zero: 12.0
+      sat: 50.0
+      weight: 0.8
+  level_low: 40.0
+  level_high: 65.0
+distraction:
+  features:
+    secondary_content_share_pct:
+      zero: 10.0
+      sat: 45.0
+      weight: 1.0
+    decorative_pct:
+      zero: 2.0
+      sat: 20.0
+      weight: 0.8
+    unexplained_pct:
+      zero: 3.0
+      sat: 25.0
+      weight: 0.9
+    effective_peaks_norm:
+      zero: 0.3
+      sat: 1.0
+      weight: 0.6
+  level_low: 40.0
+  level_high: 65.0
+legibility:
+  tiny_text_pct:
+    zero: 5.0
+    sat: 40.0
+  tiny_text_threshold_px: 12.0
+crowding:
+  desktop:
+    gap_px: 8.0
+    target_px: 24.0
+    clear_gap_px: 4.0
+    clear_target_px: 24.0
+    comfortable_target_px: 44.0
+  mobile:
+    gap_px: 16.0
+    target_px: 24.0
+    clear_gap_px: 8.0
+    clear_target_px: 24.0
+    comfortable_target_px: 44.0
+  severity_weight: 25.0
+weights:
+  noise: 0.3
+  focus: 0.3
+  crowding: 0.3
+  distraction: 0.1
+levels:
+  low: 40.0
+  high: 65.0
+scoring_modifiers:
+  enabled: true
+  structure_points: 2.5
+  structure_cap: 7.5
+  grid_organization_points: 1.5
+  grid_organization_cap: 9.0
+  severity_weight:
+    clear_problem: 1.0
+    potential_improvement: 0.7
+    needs_investigation: 0.45
+  impact_weight:
+    high: 1.25
+    medium: 1.0
+    low: 0.7
+  confidence_weight: 0.5
+layout:
+  tolerance_px: 2.0
+  row_band_tolerance_px: 10.0
+  cell_merge_gap_px: 8.0
+  min_container_px: 48.0
+  symmetry_warn_ratio: 0.04
+  spacing_tolerance_px: 2.0
+  grid_width_variance: 0.15
+  fold_clip_min_visible: 0.02
+  fold_clip_max_visible: 0.98
+  fold_clip_min_px: 8.0
+  fold_clip_max_findings: 8
+  max_atoms: 1200
+  # organization detectors ("design expert" comments on how rows are organized)
+  orphan_max_words: 2            # dangling last-line fragment: max words
+  orphan_max_width_ratio: 0.30   # last line <= 30% of block width
+  orphan_min_prev_chars: 12      # previous line must be a real sentence line
+  orphan_min_words: 4            # block must hold >= 4 words (skip label pairs)
+  orphan_max_findings: 6
+  underfill_ratio: 0.62          # row span < 62% of the cluster's median span
+  imbalance_skew: 0.55           # |left-right| share >= 55%
+  imbalance_delta: 0.25          # ...and >= 25% more skewed than sibling rows
+  min_det_cluster_rows: 3        # need >= 3 rows before we comment on organization
+  max_grid_findings: 12

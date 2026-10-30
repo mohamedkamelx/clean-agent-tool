@@ -1,0 +1,18 @@
+# Core audit dependencies
+numpy>=1.24,<2.0
+scipy>=1.8
+opencv-python>=4.8
+torch>=2.0
+torchvision>=0.15
+deepgaze-pytorch>=1.2.1
+playwright>=1.40
+PyYAML>=5.4
+
+# Install the browser once:
+#   python3 -m playwright install chromium
+#
+# For GPU saliency, install a CUDA-enabled torch/torchvision build that matches
+# your driver first, then install the rest. CPU inference works but is slower.
+#
+# Test-only:
+#   python3 -m pip install pytest

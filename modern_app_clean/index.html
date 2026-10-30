@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PulseAI Ledger — Quiet Observability for Agent Fleets</title>
+  <style>
+    :root {
+      --paper: #fbf9f5;
+      --paper-deep: #f3efe7;
+      --ink: #1c2430;
+      --ink-soft: #4b5563;
+      --ink-faint: #8a94a6;
+      --rule: #e4ddd0;
+      --rule-strong: #d3cab8;
+      --accent: #0e7a67;
+      --accent-ink: #0a5c50;
+      --alert-wash: #f8f3ea;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif; }
+
+    /* ============ STATIONERY HEADER ============ */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 24px;
+      padding: 28px 56px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .wordmark { font-size: 21px; font-weight: 700; letter-spacing: 0.01em; color: var(--ink); }
+    .wordmark .ledger { color: var(--accent); }
+    nav { display: flex; gap: 28px; align-items: baseline; }
+    nav a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 15px;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 1px;
+    }
+    nav a:hover { border-bottom-color: var(--rule-strong); }
+    .quiet-link-btn {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-ink);
+      border: 1px solid var(--accent);
+      border-radius: 3px;
+      padding: 9px 18px;
+      text-decoration: none;
+      background: transparent;
+    }
+
+    /* ============ EDITORIAL HERO ============ */
+    .hero {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 96px 32px 72px 32px;
+    }
+    .kicker {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-size: 46px;
+      font-weight: 400;
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 22px;
+    }
+    .hero-title em { font-style: italic; color: var(--accent-ink); }
+    .hero-copy {
+      font-size: 18px;
+      color: var(--ink-soft);
+      max-width: 620px;
+      margin-bottom: 30px;
+    }
+    .hero-actions { display: flex; align-items: center; gap: 22px; }
+    .btn-primary {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      padding: 14px 26px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .text-cta {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      color: var(--accent-ink);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+    }
+    .hero-footnote {
+      margin-top: 26px;
+      font-size: 14px;
+      font-style: italic;
+      color: var(--ink-faint);
+    }
+
+    /* ============ DIVIDER RULE ============ */
+    .rule {
+      max-width: 820px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid var(--rule);
+    }
+
+    /* ============ THE LEDGER (simplified statement list) ============ */
+    .ledger-section {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 64px 32px;
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 28px;
+      gap: 20px;
+    }
+    .section-title { font-size: 27px; font-weight: 400; color: var(--ink); }
+    .section-note { font-size: 14px; color: var(--ink-faint); font-style: italic; }
+
+    .statement {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .statement:last-child { border-bottom: none; }
+    .statement-name {
+      font-size: 17px;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+    .statement-detail {
+      font-size: 14px;
+      color: var(--ink-faint);
+      margin-top: 3px;
+      max-width: 380px;
+    }
+    .statement-value {
+      display: flex;
+      align-items: baseline;
+      gap: 26px;
+      white-space: nowrap;
+    }
+    .statement-number {
+      font-size: 26px;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .statement-state {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent-ink);
+    }
+    .statement-state.warn { color: #9a6a14; }
+    .statement-link {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-ink);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    /* One calm notice — the only emphasized item on the page */
+    .notice {
+      margin: 44px 0 8px 0;
+      background: var(--alert-wash);
+      border: 1px solid var(--rule-strong);
+      border-radius: 4px;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .notice-text { font-size: 15px; color: var(--ink); }
+    .notice-text b { font-weight: 700; }
+    .notice-sub { font-size: 13px; color: var(--ink-faint); margin-top: 3px; }
+    .notice-btn {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    /* ============ TWO-VOICE NOTE ============ */
+    .note-section {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 56px 32px 72px 32px;
+    }
+    .note-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+    }
+    .note-col h3 {
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .note-col p { font-size: 15px; color: var(--ink-soft); }
+
+    /* ============ STATIONERY FOOTER ============ */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 34px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 24px;
+    }
+    footer .foot-note { font-size: 14px; color: var(--ink-faint); }
+    footer .foot-links { display: flex; gap: 22px; }
+    footer .foot-links a {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      font-size: 13px;
+      color: var(--ink-soft);
+      text-decoration: none;
+    }
+
+    /* ============ MOBILE: same calm stationsery, larger taps ============ */
+    @media (max-width: 760px) {
+      header { padding: 20px 22px; flex-wrap: wrap; }
+      nav { gap: 18px; }
+      nav a { font-size: 14px; }
+      .hero { padding: 56px 22px 44px 22px; }
+      .hero-title { font-size: 31px; }
+      .hero-copy { font-size: 16px; }
+      .ledger-section { padding: 44px 22px; }
+      .statement { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .statement-value { width: 100%; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+      .statement-number { font-size: 23px; }
+      .statement-detail { max-width: none; }
+      .statement-link {
+        background: var(--paper-deep);
+        border: 1px solid var(--rule-strong);
+        border-radius: 3px;
+        padding: 10px 16px;
+        min-width: 132px;
+        text-align: center;
+      }
+      .notice { flex-direction: column; align-items: flex-start; gap: 14px; padding: 18px 18px; }
+      .notice-btn { width: 100%; text-align: center; padding: 13px 16px; }
+      .note-section { padding: 40px 22px 52px 22px; }
+      .note-grid { grid-template-columns: 1fr; gap: 26px; }
+      section, .ledger-section { scroll-margin-top: 20px; }
+      footer { flex-direction: column; padding: 26px 22px; }
+      footer .foot-links { flex-wrap: wrap; gap: 14px; }
+      .rule { margin: 0 22px; }
+      .rule.wide { margin: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== STATIONERY HEADER ==================== -->
+  <header id="site-header">
+    <div class="wordmark" id="brand-logo">PulseAI <span class="ledger">Ledger</span></div>
+    <nav id="top-nav" class="sans">
+      <a href="#ledger" id="link-features">The Ledger</a>
+      <a href="#voices" id="link-voices">Voices</a>
+      <a href="#pricing" id="link-pricing">Pricing</a>
+      <a href="#signin" class="quiet-link-btn" id="btn-login">Open your ledger</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==================== EDITORIAL HERO ==================== -->
+    <section class="hero" id="hero-area">
+      <div class="kicker" id="badge-announcement">Agent Observability, Written Down</div>
+      <h1 class="hero-title" id="main-heading">
+        Your agents already did the work. <em>The Ledger reads it back to you.</em>
+      </h1>
+      <p class="hero-copy" id="main-subheading">
+        Latency, token burn and reasoning anomalies — watched around the
+        clock, then explained in one calm morning note.
+      </p>
+      <div class="hero-actions sans" id="hero-actions">
+        <a href="#ledger" class="btn-primary" id="btn-start-trial">See today's entry — free for 14 days</a>
+        <a href="#voices" class="text-cta" id="btn-book-demo">how teams read it</a>
+      </div>
+      <p class="hero-footnote" id="hero-footnote">No instrumentation to install. A read-only observer sits beside your fleet and takes notes.</p>
+    </section>
+
+    <hr class="rule wide" id="rule-1">
+
+    <!-- ==================== THE LEDGER ==================== -->
+    <section class="ledger-section" id="ledger">
+      <div class="section-head" id="dash-header">
+        <h2 class="section-title" id="dash-title-text">Today's entry — the fleet, in six lines</h2>
+        <div class="section-note sans" id="dash-subtitle">updated 14:02 UTC · US-East &amp; EU-Central</div>
+      </div>
+
+      <div class="statement" id="card-cpu">
+        <div>
+          <div class="statement-name" id="cpu-name">CPU saturation</div>
+          <div class="statement-detail" id="cpu-detail">worker-node-04 ran hot during the afternoon swarm rush</div>
+        </div>
+        <div class="statement-value sans" id="cpu-value">
+          <span class="statement-number" id="cpu-number">94.8%</span>
+          <span class="statement-state warn" id="cpu-state">attention needed</span>
+          <a class="statement-link" href="#cpu" id="btn-throttle">Open</a>
+        </div>
+      </div>
+
+      <div class="statement" id="card-memory">
+        <div>
+          <div class="statement-name" id="mem-name">Memory allocation</div>
+          <div class="statement-detail" id="mem-detail">holding steady on the 48 GB pool since Tuesday</div>
+        </div>
+        <div class="statement-value sans" id="mem-value">
+          <span class="statement-number" id="mem-number">34.2 GB</span>
+          <span class="statement-state" id="mem-state">steady</span>
+          <a class="statement-link" href="#mem" id="btn-dump">Open</a>
+        </div>
+      </div>
+
+      <div class="statement" id="card-agents">
+        <div>
+          <div class="statement-name" id="agents-name">Active agents</div>
+          <div class="statement-detail" id="agents-detail">twelve swarms at work · six odd visitors were quarantined</div>
+        </div>
+        <div class="statement-value sans" id="agents-value">
+          <span class="statement-number" id="agents-number">1,842</span>
+          <span class="statement-state" id="agents-state">working</span>
+          <a class="statement-link" href="#agents" id="btn-scale">Open</a>
+        </div>
+      </div>
+
+      <div class="statement" id="card-latency">
+        <div>
+          <div class="statement-name" id="lat-name">P99 inference latency</div>
+          <div class="statement-detail" id="lat-detail">twelve milliseconds better than last week's baseline</div>
+        </div>
+        <div class="statement-value sans" id="lat-value">
+          <span class="statement-number" id="lat-number">48 ms</span>
+          <span class="statement-state" id="lat-state">comfortable</span>
+          <a class="statement-link" href="#lat" id="btn-trace">Open</a>
+        </div>
+      </div>
+
+      <div class="statement" id="card-tokens">
+        <div>
+          <div class="statement-name" id="tok-name">Token burn</div>
+          <div class="statement-detail" id="tok-detail">most of it answering, a fifth composing — the ceiling holds</div>
+        </div>
+        <div class="statement-value sans" id="tok-value">
+          <span class="statement-number" id="tok-number">42,190</span>
+          <span class="statement-state" id="tok-state">per minute</span>
+          <a class="statement-link" href="#tok" id="btn-cost">Open</a>
+        </div>
+      </div>
+
+      <div class="statement" id="card-error">
+        <div>
+          <div class="statement-name" id="err-name">Reasoning error budget</div>
+          <div class="statement-detail" id="err-detail">no hallucinations this hour; fourteen tool calls retried</div>
+        </div>
+        <div class="statement-value sans" id="err-value">
+          <span class="statement-number" id="err-number">0.06%</span>
+          <span class="statement-state" id="err-state">well within budget</span>
+          <a class="statement-link" href="#err" id="btn-evals">Open</a>
+        </div>
+      </div>
+
+      <!-- the page's single emphasized row -->
+      <div class="notice" id="card-cpu-alert">
+        <div>
+          <div class="notice-text" id="notice-text"><b>One thing wants your attention:</b> worker-node-04 peaked at 94.8% CPU while the finance swarm grew.</div>
+          <div class="notice-sub" id="notice-sub">The Ledger suggests draining that node after the 15:00 batch — one click, reversible.</div>
+        </div>
+        <a class="notice-btn sans" href="#remediate" id="btn-drain-node">Drain the node</a>
+      </div>
+    </section>
+
+    <hr class="rule wide" id="rule-2">
+
+    <!-- ==================== TWO VOICES ==================== -->
+    <section class="note-section" id="voices">
+      <div class="note-grid">
+        <div class="note-col" id="note-ops">
+          <h3 id="note-ops-title">For the operator</h3>
+          <p id="note-ops-copy">Every morning note names the one thing that changed, what it cost, and whether you need to act. The rest of the fleet is fine — and the note says so plainly.</p>
+        </div>
+        <div class="note-col" id="note-finance">
+          <h3 id="note-finance-title">For the budget owner</h3>
+          <p id="note-finance-copy">Token spend is recorded like an expense: per swarm, per day, against the ceiling you set. When a swarm drifts, you get one sentence, not a dashboard.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== STATIONERY FOOTER ==================== -->
+  <footer id="site-footer">
+    <div class="foot-note" id="foot-note">© 2026 PulseAI Ledger — quiet observability for agent fleets.</div>
+    <div class="foot-links" id="foot-links">
+      <a href="#terms" id="flink-terms">Terms</a>
+      <a href="#privacy" id="flink-privacy">Privacy</a>
+      <a href="#security" id="flink-security">Security</a>
+      <a href="#contact" id="flink-contact">Write to us</a>
+    </div>
+  </footer>
+
+</body>
+</html>

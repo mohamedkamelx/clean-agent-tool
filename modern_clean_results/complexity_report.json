@@ -1,0 +1,1356 @@
+{
+  "schema_version": "1.1",
+  "run_id": "20261029T175104Z_77c536",
+  "tool": {
+    "name": "interface-audit",
+    "version": "0.2.0",
+    "thresholds_version": "2026-10-29.absolute.2",
+    "calibration": "provisional"
+  },
+  "target": "/home/mkamel/Desktop/python scripts/modern_app_clean/index.html",
+  "started_at": "2026-10-29T17:51:04.461571+00:00",
+  "duration_s": 11.59,
+  "config": {
+    "views": [
+      "desktop",
+      "mobile"
+    ],
+    "max_pages": 5,
+    "device": "cuda",
+    "fast": false,
+    "thresholds_version": "2026-10-29.absolute.2"
+  },
+  "coverage": {
+    "pages_found": 1,
+    "pages_analyzed": 1,
+    "screens": 5,
+    "missing": [],
+    "pages_failed": [],
+    "measured": [
+      "layout_geometry",
+      "dom_structure",
+      "spacing",
+      "target_size",
+      "crowding",
+      "saliency_prominence",
+      "noise",
+      "focus_competition",
+      "distraction"
+    ],
+    "not_measured": [
+      "task_importance",
+      "safe_removal",
+      "dropdown_placement",
+      "naming_clarity",
+      "technical_dependencies",
+      "dynamic_ui_states"
+    ]
+  },
+  "limitations": [
+    "Saliency predicts free-viewing attention on a static screenshot, not task importance.",
+    "Spacing/alignment findings are heuristics unless severity is 'clear_problem'.",
+    "Semantic suggestions (removal, dropdown placement, label clarity) require human review.",
+    "Dynamic states (hover, focus, open menus, errors, empty/loading) are not captured.",
+    "Only the configured desktop (1920x1080) and mobile (390x844) viewports are analyzed."
+  ],
+  "summary": {
+    "clear_problem": 0,
+    "potential_improvement": 4,
+    "needs_investigation": 0,
+    "total": 4,
+    "requires_human": 2,
+    "top_issue_ids": [
+      "f_5cb347664c",
+      "f_8668e58dd1",
+      "f_2136df2300",
+      "f_d7626991ad"
+    ]
+  },
+  "pages": [
+    {
+      "page_name": "index",
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app_clean/index.html",
+      "status": "ok",
+      "views": {
+        "desktop": {
+          "score": 19.0,
+          "overall": 19.0,
+          "noise": 14.7,
+          "focus_competition": 41.9,
+          "crowding": 0.0,
+          "distraction": 20.2,
+          "level": "LOW",
+          "valid": true,
+          "screens": 2,
+          "scroll_y": [
+            0,
+            918
+          ],
+          "saliency_mode": "enabled",
+          "layout": {
+            "scope": "document_union",
+            "first_view_screen_id": "desktop_index_s0",
+            "content_atoms": {
+              "text": 32,
+              "image": 0,
+              "icon": 0,
+              "button": 15,
+              "total": 47
+            },
+            "first_view_atoms": 31,
+            "row_bands": 26,
+            "columns": 1,
+            "column_widths_px": [
+              934.0
+            ],
+            "column_edges_px": [
+              [
+                493.0,
+                1427.0
+              ]
+            ],
+            "column_pitch_px": 0.0,
+            "gutter_px": 0.0,
+            "column_histogram": {
+              "1": 25,
+              "2": 1
+            },
+            "grid_confidence": 0.96,
+            "grid_regions": 3,
+            "symmetry_error_px": 0.0,
+            "symmetry_error_ratio": 0.0,
+            "spacing_axis": "vertical",
+            "dominant_spacing_px": 54.0,
+            "spacing_outliers": 0,
+            "atom_gap_histogram": {
+              "11": 1,
+              "12": 1,
+              "14": 1,
+              "20": 1,
+              "24": 10,
+              "31": 1,
+              "32": 2
+            },
+            "off_grid_count": 0,
+            "whitespace_pct": 69.7,
+            "fold_clipped_count": 1,
+            "fold_clipped_atom_count": 0,
+            "fold_clipped_pct": 0.0,
+            "fold_clipped_selectors": [
+              "#card-latency"
+            ]
+          }
+        },
+        "mobile": {
+          "score": 33.3,
+          "overall": 33.3,
+          "noise": 35.6,
+          "focus_competition": 65.7,
+          "crowding": 2.4,
+          "distraction": 21.4,
+          "level": "LOW",
+          "valid": true,
+          "screens": 3,
+          "scroll_y": [
+            0,
+            717,
+            1434
+          ],
+          "saliency_mode": "enabled",
+          "layout": {
+            "scope": "document_union",
+            "first_view_screen_id": "mobile_index_s0",
+            "content_atoms": {
+              "text": 32,
+              "image": 0,
+              "icon": 0,
+              "button": 15,
+              "total": 47
+            },
+            "first_view_atoms": 17,
+            "row_bands": 30,
+            "columns": 1,
+            "column_widths_px": [
+              328.0
+            ],
+            "column_edges_px": [
+              [
+                31.0,
+                359.0
+              ]
+            ],
+            "column_pitch_px": 0.0,
+            "gutter_px": 0.0,
+            "column_histogram": {
+              "1": 30
+            },
+            "grid_confidence": 1.0,
+            "grid_regions": 5,
+            "symmetry_error_px": 0.0,
+            "symmetry_error_ratio": 0.0,
+            "spacing_axis": "vertical",
+            "dominant_spacing_px": 14.0,
+            "spacing_outliers": 0,
+            "atom_gap_histogram": {
+              "12": 1,
+              "13": 1,
+              "15": 1,
+              "16": 2,
+              "24": 10
+            },
+            "off_grid_count": 0,
+            "whitespace_pct": 32.8,
+            "fold_clipped_count": 1,
+            "fold_clipped_atom_count": 1,
+            "fold_clipped_pct": 5.6,
+            "fold_clipped_selectors": [
+              "#card-cpu-alert"
+            ]
+          }
+        }
+      },
+      "findings": [
+        {
+          "issue_id": "f_5cb347664c",
+          "rule_id": "FOLD_CLIPPED_CONTENT",
+          "issue": "FOLD_CLIPPED_CONTENT",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.8,
+          "requires_human": true,
+          "page": "index",
+          "view": "desktop",
+          "screen_id": "desktop_index_s0",
+          "scroll_y": 0,
+          "selector": "#card-latency",
+          "tag": "div",
+          "text": "P99 Inference Latency -12ms improvement over baseline 48 ms OPTIMAL View Spans",
+          "related_selectors": [],
+          "bbox": {
+            "x": 493,
+            "y": 1063,
+            "width": 934,
+            "height": 17
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_5cb347664c.png",
+          "observed": {
+            "visible_pct": 20.7,
+            "clipped_edge": "bottom",
+            "clipped_px": 65,
+            "element_type": "box",
+            "covered_atoms": 0
+          },
+          "expected": {
+            "visible_pct": 100.0,
+            "note": "fully inside the first viewport, or fully below the fold"
+          },
+          "evidence": {
+            "class": "deterministic_geometry",
+            "slices_seen": 1,
+            "screen_ids": [
+              "desktop_index_s0"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "Only 21% of this box fits inside the first viewport; the remaining ~65px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+          "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+          "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+          "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+          "attention_stats": {},
+          "protected": false
+        },
+        {
+          "issue_id": "f_8668e58dd1",
+          "rule_id": "FOLD_CLIPPED_CONTENT",
+          "issue": "FOLD_CLIPPED_CONTENT",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.8,
+          "requires_human": true,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s0",
+          "scroll_y": 0,
+          "selector": "#card-cpu-alert",
+          "tag": "div",
+          "text": "CRITICAL CPU Saturation at 94.8% Peak spike detected on worker-node-04 Remediate",
+          "related_selectors": [],
+          "bbox": {
+            "x": 31,
+            "y": 821,
+            "width": 328,
+            "height": 23
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_8668e58dd1.png",
+          "observed": {
+            "visible_pct": 15.9,
+            "clipped_edge": "bottom",
+            "clipped_px": 122,
+            "element_type": "box",
+            "covered_atoms": 1
+          },
+          "expected": {
+            "visible_pct": 100.0,
+            "note": "fully inside the first viewport, or fully below the fold"
+          },
+          "evidence": {
+            "class": "deterministic_geometry",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s0"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "Only 16% of this box fits inside the first viewport; the remaining ~122px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+          "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+          "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+          "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+          "attention_stats": {},
+          "protected": false
+        },
+        {
+          "issue_id": "f_2136df2300",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.6,
+          "requires_human": false,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s0",
+          "scroll_y": 0,
+          "selector": "#btn-start-trial",
+          "tag": "a",
+          "text": "2 controls, gap 14.0px",
+          "related_selectors": [
+            "#btn-start-trial",
+            "#btn-book-demo"
+          ],
+          "bbox": {
+            "x": 16,
+            "y": 414,
+            "width": 358,
+            "height": 127
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_2136df2300.png",
+          "observed": {
+            "gap_px": 14.0,
+            "target_min_px": 56,
+            "group_size": 2
+          },
+          "expected": {
+            "gap_px": 16.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "statistical_heuristic",
+            "slices_seen": 1,
+            "screen_ids": [
+              "mobile_index_s0"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "2 adjacent controls are separated by 14.0px (threshold 16px); smallest target is 358x56px. Check touch spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 16.0px (current 14.0px), or raise the smallest target to at least 44x44px (current 56px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 14.0,
+            "severity": 0.056
+          },
+          "protected": true
+        },
+        {
+          "issue_id": "f_d7626991ad",
+          "rule_id": "CROWDING_GROUP",
+          "issue": "CROWDING_VIOLATION",
+          "severity": "potential_improvement",
+          "impact": "medium",
+          "confidence": 0.6,
+          "requires_human": false,
+          "page": "index",
+          "view": "mobile",
+          "screen_id": "mobile_index_s0",
+          "scroll_y": 0,
+          "selector": "#chip-all",
+          "tag": "button",
+          "text": "3 controls, gap 12.0px",
+          "related_selectors": [
+            "#chip-all",
+            "#chip-prod",
+            "#chip-staging"
+          ],
+          "bbox": {
+            "x": 31,
+            "y": 741,
+            "width": 328,
+            "height": 37
+          },
+          "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_d7626991ad.png",
+          "observed": {
+            "gap_px": 12.0,
+            "target_min_px": 37,
+            "group_size": 3
+          },
+          "expected": {
+            "gap_px": 16.0,
+            "target_px": 44.0
+          },
+          "evidence": {
+            "class": "statistical_heuristic",
+            "slices_seen": 2,
+            "screen_ids": [
+              "mobile_index_s0",
+              "mobile_index_s1"
+            ],
+            "thresholds_version": "2026-10-29.absolute.2"
+          },
+          "why": "3 adjacent controls are separated by 12.0px (threshold 16px); smallest target is 101x37px. Check touch spacing and target size.",
+          "fix": "Increase the gap in this control group to at least 16.0px (current 12.0px), or raise the smallest target to at least 44x44px (current 37px). Add padding/gap in the shared action-row container.",
+          "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+          "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+          "attention_stats": {
+            "gap_px": 12.0,
+            "severity": 0.113
+          },
+          "protected": true
+        }
+      ],
+      "comparison": {
+        "desktop_score": 19.0,
+        "mobile_score": 33.3,
+        "score_diff": 14.3,
+        "coverage": "complete",
+        "mobile_degradation_detected": false,
+        "reason": null
+      }
+    }
+  ],
+  "screens": [
+    {
+      "screen_id": "desktop_index_s0",
+      "page": "index",
+      "view": "desktop",
+      "scroll_y": 0,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app_clean/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/screenshots/desktop_index_s0.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 18.71,
+        "noise": 14.37,
+        "focus_competition": 39.95,
+        "crowding": 0.0,
+        "distraction": 24.11
+      },
+      "level": "LOW",
+      "metrics": {
+        "entropy_bits": 19.089,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 0.0,
+        "container_saliency_pct": 43.48,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 11.14,
+        "textual_saliency_pct": 56.52,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 6,
+        "effective_peaks": 5.81,
+        "peak_top1_share": 0.214,
+        "content_coverage_pct": 12.6,
+        "density_outlier_pct": 8.82,
+        "visible_element_count": 51,
+        "content_element_count": 31,
+        "control_count": 12,
+        "element_density": 2.459,
+        "content_density": 1.495,
+        "control_density": 0.579,
+        "text_density": 1.495,
+        "tiny_text_pct": 3.23,
+        "font_size_variety": 10,
+        "small_control_pct": 25.0,
+        "effective_targets": 4.79,
+        "top1_share": 0.423,
+        "balance": 0.577,
+        "control_effective_targets": 5.23,
+        "secondary_content_share_pct": 21.45,
+        "primary_heading_share_pct": 23.92,
+        "crowding_groups_count": 0,
+        "crowding_conflicts_count": 0,
+        "complex_clusters_count": 0,
+        "features": {
+          "unexplained_pct": 0.0,
+          "container_pct": 43.4844,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 0.8465,
+          "density_outlier_pct": 8.8235,
+          "content_coverage_pct": 12.5992,
+          "element_density": 2.4595,
+          "content_density": 1.495,
+          "control_density": 0.5787,
+          "text_density": 1.495,
+          "tiny_text_pct": 3.2258,
+          "font_size_variety": 10.0,
+          "small_control_pct": 25.0,
+          "secondary_content_share_pct": 21.4541,
+          "effective_targets": 4.7923,
+          "balance": 0.5767,
+          "control_effective_targets": 5.2345,
+          "top1_share": 0.4233,
+          "distraction_secondary_content_share_pct": 21.4541,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 0.0
+        },
+        "labels": {
+          "noise_score": 14.37,
+          "focus_competition_score": 39.95,
+          "distraction_score": 24.11,
+          "crowding_score": 0.0
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 26.8958,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "desktop_index_s0",
+          "content_atoms": {
+            "text": 32,
+            "image": 0,
+            "icon": 0,
+            "button": 15,
+            "total": 47
+          },
+          "first_view_atoms": 31,
+          "row_bands": 26,
+          "columns": 1,
+          "column_widths_px": [
+            934.0
+          ],
+          "column_edges_px": [
+            [
+              493.0,
+              1427.0
+            ]
+          ],
+          "column_pitch_px": 0.0,
+          "gutter_px": 0.0,
+          "column_histogram": {
+            "1": 25,
+            "2": 1
+          },
+          "grid_confidence": 0.96,
+          "grid_regions": 3,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "vertical",
+          "dominant_spacing_px": 54.0,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "11": 1,
+            "12": 1,
+            "14": 1,
+            "20": 1,
+            "24": 10,
+            "31": 1,
+            "32": 2
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 69.7,
+          "fold_clipped_count": 1,
+          "fold_clipped_atom_count": 0,
+          "fold_clipped_pct": 0.0,
+          "fold_clipped_selectors": [
+            "#card-latency"
+          ]
+        }
+      },
+      "findings_count": 1
+    },
+    {
+      "screen_id": "desktop_index_s1",
+      "page": "index",
+      "view": "desktop",
+      "scroll_y": 918,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app_clean/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/screenshots/desktop_index_s1.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 19.34,
+        "noise": 15.07,
+        "focus_competition": 44.21,
+        "crowding": 0.0,
+        "distraction": 15.55
+      },
+      "level": "LOW",
+      "metrics": {
+        "entropy_bits": 18.774,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 1.25,
+        "container_saliency_pct": 45.3,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 27.63,
+        "textual_saliency_pct": 53.45,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 5,
+        "effective_peaks": 4.23,
+        "peak_top1_share": 0.33,
+        "content_coverage_pct": 16.83,
+        "density_outlier_pct": 14.71,
+        "visible_element_count": 63,
+        "content_element_count": 37,
+        "control_count": 11,
+        "element_density": 3.038,
+        "content_density": 1.784,
+        "control_density": 0.53,
+        "text_density": 1.784,
+        "tiny_text_pct": 2.7,
+        "font_size_variety": 7,
+        "small_control_pct": 0.0,
+        "effective_targets": 7.57,
+        "top1_share": 0.296,
+        "balance": 0.704,
+        "control_effective_targets": 2.83,
+        "secondary_content_share_pct": 16.13,
+        "primary_heading_share_pct": 5.39,
+        "crowding_groups_count": 0,
+        "crowding_conflicts_count": 0,
+        "complex_clusters_count": 0,
+        "features": {
+          "unexplained_pct": 1.2503,
+          "container_pct": 45.2985,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 0.6941,
+          "density_outlier_pct": 14.7059,
+          "content_coverage_pct": 16.8343,
+          "element_density": 3.0382,
+          "content_density": 1.7843,
+          "control_density": 0.5305,
+          "text_density": 1.7843,
+          "tiny_text_pct": 2.7027,
+          "font_size_variety": 7.0,
+          "small_control_pct": 0.0,
+          "secondary_content_share_pct": 16.1325,
+          "effective_targets": 7.5675,
+          "balance": 0.7041,
+          "control_effective_targets": 2.8295,
+          "top1_share": 0.2959,
+          "distraction_secondary_content_share_pct": 16.1325,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 1.2503
+        },
+        "labels": {
+          "noise_score": 15.07,
+          "focus_competition_score": 44.21,
+          "distraction_score": 15.55,
+          "crowding_score": 0.0
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 21.6178,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "desktop_index_s0",
+          "content_atoms": {
+            "text": 32,
+            "image": 0,
+            "icon": 0,
+            "button": 15,
+            "total": 47
+          },
+          "first_view_atoms": 31,
+          "row_bands": 26,
+          "columns": 1,
+          "column_widths_px": [
+            934.0
+          ],
+          "column_edges_px": [
+            [
+              493.0,
+              1427.0
+            ]
+          ],
+          "column_pitch_px": 0.0,
+          "gutter_px": 0.0,
+          "column_histogram": {
+            "1": 25,
+            "2": 1
+          },
+          "grid_confidence": 0.96,
+          "grid_regions": 3,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "vertical",
+          "dominant_spacing_px": 54.0,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "11": 1,
+            "12": 1,
+            "14": 1,
+            "20": 1,
+            "24": 10,
+            "31": 1,
+            "32": 2
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 69.7,
+          "fold_clipped_count": 1,
+          "fold_clipped_atom_count": 0,
+          "fold_clipped_pct": 0.0,
+          "fold_clipped_selectors": [
+            "#card-latency"
+          ]
+        }
+      },
+      "findings_count": 0
+    },
+    {
+      "screen_id": "mobile_index_s0",
+      "page": "index",
+      "view": "mobile",
+      "scroll_y": 0,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app_clean/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/screenshots/mobile_index_s0.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 30.65,
+        "noise": 43.03,
+        "focus_competition": 47.9,
+        "crowding": 4.22,
+        "distraction": 21.1
+      },
+      "level": "LOW",
+      "metrics": {
+        "entropy_bits": 17.52,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 0.0,
+        "container_saliency_pct": 34.04,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 16.84,
+        "textual_saliency_pct": 65.96,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 3,
+        "effective_peaks": 2.99,
+        "peak_top1_share": 0.352,
+        "content_coverage_pct": 48.88,
+        "density_outlier_pct": 32.65,
+        "visible_element_count": 30,
+        "content_element_count": 18,
+        "control_count": 9,
+        "element_density": 9.114,
+        "content_density": 5.468,
+        "control_density": 2.734,
+        "text_density": 5.468,
+        "tiny_text_pct": 0.0,
+        "font_size_variety": 7,
+        "small_control_pct": 33.33,
+        "effective_targets": 5.97,
+        "top1_share": 0.327,
+        "balance": 0.673,
+        "control_effective_targets": 3.89,
+        "secondary_content_share_pct": 27.55,
+        "primary_heading_share_pct": 21.57,
+        "crowding_groups_count": 2,
+        "crowding_conflicts_count": 3,
+        "complex_clusters_count": 0,
+        "features": {
+          "unexplained_pct": 0.0,
+          "container_pct": 34.0384,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 0.5275,
+          "density_outlier_pct": 32.6531,
+          "content_coverage_pct": 48.8777,
+          "element_density": 9.1141,
+          "content_density": 5.4685,
+          "control_density": 2.7342,
+          "text_density": 5.4685,
+          "tiny_text_pct": 0.0,
+          "font_size_variety": 7.0,
+          "small_control_pct": 33.3333,
+          "secondary_content_share_pct": 27.5509,
+          "effective_targets": 5.9727,
+          "balance": 0.6729,
+          "control_effective_targets": 3.8894,
+          "top1_share": 0.3271,
+          "distraction_secondary_content_share_pct": 27.5509,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 0.0
+        },
+        "labels": {
+          "noise_score": 43.03,
+          "focus_competition_score": 47.9,
+          "distraction_score": 21.1,
+          "crowding_score": 4.22
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 57.0807,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "mobile_index_s0",
+          "content_atoms": {
+            "text": 32,
+            "image": 0,
+            "icon": 0,
+            "button": 15,
+            "total": 47
+          },
+          "first_view_atoms": 17,
+          "row_bands": 30,
+          "columns": 1,
+          "column_widths_px": [
+            328.0
+          ],
+          "column_edges_px": [
+            [
+              31.0,
+              359.0
+            ]
+          ],
+          "column_pitch_px": 0.0,
+          "gutter_px": 0.0,
+          "column_histogram": {
+            "1": 30
+          },
+          "grid_confidence": 1.0,
+          "grid_regions": 5,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "vertical",
+          "dominant_spacing_px": 14.0,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "12": 1,
+            "13": 1,
+            "15": 1,
+            "16": 2,
+            "24": 10
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 32.8,
+          "fold_clipped_count": 1,
+          "fold_clipped_atom_count": 1,
+          "fold_clipped_pct": 5.6,
+          "fold_clipped_selectors": [
+            "#card-cpu-alert"
+          ]
+        }
+      },
+      "findings_count": 3
+    },
+    {
+      "screen_id": "mobile_index_s1",
+      "page": "index",
+      "view": "mobile",
+      "scroll_y": 717,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app_clean/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/screenshots/mobile_index_s1.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 33.79,
+        "noise": 27.49,
+        "focus_competition": 75.39,
+        "crowding": 2.81,
+        "distraction": 20.82
+      },
+      "level": "LOW",
+      "metrics": {
+        "entropy_bits": 17.563,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 0.0,
+        "container_saliency_pct": 49.72,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 16.23,
+        "textual_saliency_pct": 50.28,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 1,
+        "effective_peaks": 1.0,
+        "peak_top1_share": 1.0,
+        "content_coverage_pct": 29.48,
+        "density_outlier_pct": 10.2,
+        "visible_element_count": 45,
+        "content_element_count": 25,
+        "control_count": 7,
+        "element_density": 13.671,
+        "content_density": 7.595,
+        "control_density": 2.127,
+        "text_density": 7.595,
+        "tiny_text_pct": 4.0,
+        "font_size_variety": 6,
+        "small_control_pct": 0.0,
+        "effective_targets": 15.23,
+        "top1_share": 0.14,
+        "balance": 0.86,
+        "control_effective_targets": 4.12,
+        "secondary_content_share_pct": 34.05,
+        "primary_heading_share_pct": 0.0,
+        "crowding_groups_count": 1,
+        "crowding_conflicts_count": 2,
+        "complex_clusters_count": 0,
+        "features": {
+          "unexplained_pct": 0.0,
+          "container_pct": 49.7223,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 0.0,
+          "density_outlier_pct": 10.2041,
+          "content_coverage_pct": 29.482,
+          "element_density": 13.6712,
+          "content_density": 7.5951,
+          "control_density": 2.1266,
+          "text_density": 7.5951,
+          "tiny_text_pct": 4.0,
+          "font_size_variety": 6.0,
+          "small_control_pct": 0.0,
+          "secondary_content_share_pct": 34.0477,
+          "effective_targets": 15.2337,
+          "balance": 0.8601,
+          "control_effective_targets": 4.1171,
+          "top1_share": 0.1399,
+          "distraction_secondary_content_share_pct": 34.0477,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 0.0
+        },
+        "labels": {
+          "noise_score": 27.49,
+          "focus_competition_score": 75.39,
+          "distraction_score": 20.82,
+          "crowding_score": 2.81
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 58.8301,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "mobile_index_s0",
+          "content_atoms": {
+            "text": 32,
+            "image": 0,
+            "icon": 0,
+            "button": 15,
+            "total": 47
+          },
+          "first_view_atoms": 17,
+          "row_bands": 30,
+          "columns": 1,
+          "column_widths_px": [
+            328.0
+          ],
+          "column_edges_px": [
+            [
+              31.0,
+              359.0
+            ]
+          ],
+          "column_pitch_px": 0.0,
+          "gutter_px": 0.0,
+          "column_histogram": {
+            "1": 30
+          },
+          "grid_confidence": 1.0,
+          "grid_regions": 5,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "vertical",
+          "dominant_spacing_px": 14.0,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "12": 1,
+            "13": 1,
+            "15": 1,
+            "16": 2,
+            "24": 10
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 32.8,
+          "fold_clipped_count": 1,
+          "fold_clipped_atom_count": 1,
+          "fold_clipped_pct": 5.6,
+          "fold_clipped_selectors": [
+            "#card-cpu-alert"
+          ]
+        }
+      },
+      "findings_count": 1
+    },
+    {
+      "screen_id": "mobile_index_s2",
+      "page": "index",
+      "view": "mobile",
+      "scroll_y": 1434,
+      "url": "file:///home/mkamel/Desktop/python%20scripts/modern_app_clean/index.html",
+      "image_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/screenshots/mobile_index_s2.png",
+      "saliency_mode": "enabled",
+      "calibration_status": "provisional",
+      "thresholds_version": "2026-10-29.absolute.2",
+      "scores": {
+        "overall": 35.82,
+        "noise": 34.97,
+        "focus_competition": 76.96,
+        "crowding": 0.0,
+        "distraction": 22.39
+      },
+      "level": "LOW",
+      "metrics": {
+        "entropy_bits": 17.532,
+        "norm_entropy": null,
+        "unexplained_saliency_pct": 0.85,
+        "container_saliency_pct": 46.83,
+        "decorative_saliency_pct": 0.0,
+        "interactive_saliency_pct": 5.69,
+        "textual_saliency_pct": 52.32,
+        "media_saliency_pct": 0.0,
+        "detected_peaks_count": 2,
+        "effective_peaks": 1.99,
+        "peak_top1_share": 0.535,
+        "content_coverage_pct": 35.59,
+        "density_outlier_pct": 31.63,
+        "visible_element_count": 40,
+        "content_element_count": 23,
+        "control_count": 5,
+        "element_density": 12.152,
+        "content_density": 6.987,
+        "control_density": 1.519,
+        "text_density": 6.987,
+        "tiny_text_pct": 0.0,
+        "font_size_variety": 4,
+        "small_control_pct": 20.0,
+        "effective_targets": 17.54,
+        "top1_share": 0.086,
+        "balance": 0.914,
+        "control_effective_targets": 3.88,
+        "secondary_content_share_pct": 34.93,
+        "primary_heading_share_pct": 0.0,
+        "crowding_groups_count": 0,
+        "crowding_conflicts_count": 0,
+        "complex_clusters_count": 0,
+        "features": {
+          "unexplained_pct": 0.852,
+          "container_pct": 46.8269,
+          "decorative_pct": 0.0,
+          "effective_peaks_norm": 0.331,
+          "density_outlier_pct": 31.6327,
+          "content_coverage_pct": 35.5894,
+          "element_density": 12.1521,
+          "content_density": 6.9875,
+          "control_density": 1.519,
+          "text_density": 6.9875,
+          "tiny_text_pct": 0.0,
+          "font_size_variety": 4.0,
+          "small_control_pct": 20.0,
+          "secondary_content_share_pct": 34.9313,
+          "effective_targets": 17.5444,
+          "balance": 0.9138,
+          "control_effective_targets": 3.8844,
+          "top1_share": 0.0862,
+          "distraction_secondary_content_share_pct": 34.9313,
+          "distraction_decorative_pct": 0.0,
+          "distraction_unexplained_pct": 0.852
+        },
+        "labels": {
+          "noise_score": 34.97,
+          "focus_competition_score": 76.96,
+          "distraction_score": 22.39,
+          "crowding_score": 0.0
+        },
+        "component_status": {
+          "noise": "active",
+          "focus": "active",
+          "distraction": "active"
+        },
+        "effective_support_pct": 57.5781,
+        "layout": {
+          "scope": "document_union",
+          "first_view_screen_id": "mobile_index_s0",
+          "content_atoms": {
+            "text": 32,
+            "image": 0,
+            "icon": 0,
+            "button": 15,
+            "total": 47
+          },
+          "first_view_atoms": 17,
+          "row_bands": 30,
+          "columns": 1,
+          "column_widths_px": [
+            328.0
+          ],
+          "column_edges_px": [
+            [
+              31.0,
+              359.0
+            ]
+          ],
+          "column_pitch_px": 0.0,
+          "gutter_px": 0.0,
+          "column_histogram": {
+            "1": 30
+          },
+          "grid_confidence": 1.0,
+          "grid_regions": 5,
+          "symmetry_error_px": 0.0,
+          "symmetry_error_ratio": 0.0,
+          "spacing_axis": "vertical",
+          "dominant_spacing_px": 14.0,
+          "spacing_outliers": 0,
+          "atom_gap_histogram": {
+            "12": 1,
+            "13": 1,
+            "15": 1,
+            "16": 2,
+            "24": 10
+          },
+          "off_grid_count": 0,
+          "whitespace_pct": 32.8,
+          "fold_clipped_count": 1,
+          "fold_clipped_atom_count": 1,
+          "fold_clipped_pct": 5.6,
+          "fold_clipped_selectors": [
+            "#card-cpu-alert"
+          ]
+        }
+      },
+      "findings_count": 0
+    }
+  ],
+  "findings": [
+    {
+      "issue_id": "f_5cb347664c",
+      "rule_id": "FOLD_CLIPPED_CONTENT",
+      "issue": "FOLD_CLIPPED_CONTENT",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.8,
+      "requires_human": true,
+      "page": "index",
+      "view": "desktop",
+      "screen_id": "desktop_index_s0",
+      "scroll_y": 0,
+      "selector": "#card-latency",
+      "tag": "div",
+      "text": "P99 Inference Latency -12ms improvement over baseline 48 ms OPTIMAL View Spans",
+      "related_selectors": [],
+      "bbox": {
+        "x": 493,
+        "y": 1063,
+        "width": 934,
+        "height": 17
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_5cb347664c.png",
+      "observed": {
+        "visible_pct": 20.7,
+        "clipped_edge": "bottom",
+        "clipped_px": 65,
+        "element_type": "box",
+        "covered_atoms": 0
+      },
+      "expected": {
+        "visible_pct": 100.0,
+        "note": "fully inside the first viewport, or fully below the fold"
+      },
+      "evidence": {
+        "class": "deterministic_geometry",
+        "slices_seen": 1,
+        "screen_ids": [
+          "desktop_index_s0"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "Only 21% of this box fits inside the first viewport; the remaining ~65px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+      "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+      "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+      "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+      "attention_stats": {},
+      "protected": false
+    },
+    {
+      "issue_id": "f_8668e58dd1",
+      "rule_id": "FOLD_CLIPPED_CONTENT",
+      "issue": "FOLD_CLIPPED_CONTENT",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.8,
+      "requires_human": true,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s0",
+      "scroll_y": 0,
+      "selector": "#card-cpu-alert",
+      "tag": "div",
+      "text": "CRITICAL CPU Saturation at 94.8% Peak spike detected on worker-node-04 Remediate",
+      "related_selectors": [],
+      "bbox": {
+        "x": 31,
+        "y": 821,
+        "width": 328,
+        "height": 23
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_8668e58dd1.png",
+      "observed": {
+        "visible_pct": 15.9,
+        "clipped_edge": "bottom",
+        "clipped_px": 122,
+        "element_type": "box",
+        "covered_atoms": 1
+      },
+      "expected": {
+        "visible_pct": 100.0,
+        "note": "fully inside the first viewport, or fully below the fold"
+      },
+      "evidence": {
+        "class": "deterministic_geometry",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s0"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "Only 16% of this box fits inside the first viewport; the remaining ~122px is cut by the bottom fold. In the first view it is rendered as just noise — a partial strip, not a complete object — so the viewer cannot read it as a real element. Shift it down (or resize it) so it is either fully inside the first view or fully below the fold.",
+      "fix": "Shift this element down (increase the space above it) or resize it so it is either fully inside the first viewport or fully below the fold. Do not leave it straddling the fold, where the remainder renders as a clipped strip.",
+      "verify": "Re-run at the first view (scroll_y = 0); this element's visible_fraction should be >= 0.98 or exactly 0, and this issue_id should disappear.",
+      "preserve": "Preserve task-critical content and controls. Do not remove or hide elements solely because they attract attention; change layout or hierarchy first.",
+      "attention_stats": {},
+      "protected": false
+    },
+    {
+      "issue_id": "f_2136df2300",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.6,
+      "requires_human": false,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s0",
+      "scroll_y": 0,
+      "selector": "#btn-start-trial",
+      "tag": "a",
+      "text": "2 controls, gap 14.0px",
+      "related_selectors": [
+        "#btn-start-trial",
+        "#btn-book-demo"
+      ],
+      "bbox": {
+        "x": 16,
+        "y": 414,
+        "width": 358,
+        "height": 127
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_2136df2300.png",
+      "observed": {
+        "gap_px": 14.0,
+        "target_min_px": 56,
+        "group_size": 2
+      },
+      "expected": {
+        "gap_px": 16.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "statistical_heuristic",
+        "slices_seen": 1,
+        "screen_ids": [
+          "mobile_index_s0"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "2 adjacent controls are separated by 14.0px (threshold 16px); smallest target is 358x56px. Check touch spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 16.0px (current 14.0px), or raise the smallest target to at least 44x44px (current 56px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 14.0,
+        "severity": 0.056
+      },
+      "protected": true
+    },
+    {
+      "issue_id": "f_d7626991ad",
+      "rule_id": "CROWDING_GROUP",
+      "issue": "CROWDING_VIOLATION",
+      "severity": "potential_improvement",
+      "impact": "medium",
+      "confidence": 0.6,
+      "requires_human": false,
+      "page": "index",
+      "view": "mobile",
+      "screen_id": "mobile_index_s0",
+      "scroll_y": 0,
+      "selector": "#chip-all",
+      "tag": "button",
+      "text": "3 controls, gap 12.0px",
+      "related_selectors": [
+        "#chip-all",
+        "#chip-prod",
+        "#chip-staging"
+      ],
+      "bbox": {
+        "x": 31,
+        "y": 741,
+        "width": 328,
+        "height": 37
+      },
+      "crop_path": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops/f_d7626991ad.png",
+      "observed": {
+        "gap_px": 12.0,
+        "target_min_px": 37,
+        "group_size": 3
+      },
+      "expected": {
+        "gap_px": 16.0,
+        "target_px": 44.0
+      },
+      "evidence": {
+        "class": "statistical_heuristic",
+        "slices_seen": 2,
+        "screen_ids": [
+          "mobile_index_s0",
+          "mobile_index_s1"
+        ],
+        "thresholds_version": "2026-10-29.absolute.2"
+      },
+      "why": "3 adjacent controls are separated by 12.0px (threshold 16px); smallest target is 101x37px. Check touch spacing and target size.",
+      "fix": "Increase the gap in this control group to at least 16.0px (current 12.0px), or raise the smallest target to at least 44x44px (current 37px). Add padding/gap in the shared action-row container.",
+      "verify": "Re-run the audit; this issue_id should disappear and no new crowding group should appear.",
+      "preserve": "Preserve this element: keep it visible, reachable, and semantically intact. Change only spacing, size, grouping, or visual weight as described; do not remove or hide it.",
+      "attention_stats": {
+        "gap_px": 12.0,
+        "severity": 0.113
+      },
+      "protected": true
+    }
+  ],
+  "diff": null,
+  "artifacts": {
+    "report_json": "/home/mkamel/Desktop/python scripts/modern_clean_results/complexity_report.json",
+    "dom_snapshot": "/home/mkamel/Desktop/python scripts/modern_clean_results/dom_snapshot.json",
+    "screenshots_dir": "/home/mkamel/Desktop/python scripts/modern_clean_results/screenshots",
+    "overlays_dir": "/home/mkamel/Desktop/python scripts/modern_clean_results/diagnostic_overlays",
+    "heatmaps": {
+      "desktop_index_s0": "/home/mkamel/Desktop/python scripts/modern_clean_results/heatmaps/desktop_index_s0_heatmap.jpg",
+      "desktop_index_s1": "/home/mkamel/Desktop/python scripts/modern_clean_results/heatmaps/desktop_index_s1_heatmap.jpg",
+      "mobile_index_s0": "/home/mkamel/Desktop/python scripts/modern_clean_results/heatmaps/mobile_index_s0_heatmap.jpg",
+      "mobile_index_s1": "/home/mkamel/Desktop/python scripts/modern_clean_results/heatmaps/mobile_index_s1_heatmap.jpg",
+      "mobile_index_s2": "/home/mkamel/Desktop/python scripts/modern_clean_results/heatmaps/mobile_index_s2_heatmap.jpg"
+    },
+    "crops_dir": "/home/mkamel/Desktop/python scripts/modern_clean_results/crops"
+  }
+}
