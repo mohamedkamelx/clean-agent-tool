@@ -1,0 +1,5 @@
+boltons
+numpy
+setuptools
+torch
+torchvision
